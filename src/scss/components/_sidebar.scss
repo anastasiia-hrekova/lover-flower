@@ -1,0 +1,99 @@
+@use '../utils/mixins' as *;
+
+.sidebar {
+  position: absolute;
+  z-index: 2;
+  text-transform: uppercase;
+  right: 13%;
+  top: 3rem;
+
+  @media screen and (max-width: 780px) {
+    display: none;
+  }
+
+  &__block {
+    @include flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.1rem;
+    gap: 6rem;
+  }
+
+  &__accent {
+    @include text(1.4rem, 400, 2rem);
+    color: var(--main-color);
+  }
+
+  &__text {
+    @include text(1rem, 300, 1.5rem);
+    margin-bottom: 2rem;
+  }
+
+  &__social {
+    align-self: flex-end;
+    @include size(6rem, 15.4rem);
+    background-color: rgba(0, 0, 0, 0.441);
+    border-radius: 1rem;
+    margin-top: 8rem;
+    margin-bottom: 12rem;
+    padding: 1.5rem;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-img {
+      @include size(2.4rem, 2.4rem);
+      transition: 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__call {
+    align-self: flex-end;
+    @include flex;
+    flex-direction: column;
+    @include text(1.6rem, 400, 2.4rem);
+
+    &-number {
+      color: var(--main-color);
+      margin-bottom: 0.6rem;
+      @include text(1.6rem, 300, 2.4rem);
+    }
+
+    &-btn {
+      background-color: rgba(0, 0, 0, 0.441);
+      border-radius: 1rem;
+      padding: 1.2rem;
+      @include text(1.4rem, 400, 2rem);
+    }
+
+    &-icon {
+      margin-right: 0.6rem;
+    }
+  }
+
+  &__cart {
+    background-color: rgba(0, 0, 0, 0.441);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    align-self: flex-end;
+
+    &-img {
+      transition: 0.4s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

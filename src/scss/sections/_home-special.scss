@@ -1,0 +1,98 @@
+@use '../utils/mixins' as *;
+
+.special {
+  position: relative;
+  width: 100%;
+  margin-bottom: 18.2rem;
+
+  &::before {
+    position: absolute;
+    content: '';
+    @include size(100%, 80rem);
+    background-image: url(/assets/special.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    z-index: -1;
+    right: 0;
+    top: 0;
+  }
+
+  &__block {
+    text-transform: uppercase;
+  }
+
+  &__title {
+    position: relative;
+    font-family: 'Cormorant', serif;
+    @include text(10rem, 400, 12rem);
+    letter-spacing: 0.02rem;
+    margin-bottom: 3rem;
+
+    &-img {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &-line {
+      margin-left: 35%;
+      position: relative;
+      margin-bottom: 3rem;
+
+      &::before {
+        position: absolute;
+        @include size(25.5rem, 0.1rem);
+        content: '';
+        background-color: var(--accent-color);
+        top: 50%;
+        margin-left: -78%;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  &__text {
+    width: 25.5rem;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    margin-left: 10%;
+    gap: 4rem;
+    @include text(1.4rem, 400, 2rem);
+    font-family: 'Oswald', sans-serif;
+
+    &-list {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      list-style: disc;
+
+      &::before {
+        content: '';
+        position: absolute;
+        @include size(2rem, 6rem);
+        background-image: url(/assets/arrow-oval.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: contain;
+        left: -10%;
+        top: 100%;
+      }
+    }
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    height: 29.2rem;
+    margin-left: 7%;
+  }
+}

@@ -1,0 +1,21 @@
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin text($size, $weight, $height) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}

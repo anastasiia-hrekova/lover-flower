@@ -1,0 +1,90 @@
+@use '../utils/mixins' as *;
+
+.catalog {
+  @include size(100%, 100rem);
+  margin-top: 2rem;
+  background-image: url(/assets/home-catalog.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center -15rem;
+
+  &__block {
+    @include flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 0 4rem;
+  }
+
+  &__title {
+    font-family: 'Cormorant', serif;
+    @include text(10rem, 400, 12rem);
+    letter-spacing: 0.02rem;
+    text-transform: uppercase;
+  }
+
+  &__describtion {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: column;
+    gap: 1rem;
+
+    &-text {
+      width: 46rem;
+      margin-left: 9.5rem;
+      font-family: 'Oswald', sans-serif;
+      @include text(2rem, 300, 2.6rem);
+    }
+  }
+
+  &__containers {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 2rem;
+    backdrop-filter: blur(2rem);
+    font-family: 'Oswald', sans-serif;
+    padding: 3rem;
+    padding-left: 5rem;
+
+    &-title {
+      @include text(3rem, 700, 4.4rem);
+      color: var(--main-color);
+      letter-spacing: 0.04rem;
+      text-align: left;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    &-list {
+      list-style: disc;
+      @include text(1.8rem, 400, 2.7rem);
+      letter-spacing: 0.04rem;
+      text-transform: uppercase;
+      margin-bottom: 2.4rem;
+    }
+
+    &-link {
+      @include text(1.2rem, 700, 1.8rem);
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      text-decoration: underline;
+      color: var(--accent-color);
+      margin-left: 65%;
+    }
+  }
+
+  &__bouqets {
+    margin-top: 20rem;
+    margin-left: 8rem;
+    @include size(44rem, 28rem);
+  }
+
+  &__flowers {
+    margin-top: -8rem;
+    @include size(54rem, 31rem);
+  }
+
+  &__other {
+    @include size(54rem, 26rem);
+  }
+}

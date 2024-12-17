@@ -1,0 +1,72 @@
+@use '../utils/mixins' as *;
+
+.bestsellers {
+  @include size(100%, 110rem);
+  background-image: url(/assets/bestseller_back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 10rem;
+
+  &__block {
+    @include center;
+    flex-direction: column;
+    margin-bottom: 18rem;
+    background-image: url(/assets/bestsellers.png);
+    background-repeat: no-repeat;
+    background-size: 90rem 65rem;
+    background-position: right 2.5rem;
+    padding-top: 0;
+  }
+
+  &__title {
+    @include text(10rem, 400, 12rem);
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+    text-align: center;
+
+    &-left {
+      margin-left: -100%;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    @include text(2rem, 300, 3rem);
+    letter-spacing: 0.02rem;
+    margin-bottom: 8.6rem;
+  }
+
+  &__link {
+    @include text(1.2rem, 700, 1.8rem);
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: var(--accent-color);
+    margin-right: 80%;
+  }
+
+  &__list {
+    @include flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 3rem;
+    margin-bottom: 6rem;
+
+    &-item {
+      img {
+        filter: grayscale(1);
+      }
+    }
+  }
+
+  &__btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+
+    &-arrleft {
+      transform: rotate(-180deg);
+    }
+  }
+}
