@@ -1,0 +1,221 @@
+Создание слайса для товаров 
+
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+
+const API_URL = 'http://localhost:4000/flowers/';
+
+// Асинхронное действие для загрузки товаров
+export const fetchFlowers = createAsyncThunk('flowers/fetchFlowers', async () => {
+  const response = await fetch(API_URL);
+  const data = await response.json();
+  return data;
+});
+
+// Создание слайса для работы с состоянием
+const flowersSlice = createSlice({
+  name: 'flowers',
+  initialState: {
+    items: [],  // Все товары
+    topItems: [], // Топовые товары (для карусели)
+    isLoading: false,
+    error: null,
+  },
+  reducers: {
+    // Здесь можно добавить обычные действия, если нужно
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchFlowers.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchFlowers.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.items = action.payload; // Сохраняем все товары
+        state.topItems = action.payload.filter((card) => card.onSale); // Фильтруем топовые товары
+      })
+      .addCase(fetchFlowers.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      });
+  },
+});
+
+export const selectFlowers = (state) => state.flowers.items;
+export const selectTopFlowers = (state) => state.flowers.topItems;
+export const selectLoading = (state) => state.flowers.isLoading;
+export const selectError = (state) => state.flowers.error;
+
+export default flowersSlice.reducer;
+
+
+
+Настройка Redux Store
+
+import { configureStore } from '@reduxjs/toolkit';
+import flowersReducer from './flowersSlice';
+
+const store = configureStore({
+  reducer: {
+    flowers: flowersReducer,
+  },
+});
+
+export default store;
+
+
+
+Использование Redux в компонентах
+
+
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Slider from 'react-slick';
+import { fetchFlowers, selectTopFlowers, selectLoading, selectError } from '../services/flowersSlice';
+import Cards from '../services/Cards';
+
+const CardsCarousel = () => {
+  const dispatch = useDispatch();
+  const topFlowers = useSelector(selectTopFlowers);
+  const isLoading = useSelector(selectLoading);
+  const error = useSelector(selectError);
+
+  useEffect(() => {
+    dispatch(fetchFlowers());
+  }, [dispatch]);
+
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: <button>Next</button>,
+    prevArrow: <button>Prev</button>,
+  };
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>Error: {error}</h1>;
+  }
+
+  return (
+    <Slider {...settings}>
+      <div>
+        <Cards filteredCards={topFlowers} /> {/* Используем топовые товары для отображения в карусели */}
+      </div>
+    </Slider>
+  );
+};
+
+export default CardsCarousel;
+
+
+
+Компонент HomePage
+
+
+import { Link, useNavigate } from 'react-router-dom';
+import ButtonLink from '../components/ButtonLink';
+import Sidebar from '../components/Sidebar';
+import CardsCarousel from '../services/CardsCarousel';
+
+const HomePage = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate('catalog');
+  };
+
+  return (
+    <main className="home">
+      <section className="hero">
+        <div className="container hero__block">
+          <div>
+            <span className="hero__title-back">Lover</span>
+            <h1 className="hero__title">Flower</h1>
+          </div>
+          <div className="hero__info">
+            <p>Створюєм для тих, хто цінує свіжість та витонченність</p>
+            <ButtonLink text="Дивитись каталог" onNavigate={handleNavigate} />
+          </div>
+        </div>
+        <Sidebar />
+      </section>
+
+      <section className="bestsellers">
+        <div className="container bestsellers__block">
+          <h2 className="bestsellers__title">
+            <span className="bestsellers__title-left">Популярні</span> <br />
+            букети
+          </h2>
+          <p className="bestsellers__text">
+            Найулюбленіші композиції наших клієнтів
+          </p>
+          <ul className="bestsellers__list">
+            <button className="bestsellers__btn bestsellers__btn-arrleft prev">
+              <img src="/images/arrow.svg" alt="arrow" />
+            </button>
+            <li className="bestsellers__list-item">
+              <CardsCarousel /> {/* Вставляем компонент для карусели */}
+            </li>
+            <button className="bestsellers__btn next">
+              <img src="/images/arrow.svg" alt="arrow" />
+            </button>
+          </ul>
+          <Link className="bestsellers__link" to="catalog">
+            Дивитись весь каталог
+            <img src="/images/arrow-catalog.svg" alt="arrow" />
+          </Link>
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default HomePage;
+
+
+
+
+Компонент CatalogPage
+
+
+
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchFlowers, selectFlowers, selectLoading, selectError } from '../services/flowersSlice';
+import Cards from '../services/Cards';
+
+const CatalogPage = () => {
+  const dispatch = useDispatch();
+  const flowers = useSelector(selectFlowers);
+  const isLoading = useSelector(selectLoading);
+  const error = useSelector(selectError);
+
+  useEffect(() => {
+    dispatch(fetchFlowers());
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>Error: {error}</h1>;
+  }
+
+  return (
+    <div>
+      <Cards filteredCards={flowers} /> {/* Отображаем все товары в каталоге */}
+    </div>
+  );
+};
+
+export default CatalogPage;
+
+
+
+
+
