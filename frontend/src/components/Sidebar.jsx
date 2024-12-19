@@ -1,6 +1,6 @@
-import CartLink from '../utils/CartLink';
+import ButtonToCart from './ButtonToCart';
 
-const SideBar = () => {
+const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="sidebar__block">
@@ -59,11 +59,11 @@ const SideBar = () => {
           </div>
         </div>
         <div className="sidebar__cart">
-          <CartLink />
+          <ButtonToCart />
         </div>
       </div>
     </aside>
   );
 };
 
-export default SideBar;
+export default Sidebar;

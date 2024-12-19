@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import SearchBar from '../utils/SearchBar';
+import SearchBar from './SearchBar';
 import { useEffect, useState } from 'react';
-import CartLink from '../utils/CartLink';
+import ButtonToCart from './ButtonToCart';
 
 const Menu = () => {
   const handleSearch = query => {
@@ -56,7 +56,7 @@ const Menu = () => {
               />
               +380 (97) 113-69-69
             </a>
-            <CartLink />
+            <ButtonToCart />
           </div>
         </div>
       </nav>

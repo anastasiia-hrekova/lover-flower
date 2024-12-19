@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import ButtonLink from '../components/ButtonLink';
-import SideBar from '../components/SideBar';
+import Sidebar from '../components/Sidebar';
 import Cards from '../services/Cards';
 
 const HomePage = () => {
@@ -23,7 +23,7 @@ const HomePage = () => {
             <ButtonLink text="Дивитись каталог" onNavigate={handleNavigate} />
           </div>
         </div>
-        <SideBar />
+        <Sidebar />
       </section>
 
       <section className="catalog">
@@ -93,12 +93,6 @@ const HomePage = () => {
             <button className="bestsellers__btn bestsellers__btn-arrleft prev">
               <img src="/images/arrow.svg" alt="arrow" />
             </button>
-            <li className="bestsellers__list-item">
-              <Cards />
-            </li>
-            <li className="bestsellers__list-item">
-              <Cards />
-            </li>
             <li className="bestsellers__list-item">
               <Cards />
             </li>

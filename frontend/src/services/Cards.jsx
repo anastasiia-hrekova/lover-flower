@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Card from '../components/Card';
 
-const API_URL = 'https://fakestoreapi.com/products?limit=1';
+const API_URL = './data/flowers.json';
 
 const Cards = () => {
   const [cards, setCards] = useState([]);
