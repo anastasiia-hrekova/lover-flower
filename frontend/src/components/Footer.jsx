@@ -47,23 +47,23 @@ const Footer = () => {
         <div className="footer__menu">
           <NavLink className="footer__title" to="delivery&pay">
             Доставка та оплата
-          </NavLink>{' '}
+          </NavLink>
           <br />
           <NavLink className="footer__title" to="about">
             Про нас
-          </NavLink>{' '}
+          </NavLink>
           <br />
           <NavLink className="footer__title" to="faq">
             FAQ
-          </NavLink>{' '}
+          </NavLink>
           <br />
           <NavLink className="footer__title" to="contacts">
             Контакти
-          </NavLink>{' '}
+          </NavLink>
           <br />
           <NavLink className="footer__title" to="corporation">
             Для корпоративних <br /> клієнтів
-          </NavLink>{' '}
+          </NavLink>
           <br />
         </div>
         <div className="footer__address">

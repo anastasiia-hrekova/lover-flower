@@ -227,6 +227,51 @@ const HomePage = () => {
         </div>
       </section>
 
+      <section className="instagram">
+        <div className="container instagram__block">
+          <div className="instagram__block">
+            <img src="/images/inst1.png" alt="ins1" />
+            <img src="/images/inst2.png" alt="ins2" />
+            <img src="/images/inst3.png" alt="ins3" />
+            <img src="/images/inst4.png" alt="ins4" />
+          </div>
+          <img
+            className="instagram__title"
+            src="/images/our-social-networks.png"
+            alt="Our social media"
+          />
+          <ul className="instagram__socials">
+            <li>
+              <a href="https://www.instagram.com/">
+                <img
+                  className="instagram__socials-img"
+                  src="images/instagram.png"
+                  alt="instagram"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.whatsapp.com/?lang=uk">
+                <img
+                  className="instagram__socials-img"
+                  src="images/whats-up.png"
+                  alt="whats-up"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="tel:+380971136969">
+                <img
+                  className="instagram__socials-img"
+                  src="images/call.png"
+                  alt="call"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <Footer />
     </main>
   );
