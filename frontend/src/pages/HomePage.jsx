@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import ButtonLink from '../components/ButtonLink';
 import Sidebar from '../components/Sidebar';
 import CardsCarousel from '../components/CardsCarousel';
+import Footer from '../components/Footer';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -225,6 +226,8 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 };

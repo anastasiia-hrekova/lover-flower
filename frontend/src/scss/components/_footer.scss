@@ -1,0 +1,51 @@
+@use '../../scss/utils/mixins' as *;
+
+.footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 2rem;
+  font-family: 'Oswald', sans-serif;
+  margin-top: 3rem;
+
+  &__title {
+    @include text(1.4rem, 700, 2rem);
+    color: var(--main-color);
+  }
+
+  &__payment {
+    width: 24.4rem;
+  }
+
+  &__payment,
+  &__catalog,
+  &__boquets,
+  &__menu,
+  &__address {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    text-transform: uppercase;
+    gap: 1rem;
+    @include text(1.2rem, 300, 1.8rem);
+  }
+
+  &__address {
+    &-title {
+      @include text(1.4rem, 400, 2rem);
+      color: var(--main-color);
+    }
+  }
+
+  &__social {
+    margin-top: 1.8rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    img {
+      @include size(2.4rem, 2.4rem);
+    }
+  }
+}

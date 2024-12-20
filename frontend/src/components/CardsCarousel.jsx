@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Slider from 'react-slick';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import {
   fetchFlowers,
   selectTopFlowers,
@@ -8,7 +11,7 @@ import {
   selectError,
 } from '../redux/cardsSlice';
 import Card from './Card';
-import { NextArrow, PrevArrow } from './CarouselButtons';
+// import { NextArrow, PrevArrow } from './CarouselButtons';
 
 const CardsCarousel = () => {
   const dispatch = useDispatch();
@@ -20,15 +23,6 @@ const CardsCarousel = () => {
     dispatch(fetchFlowers());
   }, [dispatch]);
 
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-  };
-
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
@@ -38,9 +32,29 @@ const CardsCarousel = () => {
   }
 
   return (
-    <Slider {...settings}>
-      <Card filteredCards={topFlowers} />
-    </Slider>
+    <Swiper
+      navigation
+      pagination={{ clickable: true }}
+      spaceBetween={20}
+      slidesPerView={3}
+      breakpoints={{
+        640: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      }}
+    >
+      {topFlowers.map(card => (
+        <SwiperSlide key={card.id}>
+          <Card cardData={card} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 

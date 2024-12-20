@@ -13,6 +13,8 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.3",
     "sass": "^1.82.0",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.1.15",
     "uuid": "^11.0.3"
   },
   "scripts": {

@@ -9,6 +9,7 @@ import ContactsPage from './pages/ContactsPage';
 import FaqPage from './pages/FaqPage';
 import NotFound from './pages/NotFound';
 import MainLayout from './layouts/MainLayout';
+import CorpClients from './pages/CorpClients';
 import './scss/index.scss';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="faq" element={<FaqPage />} />
             <Route path="product/:id" element={<ProductPage />} />
             <Route path="cart" element={<CartPage />} />
+            <Route path="corporation" element={<CorpClients />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
