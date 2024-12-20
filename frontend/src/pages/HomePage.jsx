@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import ButtonLink from '../components/ButtonLink';
 import Sidebar from '../components/Sidebar';
-import Cards from '../services/Cards';
+import CardsCarousel from '../components/CardsCarousel';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -89,17 +89,9 @@ const HomePage = () => {
           <p className="bestsellers__text">
             Найулюбленіші композиції наших клієнтів
           </p>
-          <ul className="bestsellers__list">
-            <button className="bestsellers__btn bestsellers__btn-arrleft prev">
-              <img src="/images/arrow.svg" alt="arrow" />
-            </button>
-            <li className="bestsellers__list-item">
-              <Cards />
-            </li>
-            <button className="bestsellers__btn next">
-              <img src="/images/arrow.svg" alt="arrow" />
-            </button>
-          </ul>
+          <div className="bestsellers__list">
+            <CardsCarousel />
+          </div>
           <Link className=" bestsellers__link" to="catalog">
             Дивитись весь каталог
             <img src="/images/arrow-catalog.svg" alt="arrow" />

@@ -47,16 +47,11 @@
   }
 
   &__list {
-    @include flex;
-    justify-content: space-between;
-    flex-direction: row;
-    gap: 3rem;
+    @include center;
     margin-bottom: 6rem;
 
-    &-item {
-      img {
-        filter: grayscale(1);
-      }
+    img {
+      filter: grayscale(1);
     }
   }
 
