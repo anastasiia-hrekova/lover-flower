@@ -1,5 +1,5 @@
-export const NextArrow = ({ onClick }) => (
-  <button className="bestsellers__btn next" onClick={onClick}>
+export const NextArrow = ({ onClick, disabled }) => (
+  <button className="bestsellers__btn" onClick={onClick} disabled={disabled}>
     <svg
       width="80"
       height="6"
@@ -15,10 +15,11 @@ export const NextArrow = ({ onClick }) => (
   </button>
 );
 
-export const PrevArrow = ({ onClick }) => (
+export const PrevArrow = ({ onClick, disabled }) => (
   <button
-    className="bestsellers__btn bestsellers__btn-arrleft prev"
+    className="bestsellers__btn bestsellers__btn-arrleft"
     onClick={onClick}
+    disabled={disabled}
   >
     <svg
       width="80"

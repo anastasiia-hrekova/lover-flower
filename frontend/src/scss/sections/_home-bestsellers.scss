@@ -56,12 +56,17 @@
   }
 
   &__btn {
+    align-items: center;
     background-color: transparent;
     cursor: pointer;
     border: none;
 
     &-arrleft {
       transform: rotate(-180deg);
+    }
+
+    &:disabled {
+      cursor: default;
     }
   }
 }

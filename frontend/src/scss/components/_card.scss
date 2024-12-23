@@ -1,8 +1,15 @@
 @use '../utils/mixins' as *;
 
-.cards-container {
+.card-container {
   @include flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.card-block {
+  @include flex;
+  flex-direction: row;
+  gap: 3rem;
 }
 
 .card {
