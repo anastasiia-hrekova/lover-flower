@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { fetchFlowersAPI } from '../services/fetchFlowersAPI';
 
 const initialState = {
   items: [],
@@ -11,8 +11,8 @@ const initialState = {
 export const fetchFlowers = createAsyncThunk(
   'flowers/fetchFlowers',
   async () => {
-    const res = await axios.get('http://localhost:4000/flowers');
-    return res.data;
+    const data = await fetchFlowersAPI();
+    return data;
   },
 );
 
