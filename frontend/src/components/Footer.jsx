@@ -1,25 +1,88 @@
 import { NavLink } from 'react-router-dom';
 import Container from '../styles/Container';
+import styled from 'styled-components';
+
+const FooterStyles = styled.footer`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 2rem;
+  font-family: 'Oswald', sans-serif;
+  margin-top: 3rem;
+`;
+
+const FooterTitle = styled.h3`
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2rem;
+  color: ${({ theme }) => theme.colors.mainColor};
+`;
+
+const NavLinkTitle = styled(NavLink)`
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2rem;
+  color: ${({ theme }) => theme.colors.mainColor};
+`;
+
+const FooterBlocks = styled.div`
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  text-transform: uppercase;
+  gap: 1rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.8rem;
+`;
+
+const FooterPayment = styled(FooterBlocks)`
+  width: 24.4rem;
+`;
+
+const FooterAddressTitle = styled.h3`
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2rem;
+  color: ${({ theme }) => theme.colors.mainColor};
+`;
+
+const FooterSocial = styled.ul`
+  margin-top: 1.8rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+
+  img {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+`;
 
 const Footer = () => {
   return (
     <footer>
       <Container>
-        <div className=" footer">
-          <div className="footer__payment">
+        <FooterStyles>
+          <FooterPayment>
             <NavLink to="/">
               <img className="menu__logo" src="/images/logo.png" alt="logo" />
             </NavLink>
-            <h3 className="footer__title">Реквізити</h3>
+            <FooterTitle>Реквізити</FooterTitle>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
               ad officia tempora consectetur voluptatibus laudantium dicta ipsa
               vitae magnam, obcaecati ex assumenda, blanditiis, quisquam amet
               fuga quos? Vitae, blanditiis velit!
             </p>
-          </div>
-          <div className="footer__catalog">
-            <h3 className="footer__title">Каталог</h3>
+          </FooterPayment>
+          <FooterBlocks>
+            <FooterTitle>Каталог</FooterTitle>
             <div>
               <NavLink to="catalog">Популярні</NavLink> <br />
               <NavLink to="catalog">Сухоквіти</NavLink> <br />
@@ -32,9 +95,9 @@ const Footer = () => {
               <NavLink to="catalog">Листівки</NavLink> <br />
               <NavLink to="catalog">Конверти</NavLink> <br />
             </div>
-          </div>
-          <div className="footer__boquets">
-            <h3 className="footer__title">Букет</h3>
+          </FooterBlocks>
+          <FooterBlocks>
+            <FooterTitle>Букет</FooterTitle>
             <div>
               <NavLink to="catalog">Для дівчини</NavLink> <br />
               <NavLink to="catalog">Для чоловіка</NavLink> <br />
@@ -45,75 +108,55 @@ const Footer = () => {
               <NavLink to="catalog">Для доньки</NavLink> <br />
               <NavLink to="catalog">Для дітей</NavLink> <br />
             </div>
-          </div>
-          <div className="footer__menu">
-            <NavLink className="footer__title" to="delivery&pay">
-              Доставка та оплата
-            </NavLink>
+          </FooterBlocks>
+          <FooterBlocks>
+            <NavLinkTitle to="delivery&pay">Доставка та оплата</NavLinkTitle>
             <br />
-            <NavLink className="footer__title" to="about">
-              Про нас
-            </NavLink>
+            <NavLinkTitle to="about">Про нас</NavLinkTitle>
             <br />
-            <NavLink className="footer__title" to="faq">
-              FAQ
-            </NavLink>
+            <NavLinkTitle to="faq">FAQ</NavLinkTitle>
             <br />
-            <NavLink className="footer__title" to="contacts">
-              Контакти
-            </NavLink>
+            <NavLinkTitle to="contacts">Контакти</NavLinkTitle>
             <br />
-            <NavLink className="footer__title" to="corporation">
+            <NavLinkTitle to="corporation">
               Для корпоративних <br /> клієнтів
-            </NavLink>
+            </NavLinkTitle>
             <br />
-          </div>
-          <div className="footer__address">
+          </FooterBlocks>
+          <FooterBlocks>
             <div>
-              <h3 className="footer__address-title">zakaz@loverflower.ua</h3>
+              <FooterAddressTitle>zakaz@loverflower.ua</FooterAddressTitle>
               <p>Доставка 24/7 після узгодження з оператором</p>
               <br />
-              <h3 className="footer__address-title">вул. Тараса Шевченка 67</h3>
+              <FooterAddressTitle>вул. Тараса Шевченка 67</FooterAddressTitle>
               <p>
                 10:00 до 21:00 <br /> без вихідних
               </p>
               <br />
-              <h3 className="footer__address-title">+380 (97) 113-69-69</h3>
+              <FooterAddressTitle>+380 (97) 113-69-69</FooterAddressTitle>
               <p>Прийом дзвінків цілодобово</p>
               <br />
 
-              <ul className="footer__social">
+              <FooterSocial>
                 <li>
                   <a href="https://www.instagram.com/">
-                    <img
-                      className="footer__social-img"
-                      src="images/instagram.png"
-                      alt="instagram"
-                    />
+                    <img src="images/instagram.png" alt="instagram" />
                   </a>
                 </li>
                 <li>
                   <a href="https://www.whatsapp.com/?lang=uk">
-                    <img
-                      className="footer__social-img"
-                      src="images/whats-up.png"
-                      alt="whats-up"
-                    />
+                    <img src="images/whats-up.png" alt="whats-up" />
                   </a>
                 </li>
                 <li>
                   <a href="tel:+380971136969">
-                    <img
-                      className="footer__social-img"
-                      src="images/call.png"
-                      alt="call"
-                    />
+                    <img src="images/call.png" alt="call" />
                   </a>
                 </li>
-              </ul>
+              </FooterSocial>
             </div>
-          </div>
-        </div>
+          </FooterBlocks>
+        </FooterStyles>
       </Container>
     </footer>
   );

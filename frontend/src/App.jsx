@@ -10,7 +10,6 @@ import FaqPage from './pages/FaqPage';
 import NotFound from './pages/NotFound';
 import MainLayout from './layouts/MainLayout';
 import CorpClients from './pages/CorpClients';
-import './scss/index.scss';
 
 function App() {
   return (
