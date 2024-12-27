@@ -1,7 +1,69 @@
 import { NavLink } from 'react-router-dom';
-import SearchBar from './SearchBar';
 import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import SearchBar from './SearchBar';
 import ButtonToCart from './ButtonToCart';
+import Container from '../styles/Container';
+import { PhoneLink, PhoneLinkImg } from '../styles/SideBarStyles';
+
+const Header = styled.header.withConfig({
+  shouldForwardProp: prop => prop !== 'isScrolled',
+})`
+  width: 100%;
+  background-color: ${({ theme, isScrolled }) =>
+    isScrolled ? theme.colors.backgroundColor : 'transparent'};
+  transition: background-color 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+`;
+
+const Nav = styled.nav`
+  ${({ theme }) => theme.mixins.flex};
+  justify-content: space-between;
+  flex-direction: row;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  padding: 0;
+`;
+
+const FixedMenu = styled.div`
+  ${({ theme }) => theme.mixins.flex};
+  justify-content: flex-start;
+  gap: 2rem;
+`;
+
+const Logo = styled.img`
+  width: 3.4rem;
+  height: 8rem;
+`;
+
+const NavLinkStyled = styled(NavLink)`
+  &:hover {
+    color: var(--main-color);
+    text-decoration: underline;
+    transition: 0.3s;
+  }
+`;
+
+const MenuAddition = styled.div.withConfig({
+  shouldForwardProp: prop => prop !== 'isScrolled',
+})`
+  opacity: ${({ isScrolled }) => (isScrolled ? 1 : 0)};
+  visibility: ${({ isScrolled }) => (isScrolled ? 'visible' : 'hidden')};
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 2.5rem;
+  padding-right: 1.2rem;
+`;
 
 const Menu = () => {
   const handleSearch = query => {
@@ -19,48 +81,30 @@ const Menu = () => {
   }, []);
 
   return (
-    <header>
-      <nav className={`menu ${isScrolled ? 'menu-scrolled' : ''}`}>
-        <div className="container  menu__block">
-          <div className="menu__fixed">
+    <Header isScrolled={isScrolled}>
+      <Container>
+        <Nav>
+          <FixedMenu>
             <NavLink to="/">
-              <img className="menu__logo" src="/images/logo.png" alt="logo" />
+              <Logo src="/images/logo.png" alt="logo" />
             </NavLink>
-            <NavLink className="menu__link" to="catalog">
-              Каталог
-            </NavLink>
-            <NavLink className="menu__link" to="delivery&pay">
-              Доставка та оплата
-            </NavLink>
-            <NavLink className="menu__link" to="about">
-              Про нас
-            </NavLink>
-            <NavLink className="menu__link" to="contacts">
-              Контакти
-            </NavLink>
-            <NavLink className="menu__link" to="faq">
-              FAQ
-            </NavLink>
+            <NavLinkStyled to="catalog">Каталог</NavLinkStyled>
+            <NavLinkStyled to="delivery&pay">Доставка та оплата</NavLinkStyled>
+            <NavLinkStyled to="about">Про нас</NavLinkStyled>
+            <NavLinkStyled to="contacts">Контакти</NavLinkStyled>
+            <NavLinkStyled to="faq">FAQ</NavLinkStyled>
             <SearchBar onSearch={handleSearch} />
-          </div>
-          <div
-            className={`menu__addition ${
-              isScrolled ? 'menu__addition-show' : ''
-            }`}
-          >
-            <a className="sidebar__call-number" href="tel:+380971136969">
-              <img
-                className="sidebar__call-icon"
-                src="images/phone.svg"
-                alt="call"
-              />
+          </FixedMenu>
+          <MenuAddition isScrolled={isScrolled}>
+            <PhoneLink href="tel:+380971136969">
+              <PhoneLinkImg src="images/phone.svg" alt="call" />
               +380 (97) 113-69-69
-            </a>
+            </PhoneLink>
             <ButtonToCart />
-          </div>
-        </div>
-      </nav>
-    </header>
+          </MenuAddition>
+        </Nav>
+      </Container>
+    </Header>
   );
 };
 

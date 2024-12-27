@@ -1,4 +1,28 @@
 import { useState } from 'react';
+import styled from 'styled-components';
+
+const Search = styled.div`
+  ${({ theme }) => theme.mixins.flex};
+  gap: 1rem;
+`;
+
+const SearchIcon = styled.img`
+  width: 1.8rem;
+  height: 1.8rem;
+`;
+
+const SearchInput = styled.input`
+  background: none;
+  border: none;
+  color: ${({ theme }) => theme.colors.textColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  cursor: pointer;
+`;
 
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('');
@@ -10,18 +34,18 @@ const SearchBar = ({ onSearch }) => {
       onSearch(query);
     }
   };
+
   return (
     <form role="search" onSubmit={handleSumbit}>
-      <div className="menu__form">
-        <img className="menu__form-icon" src="images/search.svg" alt="search" />
-        <input
-          className="menu__form-input"
+      <Search>
+        <SearchIcon src="images/search.svg" alt="search" />
+        <SearchInput
           type="text"
           placeholder="Пошук"
           value={query}
           onChange={e => setQuery(e.target.value)}
         />
-      </div>
+      </Search>
     </form>
   );
 };

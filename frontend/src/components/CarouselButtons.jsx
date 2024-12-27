@@ -1,5 +1,23 @@
+import styled from 'styled-components';
+
+const CarouselBtn = styled.button`
+  ${({ theme }) => theme.mixins.flex};
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+
+  &:disabled {
+    cursor: default;
+    filter: grayscale(1);
+  }
+`;
+
+const PrevBtn = styled(CarouselBtn)`
+  transform: rotate(-180deg);
+`;
+
 export const NextArrow = ({ onClick, disabled }) => (
-  <button className="bestsellers__btn" onClick={onClick} disabled={disabled}>
+  <CarouselBtn onClick={onClick} disabled={disabled}>
     <svg
       width="80"
       height="6"
@@ -12,15 +30,11 @@ export const NextArrow = ({ onClick, disabled }) => (
         fill="#43FFD2"
       />
     </svg>
-  </button>
+  </CarouselBtn>
 );
 
 export const PrevArrow = ({ onClick, disabled }) => (
-  <button
-    className="bestsellers__btn bestsellers__btn-arrleft"
-    onClick={onClick}
-    disabled={disabled}
-  >
+  <PrevBtn onClick={onClick} disabled={disabled}>
     <svg
       width="80"
       height="6"
@@ -33,5 +47,5 @@ export const PrevArrow = ({ onClick, disabled }) => (
         fill="#43FFD2"
       />
     </svg>
-  </button>
+  </PrevBtn>
 );

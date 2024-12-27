@@ -64,9 +64,5 @@
     &-arrleft {
       transform: rotate(-180deg);
     }
-
-    &:disabled {
-      cursor: default;
-    }
   }
 }

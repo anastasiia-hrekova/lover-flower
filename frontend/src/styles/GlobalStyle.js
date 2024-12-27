@@ -13,8 +13,8 @@ html {
 
 body {
   font-family: 'Cormorant', 'Oswald', sans-serif;
-  background-color: ${({ theme }) => theme.backgroundColor};
-  color:  ${({ theme }) => theme.textColor};
+  background-color: ${({ theme }) => theme.colors.backgroundColor};
+  color:  ${({ theme }) => theme.colors.textColor};
   overflow-x: hidden;
 }
 
@@ -24,7 +24,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: ${({ theme }) => theme.textColor};
+  color: ${({ theme }) => theme.colors.textColor};
 ;
 }`;
 
