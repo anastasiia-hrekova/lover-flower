@@ -77,8 +77,12 @@ const DearClientsText = styled.p`
   letter-spacing: 0.04rem;
 `;
 
-const DearClientsTextSpan = styled(DearClientsText)`
+const DearClientsTextSpan = styled.span`
   color: ${({ theme }) => theme.colors.mainColor};
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.04rem;
 `;
 
 const Payments = styled.div`
@@ -184,7 +188,7 @@ const DeliveryPage = () => {
               Під час пандемії (COVID-19) компанія Lover Flower закликає всіх
               менше контактувати з іншими людьми для захисту себе та своїх
               близьких. Саме тому ми організували
-              <DearClientsTextSpan>БЕСКОНТАКТНУ ДОСТАВКУ</DearClientsTextSpan>
+              <DearClientsTextSpan> БЕСКОНТАКТНУ ДОСТАВКУ</DearClientsTextSpan>
             </DearClientsText>
           </DearClients>
           <Payments>
