@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import SearchBar from './SearchBar';
@@ -72,13 +72,19 @@ const Menu = () => {
   };
 
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
+    const isMainOrCatalogPage =
+      location.pathname === '/' || location.pathname === '/catalog';
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 750);
+      setIsScrolled(isMainOrCatalogPage ? window.scrollY > 750 : true);
     };
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
-  }, []);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location]);
 
   return (
     <Header isScrolled={isScrolled}>
