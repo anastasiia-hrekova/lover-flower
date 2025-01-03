@@ -69,6 +69,7 @@ const AboutBlock = styled.div`
   height: 28rem;
   padding: 4rem 2rem;
   background-color: #00000033;
+  backdrop-filter: blur(10px);
   border: none;
   right: 0;
   z-index: 12;

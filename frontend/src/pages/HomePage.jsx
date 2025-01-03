@@ -117,6 +117,7 @@ const CatalogText = styled.p`
 
 const CatalogContainers = styled.div`
   background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
   border-radius: 2rem;
   backdrop-filter: blur(2rem);
   font-family: 'Oswald', sans-serif;
@@ -455,6 +456,7 @@ const Questions = styled.section`
   width: 100%;
   height: 66.6rem;
   background-color: #0f2222;
+  backdrop-filter: blur(8px);
 
   &::before {
     position: absolute;

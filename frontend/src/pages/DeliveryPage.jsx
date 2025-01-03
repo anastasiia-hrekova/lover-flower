@@ -117,6 +117,7 @@ const PaymentsWay = styled.li`
   height: 21.1rem;
   border-radius: 2rem;
   background-color: #00000033;
+  backdrop-filter: blur(10px);
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -191,6 +192,7 @@ const AdditionBlock = styled.div`
   align-items: left;
   width: 100%;
   background-color: #00000033;
+  backdrop-filter: blur(10px);
   border-radius: 2rem;
   padding: 3rem;
   font-family: 'Oswald', sans-serif;

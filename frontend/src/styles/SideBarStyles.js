@@ -41,6 +41,7 @@ export const SocialSide = styled.div`
   width: 6rem;
   height: 15.4rem;
   background-color: rgba(0, 0, 0, 0.441);
+  backdrop-filter: blur(8px);
   border-radius: 1rem;
   margin-top: 8rem;
   margin-bottom: 12rem;
@@ -74,6 +75,7 @@ export const SidebarCall = styled.div`
 
 export const CallBtn = styled.button`
   background-color: rgba(0, 0, 0, 0.441);
+  backdrop-filter: blur(8px);
   border: none;
   border-radius: 1rem;
   padding: 1.2rem;
@@ -84,6 +86,7 @@ export const CallBtn = styled.button`
 
 export const SidebarCart = styled.div`
   background-color: rgba(0, 0, 0, 0.441);
+  backdrop-filter: blur(8px);
   border-radius: 1rem;
   padding: 1.5rem;
   align-self: flex-end;
