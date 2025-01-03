@@ -1,6 +1,7 @@
 import Breadcrumbs from '../components/BreadcrumbsContainer';
 import Container from '../styles/Container';
 import styled from 'styled-components';
+import Footer from '../components/Footer';
 
 const Delivery = styled.div`
   background-image: url(/images/delivery-back.png);
@@ -99,6 +100,7 @@ const BlocksTitle = styled.p`
   line-height: 3rem;
   letter-spacing: 0.04rem;
   color: ${({ theme }) => theme.colors.accentColor};
+  text-transform: uppercase;
 `;
 
 const PaymentsBlock = styled.ul`
@@ -148,9 +150,10 @@ const DeliveryCost = styled.div`
   text-transform: uppercase;
   font-family: 'Oswald', sans-serif;
   margin-left: 17rem;
+  margin-bottom: 10rem;
 `;
 
-const DeliveryCostBlock = styled.ul`
+const DeliveryBlock = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -168,78 +171,195 @@ const DeliveryCostText = styled.span`
   font-weight: 700;
 `;
 
-const DeliveryCostTextSpan = styled.span`
+const DeliveryTextSpan = styled.span`
+  color: ${({ theme }) => theme.colors.mainColor};
+`;
+
+const DeliveryTerms = styled.div`
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  gap: 2rem;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 10rem;
+`;
+
+const AdditionBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  background-color: #00000033;
+  border-radius: 2rem;
+  padding: 3rem;
+  font-family: 'Oswald', sans-serif;
+  margin: 0 auto;
+  gap: 2rem;
+`;
+
+const AdittionText = styled.p`
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 3rem;
+  letter-spacing: 0.04rem;
+`;
+
+const AdittionUl = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: disc;
+
+  li {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2.6rem;
+    letter-spacing: 0.02rem;
+  }
+`;
+
+const AdittionTextSpan = styled.span`
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 3rem;
+  letter-spacing: 0.04rem;
   color: ${({ theme }) => theme.colors.mainColor};
 `;
 
 const DeliveryPage = () => {
   return (
-    <Delivery>
-      <Container>
-        <DeliveryContent>
-          <Breadcrumbs />
-          <DeliveryTitle>
-            Доставка <br />
-            <DeliveryTitleSpan>і оплата</DeliveryTitleSpan>
-          </DeliveryTitle>
-          <DearClients>
-            <DearClientsTitle>Дорогі клієнти!</DearClientsTitle>
-            <DearClientsText>
-              Під час пандемії (COVID-19) компанія Lover Flower закликає всіх
-              менше контактувати з іншими людьми для захисту себе та своїх
-              близьких. Саме тому ми організували
-              <DearClientsTextSpan> БЕСКОНТАКТНУ ДОСТАВКУ</DearClientsTextSpan>
-            </DearClientsText>
-          </DearClients>
-          <Payments>
-            <BlocksTitle>Способи оплати:</BlocksTitle>
-            <PaymentsBlock>
-              <PaymentsWay>
-                <PaymentsWayText>
-                  Банківською картою при оформленні замовлення через сайт або за
-                  посиланням
-                </PaymentsWayText>
-              </PaymentsWay>
-              <PaymentsWay>
-                <PaymentsWayText>
-                  Готівкою, банківською картою при самовивозі або з
-                  розрахункового рахунку організації
-                </PaymentsWayText>
-              </PaymentsWay>
-              <PaymentsWay>
-                <PaymentsWayText>
-                  Готівкою, при доставці кур'єром
-                </PaymentsWayText>
-              </PaymentsWay>
-              <PaymentsWay>
-                <PaymentsWayText>Криптовалютою</PaymentsWayText>
-              </PaymentsWay>
-            </PaymentsBlock>
-          </Payments>
-          <DeliveryCost>
-            <BlocksTitle>Вартість доставки:</BlocksTitle>
-            <DeliveryCostBlock>
-              <li>
-                <DeliveryCostText>Безкоштовно</DeliveryCostText> - при
-                замовленні на суму
-                <DeliveryCostTextSpan> від 1500грн</DeliveryCostTextSpan>
-              </li>
-              <li>
-                <DeliveryCostText>100грн</DeliveryCostText> - при замовленні на
-                суму <DeliveryCostTextSpan>меньше 1500грн</DeliveryCostTextSpan>
-              </li>
-              <li>
-                Також ви можете забрати ваше замовлення самостійно за адресою:
+    <>
+      <Delivery>
+        <Container>
+          <DeliveryContent>
+            <Breadcrumbs />
+            <DeliveryTitle>
+              Доставка <br />
+              <DeliveryTitleSpan>і оплата</DeliveryTitleSpan>
+            </DeliveryTitle>
+            <DearClients>
+              <DearClientsTitle>Дорогі клієнти!</DearClientsTitle>
+              <DearClientsText>
+                Під час пандемії (COVID-19) компанія Lover Flower закликає всіх
+                менше контактувати з іншими людьми для захисту себе та своїх
+                близьких. Саме тому ми організували
+                <DearClientsTextSpan>БЕСКОНТАКТНУ ДОСТАВКУ</DearClientsTextSpan>
+              </DearClientsText>
+            </DearClients>
+            <Payments>
+              <BlocksTitle>Способи оплати:</BlocksTitle>
+              <PaymentsBlock>
+                <PaymentsWay>
+                  <PaymentsWayText>
+                    Банківською картою при оформленні замовлення через сайт або
+                    за посиланням
+                  </PaymentsWayText>
+                </PaymentsWay>
+                <PaymentsWay>
+                  <PaymentsWayText>
+                    Готівкою, банківською картою при самовивозі або з
+                    розрахункового рахунку організації
+                  </PaymentsWayText>
+                </PaymentsWay>
+                <PaymentsWay>
+                  <PaymentsWayText>
+                    Готівкою, при доставці кур'єром
+                  </PaymentsWayText>
+                </PaymentsWay>
+                <PaymentsWay>
+                  <PaymentsWayText>Криптовалютою</PaymentsWayText>
+                </PaymentsWay>
+              </PaymentsBlock>
+            </Payments>
+            <DeliveryCost>
+              <BlocksTitle>Вартість доставки:</BlocksTitle>
+              <DeliveryBlock>
+                <li>
+                  <DeliveryCostText>Безкоштовно</DeliveryCostText> - при
+                  замовленні на суму
+                  <DeliveryTextSpan> від 1500грн</DeliveryTextSpan>
+                </li>
+                <li>
+                  <DeliveryCostText>100грн</DeliveryCostText> - при замовленні
+                  на суму <DeliveryTextSpan>меньше 1500грн</DeliveryTextSpan>
+                </li>
+                <li>
+                  Також ви можете забрати ваше замовлення самостійно за адресою:
+                  <br />
+                  <DeliveryTextSpan>
+                    м. Київ, вул. Тараса Шевченка 67, щоденно з 10:00 до 21:00
+                  </DeliveryTextSpan>
+                </li>
+              </DeliveryBlock>
+            </DeliveryCost>
+            <DeliveryTerms>
+              <BlocksTitle>Умови доставки:</BlocksTitle>
+              <DeliveryBlock>
+                <li>
+                  Доставка здійснюється по місту Київ в
+                  <DeliveryTextSpan> будь-якого дня.</DeliveryTextSpan>
+                </li>
+                <li>
+                  Можливість вибору терміну та вартості доставки за межі Києва,
+                  доставки у нічний час, свята
+                  <DeliveryTextSpan>
+                    {' '}
+                    обговорюються з менеджером
+                  </DeliveryTextSpan>
+                </li>
+              </DeliveryBlock>
+            </DeliveryTerms>
+            <AdditionBlock>
+              <BlocksTitle>Додатково: </BlocksTitle>
+              <AdittionText>
+                Доставка іншій особі можлива лише у разі оплати замовлення
+                замовником. Доставка здійснюється не раніше ніж через 2 години
+                після оплати замовлення, але може бути раніше, якщо букет є у
+                наявності або за домовленістю з менеджером.
                 <br />
-                <DeliveryCostTextSpan>
-                  м. Київ, вул. Тараса Шевченка 67, щоденно з 10:00 до 21:00
-                </DeliveryCostTextSpan>
-              </li>
-            </DeliveryCostBlock>
-          </DeliveryCost>
-        </DeliveryContent>
-      </Container>
-    </Delivery>
+                Час очікування кур'єра складає 15 хвилин.
+                <br />
+                Якщо на момент доставки кольорів одержувача немає або немає
+                можливості з інших причин зробити доставку (зазначена неточна
+                адреса, закриті вхідні двері, контрольно-пропускна система та
+                ін), ми залишаємо за собою право на свій вибір:
+              </AdittionText>
+              <AdittionUl>
+                <li>залишити квіти тому, хто відчинив двері;</li>
+                <li>
+                  із замовником погодили повторну доставку, що додатково
+                  оплачується;
+                </li>
+                <li>відмовитися від передачі квітів без повернення коштів.</li>
+              </AdittionUl>
+              <AdittionText>
+                Якщо ви або інший одержувач не отримали замовлення, вам
+                необхідно повідомити про це менеджера за телефоном
+                <AdittionTextSpan> +380 98 113 69 69.</AdittionTextSpan>
+              </AdittionText>
+              <BlocksTitle>Повернення грошей:</BlocksTitle>
+              <AdittionText>
+                При відмові замовника від замовлення протягом двох годин, якщо
+                замовлення ще не почало готуватися, кошти повертаються в повному
+                обсязі. Якщо ж флорист почав підготовку, то замовник має право
+                на повернення 50% вартості, або, якщо ще не було сплачено, то
+                має сплатити 50%.
+              </AdittionText>
+              <AdittionText>
+                Квіти належної якості поверненню та обміну не підлягають, а якщо
+                є якісь недоліки в кольорах – повернення проводиться лише якщо
+                ці недоліки не є природними та природними вадами рослини.
+                Повернення коштів здійснюється негайно на той рахунок, з якого
+                відбулася оплата, їх же надходження на рахунок залежить від
+                платіжної системи.
+              </AdittionText>
+            </AdditionBlock>
+          </DeliveryContent>
+        </Container>
+      </Delivery>
+      <Footer />
+    </>
   );
 };
 
