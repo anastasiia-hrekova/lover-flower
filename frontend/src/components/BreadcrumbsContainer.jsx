@@ -18,6 +18,7 @@ const BreadcrumbsContainer = styled.nav`
   letter-spacing: 0.04rem;
   text-transform: uppercase;
   margin-bottom: 6rem;
+  margin-top: 5rem;
   font-family: 'Oswald', sans-serif;
 
   a{
