@@ -52,7 +52,7 @@ const NavLinkStyled = styled(NavLink)`
 `;
 
 const MenuAddition = styled.div.withConfig({
-  shouldForwardProp: prop => prop !== 'isScrolled',
+  shouldForwardProp: prop => prop !== 'isScrolled' && prop !== 'zIndex',
 })`
   opacity: ${({ isScrolled }) => (isScrolled ? 1 : 0)};
   visibility: ${({ isScrolled }) => (isScrolled ? 'visible' : 'hidden')};

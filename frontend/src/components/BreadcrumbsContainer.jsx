@@ -6,6 +6,9 @@ const titles = {
   catalog: 'Каталог',
   about: 'Про нас',
   contacts: 'Контакти',
+  corporation: 'Корпоративним клієнтам',
+  product: 'Продукт',
+  order: 'Оформлення замовлення',
 };
 
 const BreadcrumbsContainer = styled.nav`
