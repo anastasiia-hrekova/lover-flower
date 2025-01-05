@@ -16,7 +16,7 @@ const Header = styled.header.withConfig({
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: ${({ zIndex }) => zIndex};
 `;
 
 const Nav = styled.nav`
@@ -72,6 +72,7 @@ const Menu = () => {
   };
 
   const [isScrolled, setIsScrolled] = useState(false);
+  const [zIndex, setZIndex] = useState(10);
   const location = useLocation();
 
   useEffect(() => {
@@ -80,14 +81,19 @@ const Menu = () => {
 
     const handleScroll = () => {
       setIsScrolled(isMainOrCatalogPage ? window.scrollY > 750 : true);
+      setZIndex(window.scrollY > 30 ? 20 : 10);
     };
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
-    <Header isScrolled={isScrolled}>
+    <Header isScrolled={isScrolled} zIndex={zIndex}>
       <Container>
         <Nav>
           <FixedMenu>
