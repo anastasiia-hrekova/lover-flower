@@ -60,10 +60,11 @@ const TitleAdd = styled.h2`
   letter-spacing: 0.02rem;
   font-family: 'Cormorant', serif;
   text-transform: uppercase;
-  margin-left: 15rem;
+  margin-left: 10rem;
+  margin-bottom: 10rem;
 `;
 
-const TitleAddSpan = styled.h2`
+const TitleAddSpan = styled.span`
   font-size: 4rem;
   font-weight: 400;
   line-height: 4.9rem;
@@ -71,7 +72,6 @@ const TitleAddSpan = styled.h2`
   font-family: 'Cormorant', serif;
   text-transform: uppercase;
   margin-left: 18rem;
-  margin-bottom: 10rem;
 `;
 
 const AddText = styled.p`
@@ -104,6 +104,131 @@ const CorporationTextSpan = styled.span`
   color: ${({ theme }) => theme.colors.mainColor};
 `;
 
+const Bouquets = styled.h3`
+  max-width: 110rem;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 4.9rem;
+  letter-spacing: 0.02rem;
+  font-family: 'Cormorant', serif;
+  text-transform: uppercase;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+`;
+
+const ListBlock = styled.div`
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 3rem;
+  letter-spacing: 0.04rem;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 10rem;
+
+  &::before {
+    position: absolute;
+    background-image: url(/images/bouquets-4.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    content: '';
+    width: 80rem;
+    height: 75rem;
+    z-index: -2;
+    left: -15%;
+    top: 45%;
+  }
+
+  &::after {
+    position: absolute;
+    background-image: url(/images/bouquets-3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    content: '';
+    width: 80rem;
+    height: 55rem;
+    z-index: -2;
+    left: 20%;
+    top: -25%;
+  }
+`;
+
+const ListBlockContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 6rem 8rem 8rem 11rem;
+  justify-items: center;
+  gap: 1rem;
+  padding: 1rem;
+
+  p {
+    width: 100%;
+    background-color: #00000033;
+    backdrop-filter: blur(20px);
+    padding: 1rem;
+  }
+`;
+
+const ListBlockTitles = styled.p`
+  text-transform: uppercase;
+  text-align: center;
+  color: ${({ theme }) => theme.colors.mainColor};
+`;
+
+const ListBlockText = styled.p`
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+`;
+
+const StagesBlock = styled.div`
+  text-align: left;
+  margin-left: 52%;
+  margin-bottom: 18.4rem;
+`;
+
+const StagesBlockTitle = styled.h2`
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 4.9rem;
+  letter-spacing: 0.02rem;
+  font-family: 'Cormorant', serif;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  color: ${({ theme }) => theme.colors.mainColor};
+`;
+
+const StagesLine = styled.div`
+  width: 6rem;
+  border: 1px solid ${({ theme }) => theme.colors.mainColor};
+  content: '';
+  margin-bottom: 2rem;
+`;
+
+const StagesBlockText = styled.p`
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 3rem;
+  letter-spacing: 0.04rem;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+`;
+
+const FormTitle = styled.h2`
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 4.9rem;
+  letter-spacing: 0.02rem;
+  font-family: 'Cormorant', serif;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+`;
+
 const CorpClients = () => {
   return (
     <>
@@ -112,7 +237,8 @@ const CorpClients = () => {
           <BreadCrumbs />
           <CorporationTitle>Букети</CorporationTitle>
           <TitleAdd>
-            Вітання для <TitleAddSpan>ваших робітників</TitleAddSpan>
+            Вітання для <br />
+            <TitleAddSpan>ваших робітників</TitleAddSpan>
           </TitleAdd>
           <AddText>
             Якщо у Вас велика кількість співробітників (або не дуже) і ви
@@ -141,6 +267,56 @@ const CorpClients = () => {
             організації вони ставилися з усією уважністю і також пропускали
             важливі дні.
           </CorporationText>
+          <Bouquets>
+            Букети можуть виготовлятись у фірмовому кольорі організації та є
+            можливість робити привітання на Вашій фірмовій листівці, яку ми
+            можемо виготовити самі.
+          </Bouquets>
+          <AddText>
+            <AddTextSpan>
+              Вартість одного букета щонайменше 250 грн.
+            </AddTextSpan>
+          </AddText>
+          <ListBlock>
+            <ListBlockContainer>
+              <ListBlockTitles>Кількість заявок в місяць</ListBlockTitles>
+              <ListBlockText>1-2</ListBlockText>
+              <ListBlockText>3-10</ListBlockText>
+              <ListBlockText>Більше 10</ListBlockText>
+            </ListBlockContainer>
+            <ListBlockContainer>
+              <ListBlockTitles>Приємні бонуси</ListBlockTitles>
+              <p>
+                Вартість однієї доставки по Києву – 50 грн, за межі Києва – від
+                80грн
+              </p>
+              <p>
+                Доставка безкоштовно <br />
+                Букет-подарунок керівнику у його День народження
+              </p>
+              <p>
+                Доставка безкоштовно <br /> Букет-подарунок керівнику у його
+                День народження <br /> Святкова ялина перед Новим роком
+              </p>
+            </ListBlockContainer>
+          </ListBlock>
+          <StagesBlock>
+            <StagesBlockTitle>Етапи роботи:</StagesBlockTitle>
+            <StagesLine></StagesLine>
+            <StagesBlockText>1. Заповнення заявки</StagesBlockText>
+            <StagesBlockText>2. Підписання договору</StagesBlockText>
+            <StagesBlockText>3. Вручення квітів</StagesBlockText>
+            <StagesBlockText>
+              4. Звіт про доставлення замовлення
+            </StagesBlockText>
+            <StagesBlockText>5. Оплата</StagesBlockText>
+          </StagesBlock>
+          <FormTitle>
+            Якщо у Вас одиничне замовлення, то можете вибрати букет в каталозі
+            або замовити індивідуальний букет і вказати його вартість, а при
+            оформленні замовлення в кошику вказати, що оплата буде здійснюватись
+            з розрахункового рахунку організації.
+          </FormTitle>
         </Container>
       </Corporation>
       <Footer />
