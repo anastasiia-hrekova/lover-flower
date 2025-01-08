@@ -7,7 +7,7 @@ import Container from '../styles/Container';
 import { PhoneLink, PhoneLinkImg } from '../styles/SideBarStyles';
 
 const Header = styled.header.withConfig({
-  shouldForwardProp: prop => prop !== 'isScrolled',
+  shouldForwardProp: prop => prop !== 'isScrolled' && prop !== 'zIndex',
 })`
   width: 100%;
   background-color: ${({ theme, isScrolled }) =>
@@ -52,7 +52,7 @@ const NavLinkStyled = styled(NavLink)`
 `;
 
 const MenuAddition = styled.div.withConfig({
-  shouldForwardProp: prop => prop !== 'isScrolled' && prop !== 'zIndex',
+  shouldForwardProp: prop => prop !== 'isScrolled',
 })`
   opacity: ${({ isScrolled }) => (isScrolled ? 1 : 0)};
   visibility: ${({ isScrolled }) => (isScrolled ? 'visible' : 'hidden')};

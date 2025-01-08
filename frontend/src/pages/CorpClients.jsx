@@ -1,6 +1,7 @@
 import BreadCrumbs from '../components/BreadcrumbsContainer';
 import Container from '../styles/Container';
 import Footer from '../components/Footer';
+import ButtonLink from '../components/ButtonLink';
 import styled from 'styled-components';
 
 const Corporation = styled.div`
@@ -11,7 +12,7 @@ const Corporation = styled.div`
   background-size: cover;
   content: '';
   width: 100%;
-  height: 350rem;
+  height: 360rem;
   margin-top: 10rem;
 
   &::after {
@@ -203,7 +204,7 @@ const StagesBlockTitle = styled.h2`
   color: ${({ theme }) => theme.colors.mainColor};
 `;
 
-const StagesLine = styled.div`
+const StagesLine = styled.span`
   width: 6rem;
   border: 1px solid ${({ theme }) => theme.colors.mainColor};
   content: '';
@@ -227,6 +228,98 @@ const FormTitle = styled.h2`
   font-family: 'Cormorant', serif;
   text-transform: uppercase;
   margin-bottom: 6rem;
+`;
+
+const CorporationForm = styled.form`
+  display: grid;
+  grid-template-columns: repeat(2, 54rem);
+  gap: 3rem;
+  text-align: left;
+`;
+
+const FormBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  text-transform: none;
+
+  label {
+    letter-spacing: 0.06rem;
+    color: ${({ theme }) => theme.colors.textColor};
+  }
+
+  input {
+    height: 6rem;
+    padding: 1.9rem;
+    border: 1px solid #555555;
+    background-color: transparent;
+    letter-spacing: 0.04rem;
+    color: #555555;
+  }
+`;
+
+const FormBlockLeft = styled.div`
+  display: grid;
+  grid-template-rows: repeat(6, 8.5rem);
+  gap: 2rem;
+  margin-bottom: 4rem;
+`;
+
+const FormBlockRight = styled.div`
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(6, 8.5rem);
+  gap: 2rem;
+
+  &::after {
+    position: absolute;
+    background-image: url(/images/bouquets-lover.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    content: '';
+    width: 30rem;
+    height: 20rem;
+    z-index: -2;
+    left: 30%;
+    top: 70%;
+  }
+`;
+
+const FormBlockTitle = styled.h3`
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 3rem;
+  letter-spacing: 0.04rem;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: ${({ theme }) => theme.colors.mainColor};
+`;
+
+const FromButtonPolicy = styled.p`
+  font-family: 'Oswald', sans-serif;
+  margin-top: 1rem;
+  width: 34.2rem;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.2rem;
+  text-align: left;
+  letter-spacing: 0.02rem;
+`;
+
+const FromButtonPolicySpan = styled.span`
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+  text-align: left;
+  letter-spacing: 0.02rem;
+  text-decoration: underline;
+  color: #922d2d;
 `;
 
 const CorpClients = () => {
@@ -317,6 +410,81 @@ const CorpClients = () => {
             оформленні замовлення в кошику вказати, що оплата буде здійснюватись
             з розрахункового рахунку організації.
           </FormTitle>
+          <FormBlockTitle>Заповніть заявку:</FormBlockTitle>
+          <CorporationForm>
+            <FormBlockLeft>
+              <FormBlock>
+                <label>Назва організації</label>
+                <input
+                  type="text"
+                  placeholder="Введіть назву вашої організації"
+                />
+              </FormBlock>
+              <FormBlock>
+                <label>Поштова адреса</label>
+                <input type="text" placeholder="Введіть поштову адресу" />
+              </FormBlock>
+              <FormBlock>
+                <label>Контактна особа</label>
+                <input
+                  type="text"
+                  placeholder="Введіть ім'я контактної особи"
+                />
+              </FormBlock>
+              <FormBlock>
+                <label>Контактний номер телефону</label>
+                <input type="tel" placeholder="+38(097)777-77-77" />
+              </FormBlock>
+              <FormBlock>
+                <label>
+                  Вартість букета співробітнику (якщо різна – вказати)
+                </label>
+                <input
+                  type="text"
+                  placeholder="Вкажіть вартість букета співробітнику"
+                />
+              </FormBlock>
+              <FormBlock>
+                <label>Адреса електронної пошти</label>
+                <input
+                  type="text"
+                  placeholder="Вкажіть вашу адресу електронної пошти"
+                />
+              </FormBlock>
+            </FormBlockLeft>
+            <FormBlockRight>
+              <FormBlock>
+                <label>УНП</label>
+                <input type="text" placeholder="УНП" />
+              </FormBlock>
+              <FormBlock>
+                <label>Розрахунковий рахунок</label>
+                <input
+                  type="text"
+                  placeholder="Введіть номер розрахункового рахунку"
+                />
+              </FormBlock>
+              <FormBlock>
+                <label>Код банку</label>
+                <input type="text" placeholder="Код банку" />
+              </FormBlock>
+              <FormBlock>
+                <label>Передбачувана кількість заявок на місяць</label>
+                <input
+                  type="text"
+                  placeholder="Введіть передбачувану кількість заявок на місяць"
+                />
+              </FormBlock>
+            </FormBlockRight>
+          </CorporationForm>
+          <ButtonLink text="Надіслати" />
+          <FromButtonPolicy>
+            Натискаючи на кнопку «Надіслати», я даю свою згоду на обробку
+            персональних даних відповідно до
+            <FromButtonPolicySpan>
+              Політики конфіденційності
+            </FromButtonPolicySpan>
+          </FromButtonPolicy>
         </Container>
       </Corporation>
       <Footer />
