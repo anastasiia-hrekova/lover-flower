@@ -18,7 +18,7 @@ const SidebarStyle = styled.aside`
   position: absolute;
   z-index: 2;
   text-transform: uppercase;
-  right: 13%;
+  right: 10%;
   top: 3rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {

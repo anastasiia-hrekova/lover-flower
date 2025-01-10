@@ -6,6 +6,9 @@ export const PhoneLink = styled.a`
   font-size: 1.6rem;
   font-weight: 300;
   line-height: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-family: 'Oswald', sans-serif;
 `;
 
 export const PhoneLinkImg = styled.img`
@@ -43,8 +46,8 @@ export const SocialSide = styled.div`
   background-color: rgba(0, 0, 0, 0.441);
   backdrop-filter: blur(8px);
   border-radius: 1rem;
-  margin-top: 8rem;
-  margin-bottom: 12rem;
+  margin-top: 2rem;
+  margin-bottom: 11rem;
   padding: 1.5rem;
 `;
 

@@ -6,12 +6,14 @@ const initialState = {
   isTop: [],
   isLoading: false,
   error: null,
+  page: 1,
+  hasMore: true,
 };
 
 export const fetchFlowers = createAsyncThunk(
   'flowers/fetchFlowers',
-  async () => {
-    const data = await fetchFlowersAPI();
+  async ({ page, limit }) => {
+    const data = await fetchFlowersAPI(page, limit);
     return data;
   },
 );
@@ -27,8 +29,13 @@ const cardsSlice = createSlice({
       })
       .addCase(fetchFlowers.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.items = action.payload;
-        state.isTop = action.payload.filter(card => card.isTop);
+        if (action.payload.length > 0) {
+          state.items = [...state.items, ...action.payload.slice(0, 11)];
+          state.isTop = action.payload.filter(card => card.isTop);
+          state.hasMore = false;
+        } else {
+          state.hasMore = false;
+        }
       })
       .addCase(fetchFlowers.rejected, (state, action) => {
         state.isLoading = false;
@@ -41,5 +48,6 @@ export const selectFlowers = state => state.flowers.items;
 export const selectTopFlowers = state => state.flowers.isTop;
 export const selectLoading = state => state.flowers.isLoading;
 export const selectError = state => state.flowers.error;
+export const selectHasMore = state => state.flowers.hasMore;
 
 export default cardsSlice.reducer;
