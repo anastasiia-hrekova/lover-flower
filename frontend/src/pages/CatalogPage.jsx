@@ -9,8 +9,8 @@ const CatalogBlock = styled.div`
   position: relative;
   background-image: url(/images/catalog-top.png);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-position: top;
+  background-size: contain;
   content: '';
   width: 100%;
   height: auto;
