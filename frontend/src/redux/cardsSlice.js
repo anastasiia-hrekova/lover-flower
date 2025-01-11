@@ -6,14 +6,12 @@ const initialState = {
   isTop: [],
   isLoading: false,
   error: null,
-  page: 1,
-  hasMore: true,
 };
 
 export const fetchFlowers = createAsyncThunk(
   'flowers/fetchFlowers',
-  async ({ page, limit }) => {
-    const data = await fetchFlowersAPI(page, limit);
+  async () => {
+    const data = await fetchFlowersAPI();
     return data;
   },
 );
@@ -30,7 +28,7 @@ const cardsSlice = createSlice({
       .addCase(fetchFlowers.fulfilled, (state, action) => {
         state.isLoading = false;
         if (action.payload.length > 0) {
-          state.items = [...state.items, ...action.payload.slice(0, 11)];
+          state.items = [...state.items, ...action.payload.slice(0, 12)];
           state.isTop = action.payload.filter(card => card.isTop);
           state.hasMore = false;
         } else {

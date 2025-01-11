@@ -12,6 +12,7 @@ const ToCardButton = styled.button`
   line-height: 1.8rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+  cursor: pointer;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.mainColor};

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const SidebarCardImg = styled.img`
   transition: 0.4s;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.1);

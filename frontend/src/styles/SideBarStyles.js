@@ -85,6 +85,11 @@ export const CallBtn = styled.button`
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 2rem;
+
+  &:hover {
+    transform: scale(1.04);
+    transition: 0.3s ease;
+  }
 `;
 
 export const SidebarCart = styled.div`

@@ -20,6 +20,16 @@ const SidebarStyle = styled.aside`
   text-transform: uppercase;
   right: 10%;
   top: 3rem;
+  transform: translateX(100%);
+  animation: slideIn 1s ease-out forwards;
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%); 
+    }
+    to {
+      transform: translateX(0); 
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: none;

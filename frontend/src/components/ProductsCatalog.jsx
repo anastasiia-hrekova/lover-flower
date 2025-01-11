@@ -20,7 +20,7 @@ const ProductsCatalog = () => {
   const isLoading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
-  const limit = 11;
+  const limit = 12;
 
   useEffect(() => {
     dispatch(fetchFlowers({ page: 1, limit }));

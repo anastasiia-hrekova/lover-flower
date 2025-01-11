@@ -10,6 +10,7 @@ const CardStyle = styled.div`
   font-family: 'Oswald', sans-serif;
   letter-spacing: 0.04rem;
   text-transform: uppercase;
+  cursor: pointer;
 `;
 
 const CardImg = styled.img`

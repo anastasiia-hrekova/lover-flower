@@ -91,6 +91,14 @@ const SortBlockItem = styled.li`
   border: 0.5px solid ${({ theme }) => theme.colors.textColor};
   border-radius: 4rem;
   padding: 1rem 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    border: 0.5px solid ${({ theme }) => theme.colors.backgroundColor};
+    background-color: ${({ theme }) => theme.colors.mainColor};
+    color: ${({ theme }) => theme.colors.backgroundColor};
+    transition: 0.3s ease;
+  }
 `;
 
 const SortContainer = styled.div`
@@ -159,6 +167,7 @@ const CatalogSortButton = styled.button`
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   padding: 1.6rem;
+  cursor: pointer;
 
   &:hover {
     border: none;
