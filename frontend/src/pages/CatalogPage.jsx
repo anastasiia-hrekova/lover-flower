@@ -1,9 +1,14 @@
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectFlowers, selectTopFlowers } from '../redux/cardsSlice';
 import Breadcrumbs from '../components/BreadcrumbsContainer';
 import Container from '../styles/Container';
 import SideBar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
 import ProductsCatalog from '../components/ProductsCatalog';
+
+// MAIN STYLES
 
 const CatalogBlock = styled.div`
   position: relative;
@@ -29,6 +34,8 @@ const CatalogBlock = styled.div`
     z-index: -10;
   }
 `;
+
+// TITLE BLOCK
 
 const CatalogTitleBlock = styled.div`
   width: 80%;
@@ -73,7 +80,9 @@ const CatalogTitleBlockText = styled.p`
   margin-bottom: 6rem;
 `;
 
-const SortBlock = styled.ul`
+// SORT BLOCK
+
+const SortBlock = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -86,14 +95,16 @@ const SortBlock = styled.ul`
   text-transform: uppercase;
 `;
 
-const SortBlockItem = styled.li`
+const SortBlockItem = styled.button`
   background-color: transparent;
   border: 0.5px solid ${({ theme }) => theme.colors.textColor};
+  color: ${({ theme }) => theme.colors.textColor};
   border-radius: 4rem;
   padding: 1rem 1.5rem;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:active {
     border: 0.5px solid ${({ theme }) => theme.colors.backgroundColor};
     background-color: ${({ theme }) => theme.colors.mainColor};
     color: ${({ theme }) => theme.colors.backgroundColor};
@@ -126,6 +137,8 @@ const SortBy = styled.select`
   color: ${({ theme }) => theme.colors.textColor};
   cursor: pointer;
 `;
+
+// CATALOG CONTAINER
 
 const CatalogContainer = styled.div`
   display: grid;
@@ -178,6 +191,12 @@ const CatalogSortButton = styled.button`
 `;
 
 const CatalogPage = () => {
+  const [filter, setFilter] = useState('all');
+  const allFlowers = useSelector(selectFlowers);
+  const topFlowers = useSelector(selectTopFlowers);
+
+  const filteredFlowers = filter === 'isTop' ? topFlowers : allFlowers;
+
   return (
     <>
       <CatalogBlock>
@@ -195,17 +214,29 @@ const CatalogPage = () => {
               <SortBlockItem>Букет із гіпсофіл</SortBlockItem>
               <SortBlockItem>Букет із ромашок</SortBlockItem>
               <SortBlockItem>Букет із хризантем</SortBlockItem>
-              <SortBlockItem>Кімнатні квіти в горщиках</SortBlockItem>
+              <SortBlockItem onClick={() => setFilter('all')}>
+                Кімнатні квіти в горщиках
+              </SortBlockItem>
               <SortBlockItem>Монобукети</SortBlockItem>
               <SortBlockItem>Збірні букети</SortBlockItem>
               <SortBlockItem>Букет на свято</SortBlockItem>
               <SortBlockItem>Композиції із квітів</SortBlockItem>
-              <SortBlockItem>Конверти</SortBlockItem>
-              <SortBlockItem>Листівки</SortBlockItem>
-              <SortBlockItem>Подарунки</SortBlockItem>
+              <SortBlockItem onClick={() => setFilter('all')}>
+                Конверти
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setFilter('all')}>
+                Листівки
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setFilter('all')}>
+                Подарунки
+              </SortBlockItem>
               <SortBlockItem>Букети із сухоквітів</SortBlockItem>
-              <SortBlockItem>Шари</SortBlockItem>
-              <SortBlockItem>Популярне</SortBlockItem>
+              <SortBlockItem onClick={() => setFilter('all')}>
+                Шари
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setFilter('isTop')}>
+                Популярне
+              </SortBlockItem>
               <SortBlockItem>Букети троянд</SortBlockItem>
               <SortBlockItem>Упаковка подарунків</SortBlockItem>
             </SortBlock>
@@ -237,7 +268,7 @@ const CatalogPage = () => {
               <CatalogSortButton>Скинути фільтр</CatalogSortButton>
             </CatalogSort>
             <div>
-              <ProductsCatalog />
+              <ProductsCatalog flowers={filteredFlowers} />
             </div>
           </CatalogContainer>
         </Container>

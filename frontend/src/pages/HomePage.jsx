@@ -6,6 +6,8 @@ import Footer from '../components/Footer';
 import Container from '../styles/Container';
 import styled from 'styled-components';
 
+// MAIN STYLES
+
 const Hero = styled.section`
 position: relative;
 width: 100%;
@@ -27,6 +29,8 @@ height: 102rem;
     z-index: 0;
     top: 0;
 `;
+
+// HERO SECTION
 
 const HeroBlock = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -69,6 +73,8 @@ const HeroInfo = styled.div`
   line-height: 3rem;
   letter-spacing: 0.02rem;
 `;
+
+// CATALOG SECTION
 
 const Catalog = styled.section`
   width: 100%;
@@ -175,6 +181,8 @@ const CatalogOther = styled.div`
   height: 26rem;
 `;
 
+// BESTSELLER SECTION
+
 const Bestsellers = styled.section`
   width: 100%;
   height: 110rem;
@@ -229,6 +237,11 @@ const BestsellersList = styled.div`
 
   img {
     filter: grayscale(1);
+
+    &:hover {
+      filter: grayscale(0);
+      transition: 0.4s, ease;
+    }
   }
 `;
 
@@ -242,6 +255,8 @@ const BestsellersLink = styled(Link)`
   color: ${({ theme }) => theme.colors.accentColor};
   margin-right: 80%;
 `;
+
+// ORDER SECTION
 
 const Order = styled.section`
   position: relative;
@@ -343,6 +358,8 @@ const OrderItemText = styled.p`
   line-height: 2.1rem;
   color: ${({ theme }) => theme.colors.textColor};
 `;
+
+// SPECIAL SECTION
 
 const Special = styled.section`
   position: relative;
@@ -450,6 +467,8 @@ const SpecialImages = styled.div`
   height: 29.2rem;
   margin-left: 7%;
 `;
+
+// QUESTION SECTION
 
 const Questions = styled.section`
   position: relative;
@@ -592,6 +611,8 @@ const QuestionsFormTextSpan = styled.span`
   text-decoration: underline;
   color: ${({ theme }) => theme.colors.accentColor};
 `;
+
+// INSTAGRAM SECTION
 
 const Instagram = styled.section`
   padding: 20rem 0;

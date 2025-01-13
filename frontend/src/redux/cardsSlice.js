@@ -4,6 +4,7 @@ import { fetchFlowersAPI } from '../services/fetchFlowersAPI';
 const initialState = {
   items: [],
   isTop: [],
+  onSale: [],
   isLoading: false,
   error: null,
 };
@@ -19,7 +20,7 @@ export const fetchFlowers = createAsyncThunk(
 const cardsSlice = createSlice({
   name: 'flowers',
   initialState,
-  reduсers: {},
+  reducers: {},
   extraReducers: builder => {
     builder
       .addCase(fetchFlowers.pending, state => {

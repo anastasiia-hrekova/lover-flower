@@ -11,6 +11,7 @@ const CardStyle = styled.div`
   letter-spacing: 0.04rem;
   text-transform: uppercase;
   cursor: pointer;
+  position: relative;
 `;
 
 const CardImg = styled.img`
@@ -39,11 +40,28 @@ const OldPrice = styled.span`
   color: #939393;
 `;
 
-const Card = ({ cardData }) => {
+const CardSticker = styled.img.withConfig({
+  shouldForwardProp: prop => prop !== 'onSale' && prop !== 'isMainPage',
+})`
+  display: ${({ onSale }) => (onSale ? 'block' : 'none')};
+  position: absolute;
+  right: ${({ isMainPage }) => (isMainPage ? '-1.8rem' : '2.5rem')};
+  top: ${({ isMainPage }) => (isMainPage ? '-1rem' : '-1rem')};
+  width: 6rem;
+  height: 6rem;
+  z-index: 3;
+`;
+
+const Card = ({ cardData, isMainPage }) => {
   const { image, title, price, onSale, oldPrice } = cardData;
 
   return (
     <CardStyle>
+      <CardSticker
+        src="/images/sale.png"
+        onSale={onSale}
+        isMainPage={isMainPage}
+      ></CardSticker>
       <CardImg src={image} alt="flowers" />
       <CardTitle>{title}</CardTitle>
       <CardPrice>

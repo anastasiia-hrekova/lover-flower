@@ -22,15 +22,15 @@ const ScrollToTopBtn = styled.button`
   position: fixed;
   bottom: 2rem;
   right: 7%;
+  z-index: 3;
   background-color: #00000033;
   backdrop-filter: blur(20px);
   border-radius: 50%;
   display: ${({ $show }) => ($show ? 'block' : 'none')};
 `;
 
-const ProductsCatalog = () => {
+const ProductsCatalog = ({ flowers }) => {
   const dispatch = useDispatch();
-  const flowers = useSelector(selectFlowers);
   const isLoading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
@@ -52,7 +52,7 @@ const ProductsCatalog = () => {
       setLimit(prevLimit => prevLimit + 12);
     }
 
-    if (window.scrollY > 350) {
+    if (window.scrollY > 550) {
       setShowBtn(true);
     } else {
       setShowBtn(false);

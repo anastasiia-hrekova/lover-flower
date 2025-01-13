@@ -88,7 +88,7 @@ const CardsCarousel = () => {
         <PrevArrow onClick={handlePrev} disabled={isPrevDisabled} />
         <CardBlock>
           {currentCards.map(card => (
-            <Card cardData={card} key={card.id} />
+            <Card cardData={card} key={card.id} isMainPage={true} />
           ))}
         </CardBlock>
         <NextArrow onClick={handleNext} disabled={isNextDisabled} />
