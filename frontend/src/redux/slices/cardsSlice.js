@@ -1,10 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchFlowersAPI } from '../services/fetchFlowersAPI';
+import { fetchFlowersAPI } from '../../services/fetchFlowersAPI';
 
 const initialState = {
   items: [],
   isTop: [],
-  onSale: [],
   isLoading: false,
   error: null,
 };

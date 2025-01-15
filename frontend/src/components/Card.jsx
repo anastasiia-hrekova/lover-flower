@@ -41,9 +41,10 @@ const OldPrice = styled.span`
 `;
 
 const CardSticker = styled.img.withConfig({
-  shouldForwardProp: prop => prop !== 'onSale' && prop !== 'isMainPage',
+  shouldForwardProp: prop =>
+    prop !== 'onSale' && prop !== 'isNew' && prop !== 'isMainPage',
 })`
-  display: ${({ onSale }) => (onSale ? 'block' : 'none')};
+  display: ${({ onSale, isNew }) => (onSale || isNew ? 'block' : 'none')};
   position: absolute;
   right: ${({ isMainPage }) => (isMainPage ? '-1.8rem' : '2.5rem')};
   top: ${({ isMainPage }) => (isMainPage ? '-1rem' : '-1rem')};
@@ -53,13 +54,18 @@ const CardSticker = styled.img.withConfig({
 `;
 
 const Card = ({ cardData, isMainPage }) => {
-  const { image, title, price, onSale, oldPrice } = cardData;
+  const { image, title, price, onSale, oldPrice, isNew } = cardData;
 
   return (
     <CardStyle>
       <CardSticker
         src="/images/sale.png"
         onSale={onSale}
+        isMainPage={isMainPage}
+      ></CardSticker>
+      <CardSticker
+        src="/images/isNew.png"
+        isNew={isNew}
         isMainPage={isMainPage}
       ></CardSticker>
       <CardImg src={image} alt="flowers" />

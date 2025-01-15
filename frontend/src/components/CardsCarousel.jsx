@@ -5,7 +5,7 @@ import {
   selectTopFlowers,
   selectLoading,
   selectError,
-} from '../redux/cardsSlice';
+} from '../redux/slices/cardsSlice';
 import Container from '../styles/Container';
 import { CardContainer } from '../styles/CardContainer';
 import Card from './Card';

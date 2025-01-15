@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchFlowers } from '../redux/cardsSlice';
-import { selectFlowers, selectLoading, selectError } from '../redux/cardsSlice';
+import { fetchFlowers } from '../redux/slices/cardsSlice';
+import { selectLoading, selectError } from '../redux/slices/cardsSlice';
 import { v4 as uuidv4 } from 'uuid';
 import Card from '../components/Card';
 import styled from 'styled-components';
