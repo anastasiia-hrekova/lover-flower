@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFlowers } from '../redux/slices/cardsSlice';
 import { selectLoading, selectError } from '../redux/slices/cardsSlice';
@@ -37,16 +37,26 @@ const ProductsCatalog = ({ flowers }) => {
   const [limit, setLimit] = useState(12);
   const [page, setPage] = useState(1);
   const [showBtn, setShowBtn] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
-    dispatch(fetchFlowers({ page, limit }));
-  }, [dispatch, page, limit]);
+    const loadFlowers = async () => {
+      const result = await dispatch(fetchFlowers({ page, limit })).unwrap();
+      if (result.length === 0) {
+        setHasMore(false);
+      }
+    };
+    if (hasMore) {
+      loadFlowers();
+    }
+  }, [dispatch, page, limit, hasMore]);
 
-  const scrollHandler = () => {
+  const scrollHandler = useCallback(() => {
     if (
       window.innerHeight + document.documentElement.scrollTop ===
         document.documentElement.offsetHeight &&
-      !isLoading
+      !isLoading &&
+      hasMore
     ) {
       setPage(prevPage => prevPage + 1);
       setLimit(prevLimit => prevLimit + 12);
@@ -57,7 +67,14 @@ const ProductsCatalog = ({ flowers }) => {
     } else {
       setShowBtn(false);
     }
-  };
+  }, [isLoading, hasMore]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollHandler);
+    return () => {
+      window.removeEventListener('scroll', scrollHandler);
+    };
+  }, [scrollHandler]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -65,13 +82,6 @@ const ProductsCatalog = ({ flowers }) => {
       behavior: 'smooth',
     });
   };
-
-  useEffect(() => {
-    window.addEventListener('scroll', scrollHandler);
-    return () => {
-      window.removeEventListener('scroll', scrollHandler);
-    };
-  }, [isLoading]);
 
   if (isLoading && flowers.length === 0) {
     return <div>Loading...</div>;
@@ -83,10 +93,11 @@ const ProductsCatalog = ({ flowers }) => {
   return (
     <>
       <CatalogCards>
-        {flowers.slice(0, limit).map(card => (
+        {flowers.map(card => (
           <Card cardData={card} key={uuidv4()} />
         ))}
       </CatalogCards>
+      {!hasMore && <div></div>}
       <ScrollToTopBtn $show={showBtn} onClick={scrollToTop}>
         <svg
           width="6"

@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 import {
   setTypeFilter,
   setColorFilter,
   setColorShadeFilter,
   setFormatFilter,
-  setPriceFilter,
   resetFilters,
   selectTypeFilter,
   selectColorFilter,
@@ -13,6 +13,7 @@ import {
   selectPriceFilter,
 } from '../redux/slices/filterSlice';
 import styled from 'styled-components';
+import PriceRange from './PriceRange';
 
 const CatalogSort = styled.div`
   background-color: #00000033;
@@ -23,7 +24,7 @@ const CatalogSort = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  height: 82rem;
+  height: 100rem;
 `;
 
 const CatalogSortTitle = styled.h3`
@@ -34,6 +35,7 @@ const CatalogSortTitle = styled.h3`
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.mainColor};
+  margin-bottom: 0.8rem;
 `;
 
 const CatalogSortButton = styled.button`
@@ -58,7 +60,45 @@ const CatalogSortButton = styled.button`
   }
 `;
 
+const CatalogSortLabel = styled.label`
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.8rem;
+  letter-spacing: 0.04rem;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+`;
+
+const CatalogSortInput = styled.input`
+  appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: transparent;
+  border: 0.5px solid #fff;
+  border-radius: 0.2rem;
+  margin-right: 0.6rem;
+  cursor: pointer;
+
+  &:checked {
+    background-color: ${({ theme }) => theme.colors.mainColor};
+    border: ${({ theme }) => theme.colors.mainColor};
+  }
+`;
+
+const PriceSortText = styled.p`
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.8rem;
+  letter-spacing: 0.04rem;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+`;
+
 const Filteres = () => {
+  const [priceRange, setPriceRange] = useState([100, 900]);
   const dispatch = useDispatch();
   const typeFilter = useSelector(selectTypeFilter);
   const colorFilter = useSelector(selectColorFilter);
@@ -66,26 +106,28 @@ const Filteres = () => {
   const formatFilter = useSelector(selectFormatFilter);
   const priceFilter = useSelector(selectPriceFilter);
 
-  const handleCheckboxChange = (filterType, value, isChecked) => {
+  console.log('Type filter:', colorFilter);
+
+  const handleCheckboxChange = (filterType, value) => {
     const currentFilter = {
-      type: typeFilter,
-      color: colorFilter,
+      flowerType: typeFilter,
+      flowerColor: colorFilter,
       colorShade: colorShadeFilter,
       format: formatFilter,
     }[filterType];
 
-    const updateFilter = isChecked
-      ? [...currentFilter, value]
-      : currentFilter.filter(item => item !== value);
+    const updateFilter = currentFilter.includes(value)
+      ? currentFilter.filter(item => item !== value)
+      : [...currentFilter, value];
 
-    const actions = {
-      type: setTypeFilter,
-      color: setColorFilter,
-      colorShade: setColorShadeFilter,
-      format: setFormatFilter,
-    };
-
-    dispatch(actions[filterType](updateFilter));
+    dispatch(
+      {
+        flowerType: setTypeFilter,
+        flowerColor: setColorFilter,
+        colorShade: setColorShadeFilter,
+        format: setFormatFilter,
+      }[filterType](updateFilter),
+    );
   };
 
   const handleResetFilters = () => {
@@ -97,17 +139,22 @@ const Filteres = () => {
       <div>
         <CatalogSortTitle>За відтінком</CatalogSortTitle>
         {['Ніжний', 'Яскравий'].map(shade => (
-          <label key={shade} style={{ display: 'block', margin: '0.5rem 0' }}>
-            <input
+          <CatalogSortLabel
+            key={shade}
+            style={{
+              display: 'block',
+              margin: '0.5rem 0',
+            }}
+          >
+            <CatalogSortInput
               type="checkbox"
+              name="colorShade"
               value={shade}
               checked={colorShadeFilter.includes(shade)}
-              onChange={e =>
-                handleCheckboxChange('colorShade', shade, e.target.checked)
-              }
+              onChange={() => handleCheckboxChange('colorShade', shade)}
             />
             {shade}
-          </label>
+          </CatalogSortLabel>
         ))}
       </div>
       <div>
@@ -123,17 +170,19 @@ const Filteres = () => {
           'Помаранчевий',
           'Кремовий',
         ].map(color => (
-          <label key={color} style={{ display: 'block', margin: '0.5rem 0' }}>
-            <input
+          <CatalogSortLabel
+            key={color}
+            style={{ display: 'block', margin: '0.5rem 0' }}
+          >
+            <CatalogSortInput
               type="checkbox"
+              name="flowerColor"
               value={color}
               checked={colorFilter.includes(color)}
-              onChange={e =>
-                handleCheckboxChange('color', color, e.target.checked)
-              }
+              onChange={() => handleCheckboxChange('flowerColor', color)}
             />
             {color}
-          </label>
+          </CatalogSortLabel>
         ))}
       </div>
       <div>
@@ -146,28 +195,33 @@ const Filteres = () => {
           'У ящику',
           'В конверті',
         ].map(format => (
-          <label key={format} style={{ display: 'block', margin: '0.5rem 0' }}>
-            <input
+          <CatalogSortLabel
+            key={format}
+            style={{ display: 'block', margin: '0.5rem 0' }}
+          >
+            <CatalogSortInput
               type="checkbox"
+              name="format"
               value={format}
               checked={formatFilter.includes(format)}
-              onChange={e =>
-                handleCheckboxChange('format', format, e.target.checked)
-              }
+              onChange={() => handleCheckboxChange('format', format)}
             />
             {format}
-          </label>
+          </CatalogSortLabel>
         ))}
       </div>
       <div>
         <CatalogSortTitle>Вартість</CatalogSortTitle>
-        <input
-          type="range"
-          min="0"
-          max="1000"
-          value={priceFilter}
-          onChange={e => setPriceFilter(Number(e.target.value))}
+        <PriceRange
+          min={0}
+          max={1000}
+          values={priceFilter}
+          onChange={newRange => dispatch(setPriceRange(newRange))}
         />
+        <PriceSortText>
+          <br />
+          Ціна: {priceRange[0]} грн - {priceRange[1]} грн
+        </PriceSortText>
       </div>
       <div>
         <CatalogSortTitle>За квіткою</CatalogSortTitle>
@@ -183,15 +237,19 @@ const Filteres = () => {
           'Гвоздики',
           'Іриси',
         ].map(flower => (
-          <label key={flower} style={{ display: 'block', margin: '0.5rem 0' }}>
-            <input
+          <CatalogSortLabel
+            key={flower}
+            style={{ display: 'block', margin: '0.5rem 0' }}
+          >
+            <CatalogSortInput
               type="checkbox"
+              name="flowerType"
               value={flower}
-              checked={typeFilter.includes(flower)} // Проверка, выбрана ли опция
-              onChange={e => handleCheckboxChange(flower, e.target.checked)}
+              checked={typeFilter.includes(flower)}
+              onChange={() => handleCheckboxChange('flowerType', flower)}
             />
             {flower}
-          </label>
+          </CatalogSortLabel>
         ))}
       </div>
       <CatalogSortButton onClick={handleResetFilters}>

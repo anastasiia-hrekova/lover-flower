@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   title: '',
-  flowerType: '',
-  flowerColor: '',
-  colorShade: '',
-  format: '',
-  price: 0,
+  flowerType: [],
+  flowerColor: [],
+  colorShade: [],
+  format: [],
+  price: [0, 1000],
 };
 
 const filterSlice = createSlice({

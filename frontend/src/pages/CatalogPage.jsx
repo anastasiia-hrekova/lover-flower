@@ -1,11 +1,12 @@
 import { useSelector } from 'react-redux';
-import { selectFlowers, selectTopFlowers } from '../redux/slices/cardsSlice';
+import { useMemo, useState } from 'react';
+import { selectFlowers } from '../redux/slices/cardsSlice';
 import {
-  selectTypeFilter,
   selectColorFilter,
   selectColorShadeFilter,
   selectFormatFilter,
   selectPriceFilter,
+  selectTypeFilter,
 } from '../redux/slices/filterSlice';
 import Breadcrumbs from '../components/BreadcrumbsContainer';
 import Container from '../styles/Container';
@@ -13,7 +14,7 @@ import SideBar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
 import ProductsCatalog from '../components/ProductsCatalog';
-import Filteres from '../components/Filteres';
+import Filteres from '../features/Filteres';
 
 // MAIN STYLES
 
@@ -22,7 +23,7 @@ const CatalogBlock = styled.div`
   background-image: url(/images/catalog-top.png);
   background-repeat: no-repeat;
   background-position: top;
-  background-size: cover;
+  background-size: 100%;
   content: '';
   width: 100%;
   height: auto;
@@ -154,8 +155,8 @@ const CatalogContainer = styled.div`
 `;
 
 const CatalogPage = () => {
+  const [sortOption, setSortOption] = useState('default');
   const allFlowers = useSelector(selectFlowers);
-  const topFlowers = useSelector(selectTopFlowers);
 
   const typeFilter = useSelector(selectTypeFilter);
   const colorFilter = useSelector(selectColorFilter);
@@ -163,33 +164,82 @@ const CatalogPage = () => {
   const formatFilter = useSelector(selectFormatFilter);
   const priceFilter = useSelector(selectPriceFilter);
 
-  const filteredFlowers = allFlowers.filter(flower => {
-    // Перевірка популярності
-    const matchesTop = topFlowers ? flower.isTop === true : true;
-    // Перевірка типу
-    const matchesType =
-      typeFilter.length === 0 || typeFilter.includes(flower.flowerType);
-    // Перевірка кольору
-    const matchesColor = !colorFilter || flower.flowerColor === colorFilter;
-    // Перевірка відтінку
-    const matchesColorShade =
-      !colorShadeFilter || flower.colorShade === colorShadeFilter;
-    // Перевірка формату
-    const matchesFormat = !formatFilter || flower.format === formatFilter;
-    // Перевірка ціни
-    const matchesPrice = priceFilter ? flower.price <= priceFilter : true;
+  const applyFilters = (allFlowers, filters, sortOption) => {
+    let filtered = allFlowers.filter(item => {
+      const matchesType = filters.flowerType.length
+        ? filters.flowerType.includes(item.flowerType)
+        : true;
 
-    return (
-      matchesTop &&
-      matchesType &&
-      matchesColor &&
-      matchesColorShade &&
-      matchesFormat &&
-      matchesPrice
-    );
-  });
+      const matchesColor = filters.flowerColor.length
+        ? filters.flowerColor.includes(item.flowerColor)
+        : true;
 
-  // const filteredFlowers = filter === 'isTop' ? topFlowers : allFlowers;
+      const matchesColorShade = filters.colorShade.length
+        ? filters.colorShade.includes(item.colorShade)
+        : true;
+
+      const matchesFormat = filters.format.length
+        ? filters.format.includes(item.format)
+        : true;
+
+      const matchesPrice =
+        item.price >= filters.price[0] && item.price <= filters.price[1];
+
+      return (
+        matchesType &&
+        matchesColor &&
+        matchesColorShade &&
+        matchesFormat &&
+        matchesPrice
+      );
+    });
+
+    switch (sortOption) {
+      case 'isTop':
+        filtered = filtered.filter(item => item.isTop === true);
+        break;
+      case 'rose':
+        filtered = filtered.filter(item => item.flowerType === 'Троянди');
+        break;
+      case 'hydra':
+        filtered = filtered.filter(item => item.flowerType === 'Гортензії');
+        break;
+      case 'peonies':
+        filtered = filtered.filter(item => item.flowerType === 'Півонії');
+        break;
+      case 'chrysant':
+        filtered = filtered.filter(item => item.flowerType === 'Хризантеми');
+        break;
+      default:
+        break;
+    }
+
+    return filtered;
+  };
+
+  const filteredItems = useMemo(
+    () =>
+      applyFilters(
+        allFlowers,
+        {
+          flowerType: typeFilter,
+          flowerColor: colorFilter,
+          colorShade: colorShadeFilter,
+          format: formatFilter,
+          price: priceFilter,
+        },
+        sortOption,
+      ),
+    [
+      allFlowers,
+      typeFilter,
+      colorFilter,
+      colorShadeFilter,
+      formatFilter,
+      priceFilter,
+      sortOption,
+    ],
+  );
 
   return (
     <>
@@ -205,22 +255,54 @@ const CatalogPage = () => {
               У нашому магазині найбільший вибір букетів для будь-яких подій:
             </CatalogTitleBlockText>
             <SortBlock>
-              <SortBlockItem>Букет із гіпсофіл</SortBlockItem>
-              <SortBlockItem>Букет із ромашок</SortBlockItem>
-              <SortBlockItem>Букет із хризантем</SortBlockItem>
-              <SortBlockItem>Кімнатні квіти в горщиках</SortBlockItem>
-              <SortBlockItem>Монобукети</SortBlockItem>
-              <SortBlockItem>Збірні букети</SortBlockItem>
-              <SortBlockItem>Букет на свято</SortBlockItem>
-              <SortBlockItem>Композиції із квітів</SortBlockItem>
-              <SortBlockItem>Конверти</SortBlockItem>
-              <SortBlockItem>Листівки</SortBlockItem>
-              <SortBlockItem>Подарунки</SortBlockItem>
-              <SortBlockItem>Букети із сухоквітів</SortBlockItem>
-              <SortBlockItem>Шари</SortBlockItem>
-              <SortBlockItem>Популярне</SortBlockItem>
-              <SortBlockItem>Букети троянд</SortBlockItem>
-              <SortBlockItem>Упаковка подарунків</SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('hydra')}>
+                Букет із гортензій
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('peonies')}>
+                Букет із півоній
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('chrysant')}>
+                Букет із хризантем
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('default')}>
+                Кімнатні квіти в горщиках
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('default')}>
+                Монобукети
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('default')}>
+                Збірні букети
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('default')}>
+                Букет на свято
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('default')}>
+                Композиції із квітів
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('default')}>
+                Конверти
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('default')}>
+                Листівки
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('default')}>
+                Подарунки
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('default')}>
+                Букети із сухоквітів
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('default')}>
+                Шари
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('isTop')}>
+                Популярне
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('rose')}>
+                Букети троянд
+              </SortBlockItem>
+              <SortBlockItem onClick={() => setSortOption('default')}>
+                Упаковка подарунків
+              </SortBlockItem>
             </SortBlock>
           </CatalogTitleBlock>
           <SideBar />
@@ -233,7 +315,7 @@ const CatalogPage = () => {
           <CatalogContainer>
             <Filteres />
             <div>
-              <ProductsCatalog flowers={filteredFlowers} />
+              <ProductsCatalog flowers={filteredItems} />
             </div>
           </CatalogContainer>
         </Container>
