@@ -1,5 +1,7 @@
+import { useDispatch } from 'react-redux';
 import AddToCart from './AddToCart';
 import styled from 'styled-components';
+import { addToCart } from '../redux/slices/cartSlice';
 
 const CardStyle = styled.div`
   display: flex;
@@ -50,11 +52,16 @@ const CardSticker = styled.img.withConfig({
   top: ${({ isMainPage }) => (isMainPage ? '-1rem' : '-1rem')};
   width: 6rem;
   height: 6rem;
-  z-index: 3;
+  z-index: 2;
 `;
 
 const Card = ({ cardData, isMainPage }) => {
   const { image, title, price, onSale, oldPrice, isNew } = cardData;
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(cardData));
+  };
 
   return (
     <CardStyle>
@@ -74,7 +81,7 @@ const Card = ({ cardData, isMainPage }) => {
         {price} UAH
         {onSale && oldPrice && <OldPrice> {oldPrice} UAH</OldPrice>}
       </CardPrice>
-      <AddToCart />
+      <AddToCart onClick={handleAddToCart} />
     </CardStyle>
   );
 };

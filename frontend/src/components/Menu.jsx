@@ -2,7 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import SearchBar from './SearchBar';
-import ButtonToCart from './ButtonToCart';
+import ButtonToCart from '../features/ButtonToCart';
 import Container from '../styles/Container';
 import { PhoneLink, PhoneLinkImg } from '../styles/SideBarStyles';
 

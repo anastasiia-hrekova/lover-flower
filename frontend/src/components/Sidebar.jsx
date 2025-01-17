@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ButtonToCart from './ButtonToCart';
+import ButtonToCart from '../features/ButtonToCart';
 import {
   PhoneLink,
   PhoneLinkImg,

@@ -22,8 +22,8 @@ const ToCardButton = styled.button`
   }
 `;
 
-const AddToCart = () => {
-  return <ToCardButton>В кошик</ToCardButton>;
+const AddToCart = ({ onClick }) => {
+  return <ToCardButton onClick={onClick}>В кошик</ToCardButton>;
 };
 
 export default AddToCart;
