@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart } from '../redux/slices/cartSlice';
+import {
+  removeFromCart,
+  incrementQuantity,
+  decrementQuantity,
+} from '../redux/slices/cartSlice';
+import { useLocation } from 'react-router-dom';
 
 const CartBlock = styled.div`
   position: relative;
@@ -37,6 +42,12 @@ const ProductPartLeft = styled.div`
   gap: 2rem;
 `;
 
+const ProductPartCenter = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 const ProductPartRight = styled.div`
   display: flex;
   flex-direction: column;
@@ -51,6 +62,34 @@ const ProductTitle = styled.h3`
   letter-spacing: 0.02rem;
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.textColor};
+`;
+
+const ProductQuantityBlock = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 10rem;
+  height: 3rem;
+  border: 0.5px solid #555555;
+  align-items: center;
+  justify-content: space-around;
+  color: #555555;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+`;
+
+const QuantityBtn = styled.button`
+  color: #555555;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 `;
 
 const ProductImg = styled.img`
@@ -84,30 +123,66 @@ const DeleteBtn = styled.button`
   cursor: pointer;
 `;
 
+const CheckoutText = styled.p`
+  color: ${({ theme }) => theme.colors.mainColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.1rem;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+`;
+
 const Cart = () => {
-  const cartItems = useSelector(state => state.cart.items);
+  const cart = useSelector(state => state.cart);
+  const isOpen = useSelector(state => state.cart);
   const dispatch = useDispatch();
+  const location = useLocation();
+
+  const isCheckoutPage = location.pathname === '/checkout';
+
+  if (!isOpen) return null;
 
   return (
     <CartBlock>
-      <CartTitle>Ваша корзина</CartTitle>
+      {isCheckoutPage ? (
+        <CheckoutText>Ваше замовлення: </CheckoutText>
+      ) : (
+        <CartTitle>Ваша корзина</CartTitle>
+      )}
       <Line></Line>
-      {cartItems.length === 0 ? (
-        <ProductTitle>Корзина пуста</ProductTitle>
+      {cart.length === 0 ? (
+        <ProductTitle>Корзина порожня</ProductTitle>
       ) : (
         <>
-          {cartItems.map(item => (
+          {cart.items.map(item => (
             <>
               <ProductBlock key={item.id}>
                 <ProductPartLeft>
                   <ProductImg src={item.image} alt="flower" />
-                  <div>
+                  <ProductPartCenter>
                     <ProductTitle>{item.title}</ProductTitle>
-                    <p>{item.quantity}</p>
-                  </div>
+                    <ProductQuantityBlock>
+                      <QuantityBtn
+                        onClick={() =>
+                          dispatch(decrementQuantity({ id: item.id }))
+                        }
+                      >
+                        -
+                      </QuantityBtn>
+                      <p>{item.quantity}</p>
+                      <QuantityBtn
+                        onClick={() =>
+                          dispatch(incrementQuantity({ id: item.id }))
+                        }
+                      >
+                        +
+                      </QuantityBtn>
+                    </ProductQuantityBlock>
+                  </ProductPartCenter>
                 </ProductPartLeft>
                 <ProductPartRight>
-                  <ProductPrice>{item.price} грн</ProductPrice>
+                  <ProductPrice>{item.quantity * item.price} грн</ProductPrice>
                   <DeleteBtn onClick={() => dispatch(removeFromCart(item.id))}>
                     Видалити
                   </DeleteBtn>

@@ -106,8 +106,6 @@ const Filteres = () => {
   const formatFilter = useSelector(selectFormatFilter);
   const priceFilter = useSelector(selectPriceFilter);
 
-  console.log('Type filter:', colorFilter);
-
   const handleCheckboxChange = (filterType, value) => {
     const currentFilter = {
       flowerType: typeFilter,
