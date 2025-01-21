@@ -9,6 +9,7 @@ export const PhoneLink = styled.a`
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-family: 'Oswald', sans-serif;
+  cursor: pointer;
 `;
 
 export const PhoneLinkImg = styled.img`
@@ -89,10 +90,10 @@ export const CallBtn = styled.button`
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 2rem;
+  transition: 0.3s ease;
 
   &:hover {
     transform: scale(1.04);
-    transition: 0.3s ease;
   }
 `;
 
@@ -102,4 +103,9 @@ export const SidebarCart = styled.div`
   border-radius: 1rem;
   padding: 1.5rem;
   align-self: flex-end;
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: scale(1.04);
+  }
 `;

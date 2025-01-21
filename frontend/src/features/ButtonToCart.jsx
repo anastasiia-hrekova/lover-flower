@@ -9,9 +9,6 @@ const CartBtn = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-`;
-
-const SidebarCardImg = styled.img`
   transition: 0.4s;
 
   &:hover {
@@ -144,7 +141,7 @@ const ButtonToCart = () => {
   return (
     <>
       <CartBtn>
-        <SidebarCardImg
+        <img
           src="images/cart.svg"
           alt="cart"
           onClick={() => setCartOpen((cartOpen = !cartOpen))}
