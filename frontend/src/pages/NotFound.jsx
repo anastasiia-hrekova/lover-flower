@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Container from '../styles/Container';
 
 const NotFoundPage = styled.div`
-  background-image: url(/images/404-background.png);
+  background-image: url(images/404-background.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

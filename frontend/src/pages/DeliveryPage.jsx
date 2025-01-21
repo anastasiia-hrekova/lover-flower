@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Footer from '../components/Footer';
 
 const Delivery = styled.div`
-  background-image: url(/images/delivery-back.png);
+  background-image: url(images/delivery-back.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -54,7 +54,7 @@ const DearClients = styled.div`
   &:before {
     position: absolute;
     content: '';
-    background-image: url(/images/delivery-sign.png);
+    background-image: url(images/delivery-sign.png);
     background-repeat: no-repeat;
     left: -2rem;
     width: 2.5rem;
@@ -104,23 +104,21 @@ const BlocksTitle = styled.p`
 `;
 
 const PaymentsBlock = styled.ul`
-  display: flex;
+  ${({ theme }) => theme.mixins.flex};
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
   margin-bottom: 10rem;
 `;
 
 const PaymentsWay = styled.li`
   position: relative;
+  ${({ theme }) => theme.mixins.flex};
   width: 25.5rem;
   height: 21.1rem;
   border-radius: 2rem;
   background-color: #00000033;
   backdrop-filter: blur(10px);
   padding: 2rem;
-  display: flex;
-  align-items: center;
   justify-content: center;
   text-align: center;
   flex-direction: column;
@@ -131,7 +129,7 @@ const PaymentsWay = styled.li`
     top: 2rem;
     width: 1.1rem;
     height: 1.1rem;
-    background-image: url(/images/ellipse.svg);
+    background-image: url(images/ellipse.svg);
     background-repeat: no-repeat;
   }
 `;

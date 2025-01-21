@@ -12,16 +12,16 @@ const Hero = styled.section`
 position: relative;
 width: 100%;
 height: 130rem;
-  background-image: url(/images/hero-background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+background-image: url(images/hero-background.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
 
   &::after {
     position: absolute;
     width: 100%;
-height: 102rem;
-    background-image: url(/images/hero-img.png);
+    height: 102rem;
+    background-image: url(images/hero-img.png);
     content: '';
     background-repeat: no-repeat;
     background-size: cover;
@@ -80,7 +80,7 @@ const Catalog = styled.section`
   width: 100%;
   height: 100rem;
   margin-top: 2rem;
-  background-image: url(/images/home-catalog.png);
+  background-image: url(images/home-catalog.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center -15rem;
@@ -107,7 +107,6 @@ const CatalogTitle = styled.h2`
   font-size: 10rem;
   font-weight: 400;
   line-height: 12rem;
-  @include text(10rem, 400, 12rem);
   letter-spacing: 0.02rem;
   text-transform: uppercase;
 `;
@@ -186,7 +185,7 @@ const CatalogOther = styled.div`
 const Bestsellers = styled.section`
   width: 100%;
   height: 110rem;
-  background-image: url(/images/bestseller_back.png);
+  background-image: url(images/bestseller_back.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 10rem;
@@ -196,7 +195,7 @@ const BestsellersBlock = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   margin-bottom: 18rem;
-  background-image: url(/images/bestsellers.png);
+  background-image: url(images/bestsellers.png);
   background-repeat: no-repeat;
   background-size: 90rem 65rem;
   background-position: right 2.5rem;
@@ -268,7 +267,7 @@ const Order = styled.section`
     width: 100%;
     height: 102rem;
     content: '';
-    background-image: url(/images/order-section.png);
+    background-image: url(images/order-section.png);
     background-repeat: no-repeat;
     background-size: 45rem 84.5rem;
     background-position: left 4rem;
@@ -280,7 +279,7 @@ const Order = styled.section`
     width: 30rem;
     height: 20rem;
     content: '';
-    background-image: url(/images/order-section-lover-flower.png);
+    background-image: url(images/order-section-lover-flower.png);
     background-repeat: no-repeat;
     background-size: 30rem 20rem;
     background-position: center;
@@ -372,7 +371,7 @@ const Special = styled.section`
     content: '';
     width: 100%;
     height: 80rem;
-    background-image: url(/images/special.png);
+    background-image: url(images/special.png);
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
@@ -451,7 +450,7 @@ const SpecialList = styled.ul`
     position: absolute;
     width: 2rem;
     height: 6rem;
-    background-image: url(/images/arrow-oval.svg);
+    background-image: url(images/arrow-oval.svg);
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
@@ -482,7 +481,7 @@ const Questions = styled.section`
     content: '';
     width: 100%;
     height: 100rem;
-    background-image: url(/images/questions-section.png);
+    background-image: url(images/questions-section.png);
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
@@ -616,7 +615,7 @@ const QuestionsFormTextSpan = styled.span`
 
 const Instagram = styled.section`
   padding: 20rem 0;
-  background-image: url(/images/social-section-back.png);
+  background-image: url(images/social-section-back.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center -6rem;
@@ -747,7 +746,7 @@ const HomePage = () => {
             </BestsellersList>
             <BestsellersLink to="catalog">
               Дивитись весь каталог
-              <img src="/images/arrow-catalog.svg" alt="arrow" />
+              <img src="images/arrow-catalog.svg" alt="arrow" />
             </BestsellersLink>
           </BestsellersBlock>
         </Container>
@@ -883,13 +882,13 @@ const HomePage = () => {
         <Container>
           <InstagramBlock>
             <InstagramBlock>
-              <img src="/images/inst1.png" alt="ins1" />
-              <img src="/images/inst2.png" alt="ins2" />
-              <img src="/images/inst3.png" alt="ins3" />
-              <img src="/images/inst4.png" alt="ins4" />
+              <img src="images/inst1.png" alt="ins1" />
+              <img src="images/inst2.png" alt="ins2" />
+              <img src="images/inst3.png" alt="ins3" />
+              <img src="images/inst4.png" alt="ins4" />
             </InstagramBlock>
             <InstagramTitle
-              src="/images/our-social-networks.png"
+              src="images/our-social-networks.png"
               alt="Our social media"
             />
             <InstagramSocials>

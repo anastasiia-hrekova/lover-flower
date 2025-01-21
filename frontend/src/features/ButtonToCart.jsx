@@ -159,7 +159,7 @@ const ButtonToCart = () => {
         <Overlay>
           <OpenCart>
             <CloseCartBtn onClick={() => setCartOpen((cartOpen = !cartOpen))}>
-              <img src="/images/closeX.png" alt="close" />
+              <img src="images/closeX.png" alt="close" />
             </CloseCartBtn>
             <Cart />
             <TotalBlock>

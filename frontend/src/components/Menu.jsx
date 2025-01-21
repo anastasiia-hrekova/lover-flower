@@ -57,8 +57,7 @@ const MenuAddition = styled.div.withConfig({
   opacity: ${({ isScrolled }) => (isScrolled ? 1 : 0)};
   visibility: ${({ isScrolled }) => (isScrolled ? 'visible' : 'hidden')};
   transition: opacity 0.5s ease, visibility 0.5s ease;
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.mixins.flex};
   flex-direction: row;
   justify-content: flex-end;
   gap: 2.5rem;
@@ -98,7 +97,7 @@ const Menu = () => {
         <Nav>
           <FixedMenu>
             <NavLink to="/">
-              <Logo src="/images/logo.png" alt="logo" />
+              <Logo src="images/logo.png" alt="logo" />
             </NavLink>
             <NavLinkStyled to="catalog">Каталог</NavLinkStyled>
             <NavLinkStyled to="delivery&pay">Доставка та оплата</NavLinkStyled>

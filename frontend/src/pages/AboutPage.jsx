@@ -5,7 +5,7 @@ import Container from '../styles/Container';
 
 const About = styled.div`
   position: relative;
-  background-image: url(/images/about-background.png);
+  background-image: url(images/about-background.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -16,7 +16,7 @@ const About = styled.div`
 
   &::after {
     position: absolute;
-    background-image: url(/images/about-after.png);
+    background-image: url(images/about-after.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

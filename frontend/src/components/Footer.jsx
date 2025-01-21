@@ -71,7 +71,7 @@ const Footer = () => {
         <FooterStyles>
           <FooterPayment>
             <NavLink to="/">
-              <img className="menu__logo" src="/images/logo.png" alt="logo" />
+              <img className="menu__logo" src="images/logo.png" alt="logo" />
             </NavLink>
             <FooterTitle>Реквізити</FooterTitle>
             <p>

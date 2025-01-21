@@ -20,7 +20,7 @@ import Filteres from '../features/Filteres';
 
 const CatalogBlock = styled.div`
   position: relative;
-  background-image: url(/images/catalog-top.png);
+  background-image: url(images/catalog-top.png);
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100%;
@@ -31,7 +31,7 @@ const CatalogBlock = styled.div`
 
   &:after {
     position: absolute;
-    background-image: url(/images/catalog-bottom.png);
+    background-image: url(images/catalog-bottom.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

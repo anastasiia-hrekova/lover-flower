@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const Contacts = styled.div`
   position: relative;
-  background-image: url(/images/contacts-back.png);
+  background-image: url(images/contacts-back.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -28,22 +28,20 @@ const ContactsTitle = styled.h1`
 `;
 
 const ContactsBlock = styled.ul`
-  display: flex;
+  ${({ theme }) => theme.mixins.flex};
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
   margin-bottom: 14rem;
 `;
 
 const ContactsBlockLi = styled.li`
+  ${({ theme }) => theme.mixins.flex};
   width: 25.5rem;
   height: 25.5rem;
   border-radius: 2rem;
   background-color: #00000033;
   backdrop-filter: blur(8px);
   padding: 2rem;
-  display: flex;
-  align-items: center;
   justify-content: center;
   text-align: center;
   flex-direction: column;
@@ -80,7 +78,7 @@ const QuestionsBlock = styled.div`
     content: '';
     width: 50rem;
     height: 40rem;
-    background-image: url(/images/contacts-after.png);
+    background-image: url(images/contacts-after.png);
     background-repeat: no-repeat;
     top: 45%;
     left: 25%;

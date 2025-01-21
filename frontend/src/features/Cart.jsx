@@ -65,12 +65,11 @@ const ProductTitle = styled.h3`
 `;
 
 const ProductQuantityBlock = styled.div`
-  display: flex;
+  ${({ theme }) => theme.mixins.flex};
   flex-direction: row;
   width: 10rem;
   height: 3rem;
   border: 0.5px solid #555555;
-  align-items: center;
   justify-content: space-around;
   color: #555555;
   font-family: 'Oswald', sans-serif;
@@ -151,7 +150,7 @@ const Cart = () => {
         <CartTitle>Ваша корзина</CartTitle>
       )}
       <Line></Line>
-      {cart.length === 0 ? (
+      {cart.items.length === 0 ? (
         <ProductTitle>Корзина порожня</ProductTitle>
       ) : (
         <>

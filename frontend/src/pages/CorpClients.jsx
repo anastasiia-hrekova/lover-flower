@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const Corporation = styled.div`
   position: relative;
-  background-image: url(/images/bouquets-back.png);
+  background-image: url(images/bouquets-back.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -17,7 +17,7 @@ const Corporation = styled.div`
 
   &::after {
     position: absolute;
-    background-image: url(/images/bouquets-1.png);
+    background-image: url(images/bouquets-1.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -31,7 +31,7 @@ const Corporation = styled.div`
 
   &::before {
     position: absolute;
-    background-image: url(/images/bouquets-2.png);
+    background-image: url(images/bouquets-2.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -131,7 +131,7 @@ const ListBlock = styled.div`
 
   &::before {
     position: absolute;
-    background-image: url(/images/bouquets-4.png);
+    background-image: url(images/bouquets-4.png);
     background-repeat: no-repeat;
     background-position: left;
     background-size: cover;
@@ -145,7 +145,7 @@ const ListBlock = styled.div`
 
   &::after {
     position: absolute;
-    background-image: url(/images/bouquets-3.png);
+    background-image: url(images/bouquets-3.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -181,9 +181,8 @@ const ListBlockTitles = styled.p`
 `;
 
 const ListBlockText = styled.p`
-  display: flex;
+  ${({ theme }) => theme.mixins.flex};
   text-align: center;
-  align-items: center;
   justify-content: center;
 `;
 
@@ -277,7 +276,7 @@ const FormBlockRight = styled.div`
 
   &::after {
     position: absolute;
-    background-image: url(/images/bouquets-lover.png);
+    background-image: url(images/bouquets-lover.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
