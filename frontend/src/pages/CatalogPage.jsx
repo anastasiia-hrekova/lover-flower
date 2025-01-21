@@ -183,7 +183,7 @@ const CatalogPage = () => {
         : true;
 
       const matchesPrice =
-        item.price >= filters.price[0] && item.price <= filters.price[1];
+        item.price >= filters.price.min && item.price <= filters.price.max;
 
       return (
         matchesType &&

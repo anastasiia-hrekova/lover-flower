@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { setPriceFilter } from '../redux/slices/filterSlice';
 
 const StyledRangeWrapper = styled.div`
   position: relative;
@@ -56,42 +58,39 @@ const StyledRangeInput = styled.input.attrs({ type: 'range' })`
   }
 `;
 
-const PriceRange = ({ min, max, values, onChange }) => {
-  const [minValue, maxValue] = values;
+const PriceFilter = ({ priceRange }) => {
+  const dispatch = useDispatch();
 
   const handleMinChange = e => {
-    const value = Math.min(Number(e.target.value), maxValue - 1);
-    onChange([value, maxValue]);
+    dispatch(setPriceFilter({ min: Number(e.target.value) }));
   };
 
   const handleMaxChange = e => {
-    const value = Math.max(Number(e.target.value), minValue + 1);
-    onChange([minValue, value]);
+    dispatch(setPriceFilter({ max: Number(e.target.value) }));
   };
-
-  const leftPercentage = ((minValue - min) / (max - min)) * 100;
-  const rightPercentage = ((maxValue - min) / (max - min)) * 100;
 
   return (
     <StyledRangeWrapper>
       <StyledRangeTrack />
-      <StyledRangeHighlight $left={leftPercentage} $right={rightPercentage} />
+      <StyledRangeHighlight $left={priceRange.min} $right={priceRange.max} />
       <StyledRangeInput
-        min={min}
-        max={max}
-        value={minValue}
+        type="range"
+        min={0}
+        max={2000}
+        step="10"
+        value={priceRange.min}
         onChange={handleMinChange}
-        style={{ zIndex: minValue === maxValue ? 1 : 2 }}
       />
       <StyledRangeInput
-        min={min}
-        max={max}
-        value={maxValue}
+        type="range"
+        min={0}
+        max={2000}
+        step="10"
+        value={priceRange.max}
         onChange={handleMaxChange}
-        style={{ zIndex: minValue === maxValue ? 2 : 1 }}
       />
     </StyledRangeWrapper>
   );
 };
 
-export default PriceRange;
+export default PriceFilter;

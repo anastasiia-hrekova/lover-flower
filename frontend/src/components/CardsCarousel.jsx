@@ -30,7 +30,7 @@ const CardsCarousel = () => {
   useEffect(() => {
     const updateCardsToShow = () => {
       const width = window.innerWidth;
-      if (width < +600) {
+      if (width < 500) {
         setCardsToShow(1);
       } else if (width <= 1024) {
         setCardsToShow(2);

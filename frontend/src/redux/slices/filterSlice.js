@@ -6,7 +6,7 @@ const initialState = {
   flowerColor: [],
   colorShade: [],
   format: [],
-  price: [0, 1000],
+  price: { min: 0, max: 2000 },
 };
 
 const filterSlice = createSlice({
@@ -29,7 +29,7 @@ const filterSlice = createSlice({
       state.format = action.payload;
     },
     setPriceFilter: (state, action) => {
-      state.price = action.payload;
+      state.price = { ...state.price, ...action.payload };
     },
     resetFilters: () => {
       return initialState;

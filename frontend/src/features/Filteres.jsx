@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
 import {
   setTypeFilter,
   setColorFilter,
@@ -13,7 +12,7 @@ import {
   selectPriceFilter,
 } from '../redux/slices/filterSlice';
 import styled from 'styled-components';
-import PriceRange from './PriceRange';
+import PriceFilter from './PriceRange';
 
 const CatalogSort = styled.div`
   background-color: #00000033;
@@ -98,13 +97,12 @@ const PriceSortText = styled.p`
 `;
 
 const Filteres = () => {
-  const [priceRange, setPriceRange] = useState([100, 900]);
   const dispatch = useDispatch();
   const typeFilter = useSelector(selectTypeFilter);
   const colorFilter = useSelector(selectColorFilter);
   const colorShadeFilter = useSelector(selectColorShadeFilter);
   const formatFilter = useSelector(selectFormatFilter);
-  const priceFilter = useSelector(selectPriceFilter);
+  const priceRange = useSelector(selectPriceFilter);
 
   const handleCheckboxChange = (filterType, value) => {
     const currentFilter = {
@@ -210,15 +208,10 @@ const Filteres = () => {
       </div>
       <div>
         <CatalogSortTitle>Вартість</CatalogSortTitle>
-        <PriceRange
-          min={0}
-          max={1000}
-          values={priceFilter}
-          onChange={newRange => dispatch(setPriceRange(newRange))}
-        />
+        <PriceFilter priceRange={priceRange} />
         <PriceSortText>
           <br />
-          Ціна: {priceRange[0]} грн - {priceRange[1]} грн
+          Ціна: {priceRange.min} грн - {priceRange.max} грн
         </PriceSortText>
       </div>
       <div>

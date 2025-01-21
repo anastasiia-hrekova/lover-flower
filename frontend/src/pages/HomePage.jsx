@@ -28,6 +28,7 @@ background-position: center;
     background-position: center;
     z-index: 0;
     top: 0;
+
 `;
 
 // HERO SECTION

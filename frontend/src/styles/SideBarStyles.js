@@ -23,6 +23,10 @@ export const SidebarBlock = styled.div`
   font-family: 'Oswald', sans-serif;
   letter-spacing: 0.1rem;
   gap: 6rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: none;
+  }
 `;
 
 export const AccentText = styled.h3`
@@ -68,7 +72,7 @@ export const SocialImg = styled.img`
 `;
 
 export const SidebarCall = styled.div`
-  ${({ theme }) => theme.mixins.flex};
+  display: flex;
   align-self: flex-end;
   flex-direction: column;
   font-size: 1.6rem;

@@ -20,6 +20,7 @@ const Header = styled.header.withConfig({
 `;
 
 const Nav = styled.nav`
+  width: 100%;
   ${({ theme }) => theme.mixins.flex};
   justify-content: space-between;
   flex-direction: row;
@@ -107,7 +108,7 @@ const Menu = () => {
             <SearchBar onSearch={handleSearch} />
           </FixedMenu>
           <MenuAddition isScrolled={isScrolled}>
-            <PhoneLink href="tel:+380971136969">
+            <PhoneLink>
               <PhoneLinkImg src="images/phone.svg" alt="call" />
               +380 (97) 113-69-69
             </PhoneLink>

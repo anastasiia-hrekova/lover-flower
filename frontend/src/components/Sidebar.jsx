@@ -16,9 +16,10 @@ import {
 
 const SidebarStyle = styled.aside`
   position: absolute;
+  display: flex;
   z-index: 2;
   text-transform: uppercase;
-  right: 10%;
+  right: 16%;
   top: 3rem;
   transform: translateX(100%);
   animation: slideIn 1s ease-out forwards;
@@ -31,9 +32,6 @@ const SidebarStyle = styled.aside`
       transform: translateX(0); 
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    display: none;
-  }
 `;
 
 const Sidebar = () => {
@@ -70,7 +68,7 @@ const Sidebar = () => {
         <SidebarCall>
           <PhoneLink>+380 (97) 113-69-69</PhoneLink>
           <CallBtn>
-            <PhoneLink href="tel:+380971136969">
+            <PhoneLink>
               <PhoneLinkImg src="images/phone.svg" alt="call" />
               Замовити дзвінок
             </PhoneLink>

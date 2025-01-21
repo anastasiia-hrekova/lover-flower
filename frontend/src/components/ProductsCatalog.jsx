@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFlowers } from '../redux/slices/cardsSlice';
 import { selectLoading, selectError } from '../redux/slices/cardsSlice';
-import { v4 as uuidv4 } from 'uuid';
 import Card from '../components/Card';
 import styled from 'styled-components';
 
@@ -56,7 +55,7 @@ const ProductsCatalog = ({ flowers }) => {
       window.innerHeight + document.documentElement.scrollTop ===
         document.documentElement.offsetHeight &&
       !isLoading &&
-      hasMore
+      !hasMore
     ) {
       setPage(prevPage => prevPage + 1);
       setLimit(prevLimit => prevLimit + 12);
@@ -94,7 +93,7 @@ const ProductsCatalog = ({ flowers }) => {
     <>
       <CatalogCards>
         {flowers.map(card => (
-          <Card cardData={card} key={uuidv4()} />
+          <Card cardData={card} key={card.id} />
         ))}
       </CatalogCards>
       {!hasMore && <div></div>}
