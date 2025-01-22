@@ -8,7 +8,7 @@ const titles = {
   contacts: 'Контакти',
   corporation: 'Корпоративним клієнтам',
   product: 'Продукт',
-  order: 'Оформлення замовлення',
+  checkout: 'Оформлення замовлення',
 };
 
 const BreadcrumbsContainer = styled.nav`

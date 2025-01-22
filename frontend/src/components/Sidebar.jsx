@@ -19,7 +19,7 @@ const SidebarStyle = styled.aside`
   display: flex;
   z-index: 2;
   text-transform: uppercase;
-  right: 16%;
+  right: 14%;
   top: 3rem;
   transform: translateX(100%);
   animation: slideIn 1s ease-out forwards;
