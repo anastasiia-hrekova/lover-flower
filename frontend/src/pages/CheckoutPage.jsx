@@ -60,7 +60,6 @@ const OrderTitle = styled.h3`
 
 const OrderForm = styled.form`
   display: flex;
-  align-items: left;
   flex-direction: column;
   gap: 2rem;
   margin-bottom: 18.8rem;
@@ -237,6 +236,12 @@ const PrivacyBlockSpan = styled.span`
   text-decoration: underline;
 `;
 
+const InputBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+`;
+
 const CheckoutPage = () => {
   const location = useLocation();
   const { cart } = location.state || { cart: { items: [] } };
@@ -281,20 +286,33 @@ const CheckoutPage = () => {
               <OrderTitle>Оформлення замовлення</OrderTitle>
               <OrderForm>
                 <FormTitles>Контактні данні</FormTitles>
-                <FormLabels></FormLabels>
-                <ContactsDataInput></ContactsDataInput>
-                <FormLabels></FormLabels>
-                <ContactsDataInput></ContactsDataInput>
-                <FormLabels></FormLabels>
-                <ContactsDataInput></ContactsDataInput>
-                <FormLabels></FormLabels>
-                <ContactsDataInput></ContactsDataInput>
-                <FormLabels></FormLabels>
-                <ContactsDataInput></ContactsDataInput>
-                <FormLabels></FormLabels>
-                <ContactsDataInput
-                  style={{ marginBottom: '6rem' }}
-                ></ContactsDataInput>
+                <InputBlock>
+                  <FormLabels>Ваше ім'я*</FormLabels>
+                  <ContactsDataInput placeholder="Введіь ваше ім`/я" />
+                </InputBlock>
+                <InputBlock>
+                  <FormLabels>Ваш телефон*</FormLabels>
+                  <ContactsDataInput placeholder="+380 (97) 777-77-77" />
+                </InputBlock>
+                <InputBlock>
+                  <FormLabels>Ваш e-mail*</FormLabels>
+                  <ContactsDataInput placeholder="Введіь вашу пошту" />
+                </InputBlock>
+                <InputBlock>
+                  <FormLabels>Телефон отримувача (не обов'язково)</FormLabels>
+                  <ContactsDataInput placeholder="+380 (97) 777-77-77" />
+                </InputBlock>
+                <InputBlock>
+                  <FormLabels>Ім'я отримувача (не обов'язково)</FormLabels>
+                  <ContactsDataInput placeholder="Введіь ім`/я отримувача" />
+                </InputBlock>
+                <InputBlock>
+                  <FormLabels>Коментарій до замовлення</FormLabels>
+                  <ContactsDataInput
+                    placeholder="Примітки до замовлення, особливі побажання відділу доставки"
+                    style={{ marginBottom: '6rem' }}
+                  />
+                </InputBlock>
 
                 <FormTitles>Доставка</FormTitles>
                 {delCheckboxes.map(({ id, label }) => (
@@ -311,28 +329,41 @@ const CheckoutPage = () => {
                     {label}
                   </CheckboxLabel>
                 ))}
-                <FormLabels></FormLabels>
-                <ContactsDataInput></ContactsDataInput>
-                <FormLabels></FormLabels>
-                <ContactsDataInput></ContactsDataInput>
-                <div>
-                  <FormLabels></FormLabels>
-                  <ContactsDataInput
-                    style={{ width: '16rem', marginRight: '3rem' }}
-                  ></ContactsDataInput>
-                  <FormLabels></FormLabels>
-                  <ContactsDataInput
-                    style={{ width: '16rem', marginRight: '3rem' }}
-                  ></ContactsDataInput>
-                  <FormLabels></FormLabels>
-                  <ContactsDataInput
-                    style={{ width: '16rem' }}
-                  ></ContactsDataInput>
+                <InputBlock>
+                  <FormLabels>Місто*</FormLabels>
+                  <ContactsDataInput placeholder="Оберіть місто" />
+                </InputBlock>
+                <InputBlock>
+                  <FormLabels>Вулиця*</FormLabels>
+                  <ContactsDataInput placeholder="Введіь вулицю" />
+                </InputBlock>
+                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                  <InputBlock style={{ flexDirection: 'column' }}>
+                    <FormLabels>Корп/стр</FormLabels>
+                    <ContactsDataInput
+                      placeholder="Корп/стр"
+                      style={{ width: '16rem', marginRight: '3rem' }}
+                    />
+                  </InputBlock>
+                  <InputBlock style={{ flexDirection: 'column' }}>
+                    <FormLabels>Будинок</FormLabels>
+                    <ContactsDataInput
+                      placeholder="Будинок"
+                      style={{ width: '16rem', marginRight: '3rem' }}
+                    />
+                  </InputBlock>
+                  <InputBlock style={{ flexDirection: 'column' }}>
+                    <FormLabels>Кв/офіс</FormLabels>
+                    <ContactsDataInput
+                      placeholder="Кв/офіс"
+                      style={{ width: '16rem' }}
+                    />
+                  </InputBlock>
                 </div>
-                <FormLabels></FormLabels>
-                <ContactsDataInput
-                  style={{ width: '16rem' }}
-                ></ContactsDataInput>
+                <InputBlock>
+                  <FormLabels>Час доставки</FormLabels>
+                  <ContactsDataInput style={{ width: '16rem' }} />
+                </InputBlock>
                 <DeliveryTotal>Вартість доставки 0 грн</DeliveryTotal>
 
                 <FormTitles>Оплата</FormTitles>
@@ -362,6 +393,7 @@ const CheckoutPage = () => {
                     Промокод
                   </FormTitles>
                   <ContactsDataInput
+                    placeholder="Промокод"
                     style={{ width: '16rem' }}
                   ></ContactsDataInput>
                   <PromoBtn>Застосувати</PromoBtn>
