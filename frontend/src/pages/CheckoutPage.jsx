@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 const OrderBlock = styled.div`
   position: relative;
   width: 100%;
-  height: 260rem;
+  height: auto;
   padding-top: 10rem;
   background-image: url(images/order-page-back.png);
   background-size: cover;
@@ -63,6 +63,7 @@ const OrderForm = styled.form`
   align-items: left;
   flex-direction: column;
   gap: 2rem;
+  margin-bottom: 18.8rem;
 `;
 
 const FormTitles = styled.p`
@@ -96,6 +97,27 @@ const ContactsDataInput = styled.input`
   font-weight: 400;
   line-height: 2.1rem;
   letter-spacing: 0.04rem;
+`;
+
+const DeliveryTotal = styled.p`
+  color: #555555;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+`;
+
+const TotalPriceAdd = styled.p`
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.textColor};
 `;
 
 const CheckboxLabel = styled.label`
@@ -173,6 +195,7 @@ const ToPayBtn = styled.button`
   line-height: 1.8rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+  margin-top: 3rem;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.buttonHover};
@@ -199,6 +222,21 @@ const TotalPrice = styled.p`
   text-transform: uppercase;
 `;
 
+const PrivacyBlock = styled.p`
+  color: ${({ theme }) => theme.colors.textColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+  letter-spacing: 0.02rem;
+  width: 32.7rem;
+`;
+
+const PrivacyBlockSpan = styled.span`
+  color: ${({ theme }) => theme.colors.accentColor};
+  text-decoration: underline;
+`;
+
 const CheckoutPage = () => {
   const location = useLocation();
   const { cart } = location.state || { cart: { items: [] } };
@@ -215,6 +253,19 @@ const CheckoutPage = () => {
     (sum, item) => sum + item.price * item.quantity,
     0,
   );
+
+  const delCheckboxes = [
+    { id: 'pickup', label: 'Самовивіз' },
+    { id: 'courier', label: "Доставка кур'єром" },
+  ];
+
+  const payCheckboxes = [
+    { id: 'card', label: 'Банківська карта' },
+    { id: 'cash', label: 'Готівкою' },
+    { id: 'applePay', label: 'Apple pay' },
+    { id: 'googlePay', label: 'Google pay' },
+    { id: 'crypto', label: 'Криптовалютою' },
+  ];
 
   return (
     <>
@@ -241,33 +292,25 @@ const CheckoutPage = () => {
                 <FormLabels></FormLabels>
                 <ContactsDataInput></ContactsDataInput>
                 <FormLabels></FormLabels>
-                <ContactsDataInput></ContactsDataInput>
+                <ContactsDataInput
+                  style={{ marginBottom: '6rem' }}
+                ></ContactsDataInput>
 
                 <FormTitles>Доставка</FormTitles>
-                <CheckboxLabel checked={checked}>
-                  <CheckboxInput
-                    type="checkbox"
-                    id="checkbox"
-                    checked={checked}
-                    onChange={handleChange}
-                  />
-                  <OuterCircle htmlFor="checkbox" checked={checked}>
-                    <InnerCircle checked={checked} />
-                  </OuterCircle>
-                  Самовивіз
-                </CheckboxLabel>
-                <CheckboxLabel checked={checked}>
-                  <CheckboxInput
-                    type="checkbox"
-                    id="checkbox"
-                    checked={checked}
-                    onChange={handleChange}
-                  />
-                  <OuterCircle htmlFor="checkbox" checked={checked}>
-                    <InnerCircle checked={checked} />
-                  </OuterCircle>
-                  Доставка кур'єром
-                </CheckboxLabel>
+                {delCheckboxes.map(({ id, label }) => (
+                  <CheckboxLabel key={id} checked={checked[id]}>
+                    <CheckboxInput
+                      type="checkbox"
+                      id={id}
+                      checked={!!checked[id]}
+                      onChange={() => handleChange(id)}
+                    />
+                    <OuterCircle htmlFor="checkbox" checked={checked[id]}>
+                      <InnerCircle checked={checked[id]} />
+                    </OuterCircle>
+                    {label}
+                  </CheckboxLabel>
+                ))}
                 <FormLabels></FormLabels>
                 <ContactsDataInput></ContactsDataInput>
                 <FormLabels></FormLabels>
@@ -275,11 +318,11 @@ const CheckoutPage = () => {
                 <div>
                   <FormLabels></FormLabels>
                   <ContactsDataInput
-                    style={{ width: '16rem' }}
+                    style={{ width: '16rem', marginRight: '3rem' }}
                   ></ContactsDataInput>
                   <FormLabels></FormLabels>
                   <ContactsDataInput
-                    style={{ width: '16rem' }}
+                    style={{ width: '16rem', marginRight: '3rem' }}
                   ></ContactsDataInput>
                   <FormLabels></FormLabels>
                   <ContactsDataInput
@@ -290,75 +333,30 @@ const CheckoutPage = () => {
                 <ContactsDataInput
                   style={{ width: '16rem' }}
                 ></ContactsDataInput>
-                <p>Вартість доставки 0 грн</p>
+                <DeliveryTotal>Вартість доставки 0 грн</DeliveryTotal>
 
                 <FormTitles>Оплата</FormTitles>
-                <CheckboxLabel checked={checked}>
-                  <CheckboxInput
-                    type="checkbox"
-                    id="checkbox"
-                    checked={checked}
-                    onChange={handleChange}
-                  />
-                  <OuterCircle htmlFor="checkbox" checked={checked}>
-                    <InnerCircle checked={checked} />
-                  </OuterCircle>
-                  Банківська карта
-                </CheckboxLabel>
-                <CheckboxLabel checked={checked}>
-                  <CheckboxInput
-                    type="checkbox"
-                    id="checkbox"
-                    checked={checked}
-                    onChange={handleChange}
-                  />
-                  <OuterCircle htmlFor="checkbox" checked={checked}>
-                    <InnerCircle checked={checked} />
-                  </OuterCircle>
-                  Готівкою
-                </CheckboxLabel>
-                <CheckboxLabel checked={checked}>
-                  <CheckboxInput
-                    type="checkbox"
-                    id="checkbox"
-                    checked={checked}
-                    onChange={handleChange}
-                  />
-                  <OuterCircle htmlFor="checkbox" checked={checked}>
-                    <InnerCircle checked={checked} />
-                  </OuterCircle>
-                  Apple pay
-                </CheckboxLabel>
-                <CheckboxLabel checked={checked}>
-                  <CheckboxInput
-                    type="checkbox"
-                    id="checkbox"
-                    checked={checked}
-                    onChange={handleChange}
-                  />
-                  <OuterCircle htmlFor="checkbox" checked={checked}>
-                    <InnerCircle checked={checked} />
-                  </OuterCircle>
-                  Goofle pay
-                </CheckboxLabel>
-                <CheckboxLabel checked={checked}>
-                  <CheckboxInput
-                    type="checkbox"
-                    id="checkbox"
-                    checked={checked}
-                    onChange={handleChange}
-                  />
-                  <OuterCircle htmlFor="checkbox" checked={checked}>
-                    <InnerCircle checked={checked} />
-                  </OuterCircle>
-                  Криптовалютою
-                </CheckboxLabel>
+                {payCheckboxes.map(({ id, label }) => (
+                  <CheckboxLabel key={id} checked={checked[id]}>
+                    <CheckboxInput
+                      type="checkbox"
+                      id={id}
+                      checked={!!checked[id]}
+                      onChange={() => handleChange(id)}
+                    />
+                    <OuterCircle htmlFor="checkbox" checked={checked[id]}>
+                      <InnerCircle checked={checked[id]} />
+                    </OuterCircle>
+                    {label}
+                  </CheckboxLabel>
+                ))}
 
                 <div>
                   <FormTitles
                     style={{
                       textTransform: 'none',
                       marginBottom: '0.4rem',
+                      marginTop: '6rem',
                     }}
                   >
                     Промокод
@@ -371,20 +369,24 @@ const CheckoutPage = () => {
 
                 <OrderTitle
                   style={{
-                    margin: '0',
+                    marginTop: '6rem',
+                    marginBottom: '0',
                   }}
                 >
                   Загальна вартість замовлення грн
                 </OrderTitle>
-                <p>Знижка = 0 грн</p>
-                <p>Доставка = 0 грн</p>
+                <TotalPriceAdd>Знижка = 0 грн</TotalPriceAdd>
+                <TotalPriceAdd>Доставка = 0 грн</TotalPriceAdd>
                 <ToPayBtn>До сплати</ToPayBtn>
-                <p>
+                <PrivacyBlock>
                   Натискаючи на кнопку «До Оплати», я даю свою згоду на обробку
                   персональних даних, відповідно до
-                  <span>Політики конфіденційності</span>, а також ознайомлений з
-                  умовами оплати та доставки
-                </p>
+                  <PrivacyBlockSpan>
+                    {' '}
+                    Політики конфіденційності
+                  </PrivacyBlockSpan>
+                  , а також ознайомлений з умовами оплати та доставки
+                </PrivacyBlock>
               </OrderForm>
             </Order>
             <ProductsBlock>
