@@ -4,6 +4,7 @@ import {
   removeFromCart,
   incrementQuantity,
   decrementQuantity,
+  selectTotalPrice,
 } from '../redux/slices/cartSlice';
 import { useLocation } from 'react-router-dom';
 
@@ -34,6 +35,7 @@ const ProductBlock = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 2rem;
 `;
 
 const ProductPartLeft = styled.div`
@@ -137,6 +139,7 @@ const Cart = () => {
   const isOpen = useSelector(state => state.cart);
   const dispatch = useDispatch();
   const location = useLocation();
+  const totalPrice = useSelector(selectTotalPrice);
 
   const isCheckoutPage = location.pathname === '/checkout';
 
@@ -155,7 +158,7 @@ const Cart = () => {
       ) : (
         <>
           {cart.items.map(item => (
-            <>
+            <div>
               <ProductBlock key={item.id}>
                 <ProductPartLeft>
                   <ProductImg src={item.image} alt="flower" />
@@ -181,14 +184,14 @@ const Cart = () => {
                   </ProductPartCenter>
                 </ProductPartLeft>
                 <ProductPartRight>
-                  <ProductPrice>{item.quantity * item.price} грн</ProductPrice>
+                  <ProductPrice>{totalPrice} грн</ProductPrice>
                   <DeleteBtn onClick={() => dispatch(removeFromCart(item.id))}>
                     Видалити
                   </DeleteBtn>
                 </ProductPartRight>
               </ProductBlock>
               <Line></Line>
-            </>
+            </div>
           ))}
         </>
       )}

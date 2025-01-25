@@ -1,10 +1,11 @@
-import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import styled from 'styled-components';
 import Container from '../styles/Container';
 import Cart from '../features/Cart';
 import Breadcrumbs from '../components/BreadcrumbsContainer';
 import Footer from '../components/Footer';
+import { useSelector } from 'react-redux';
+import { selectTotalPrice } from '../redux/slices/cartSlice';
 
 const OrderBlock = styled.div`
   position: relative;
@@ -19,6 +20,7 @@ const OrderBlock = styled.div`
 `;
 
 const OrderBlockTitle = styled.h1`
+  position: relative;
   font-size: 10rem;
   font-weight: 400;
   line-height: 12rem;
@@ -27,6 +29,16 @@ const OrderBlockTitle = styled.h1`
   font-family: 'Cormorant', serif;
   text-transform: uppercase;
   margin-bottom: 8rem;
+
+  &::after {
+    position: absolute;
+    content: '';
+    background-image: url(images/lover-flower-order.png);
+    background-repeat: no-repeat;
+    width: 30.5rem;
+    height: 19rem;
+    top: 50%;
+  }
 `;
 
 const OrderTitleSpan = styled.span`
@@ -222,6 +234,7 @@ const TotalPrice = styled.p`
 `;
 
 const PrivacyBlock = styled.p`
+  position: relative;
   color: ${({ theme }) => theme.colors.textColor};
   font-family: 'Oswald', sans-serif;
   font-size: 1rem;
@@ -229,6 +242,17 @@ const PrivacyBlock = styled.p`
   line-height: 1.2rem;
   letter-spacing: 0.02rem;
   width: 32.7rem;
+
+  &::after {
+    position: absolute;
+    content: '';
+    background-image: url(images/payment.png);
+    background-repeat: no-repeat;
+    width: 25rem;
+    height: 17rem;
+    top: -160%;
+    right: -70%;
+  }
 `;
 
 const PrivacyBlockSpan = styled.span`
@@ -243,9 +267,8 @@ const InputBlock = styled.div`
 `;
 
 const CheckoutPage = () => {
-  const location = useLocation();
-  const { cart } = location.state || { cart: { items: [] } };
   const [checked, setChecked] = useState({});
+  const totalPrice = useSelector(selectTotalPrice);
 
   const handleChange = checkboxId => {
     setChecked(prevState => ({
@@ -253,11 +276,6 @@ const CheckoutPage = () => {
       [checkboxId]: !prevState[checkboxId],
     }));
   };
-
-  const totalProductAmount = cart.items.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0,
-  );
 
   const delCheckboxes = [
     { id: 'pickup', label: 'Самовивіз' },
@@ -362,7 +380,13 @@ const CheckoutPage = () => {
                 </div>
                 <InputBlock>
                   <FormLabels>Час доставки</FormLabels>
-                  <ContactsDataInput style={{ width: '16rem' }} />
+                  <ContactsDataInput
+                    type="time"
+                    style={{
+                      width: '16rem',
+                      fontSize: '2.5rem',
+                    }}
+                  />
                 </InputBlock>
                 <DeliveryTotal>Вартість доставки 0 грн</DeliveryTotal>
 
@@ -423,9 +447,7 @@ const CheckoutPage = () => {
             </Order>
             <ProductsBlock>
               <Cart />
-              <TotalPrice>
-                Попередній підсумок: {totalProductAmount.toFixed(2)} грн
-              </TotalPrice>
+              <TotalPrice>Попередній підсумок: {totalPrice} грн</TotalPrice>
             </ProductsBlock>
           </OrderContent>
         </Container>
