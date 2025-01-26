@@ -7,9 +7,10 @@ import AboutPage from './pages/AboutPage';
 import ContactsPage from './pages/ContactsPage';
 import FaqPage from './pages/FaqPage';
 import NotFound from './pages/NotFound';
-import MainLayout from './layouts/MainLayout';
 import CorpClients from './pages/CorpClients';
 import CheckoutPage from './pages/CheckoutPage';
+import SuccessPage from './pages/SuccessPage';
+import MainLayout from './layouts/MainLayout';
 import ButtonToCart from './features/ButtonToCart';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="cart" element={<ButtonToCart />} />
             <Route path="corporation" element={<CorpClients />} />
             <Route path="checkout" element={<CheckoutPage />} />
+            <Route path="success" element={<SuccessPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

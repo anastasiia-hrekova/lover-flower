@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { selectTotalPrice } from '../redux/slices/cartSlice';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Container from '../styles/Container';
 import Cart from '../features/Cart';
 import Breadcrumbs from '../components/BreadcrumbsContainer';
 import Footer from '../components/Footer';
-import { useSelector } from 'react-redux';
-import { selectTotalPrice } from '../redux/slices/cartSlice';
 
 const OrderBlock = styled.div`
   position: relative;
@@ -268,7 +269,26 @@ const InputBlock = styled.div`
 
 const CheckoutPage = () => {
   const [checked, setChecked] = useState({});
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    city: '',
+    street: '',
+  });
+  const [isFormValid, setIsFormValid] = useState(false);
   const totalPrice = useSelector(selectTotalPrice);
+  const navigate = useNavigate();
+
+  const generateOrderNumber = () => {
+    const timestamp = Date.now().toString();
+    return timestamp.slice(-9);
+  };
+
+  const handlePayment = () => {
+    const orderNumber = generateOrderNumber();
+    navigate('/success', { state: { orderNumber } });
+  };
 
   const handleChange = checkboxId => {
     setChecked(prevState => ({
@@ -276,6 +296,25 @@ const CheckoutPage = () => {
       [checkboxId]: !prevState[checkboxId],
     }));
   };
+
+  const handleInputChange = e => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  useEffect(() => {
+    const isValid =
+      formData.name.trim() &&
+      formData.phone.trim() &&
+      formData.email.trim() &&
+      formData.city.trim() &&
+      formData.street.trim();
+
+    setIsFormValid(isValid);
+  }, [formData]);
 
   const delCheckboxes = [
     { id: 'pickup', label: 'Самовивіз' },
@@ -306,15 +345,35 @@ const CheckoutPage = () => {
                 <FormTitles>Контактні данні</FormTitles>
                 <InputBlock>
                   <FormLabels>Ваше ім'я*</FormLabels>
-                  <ContactsDataInput placeholder="Введіь ваше ім`/я" />
+                  <ContactsDataInput
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Введіь ваше ім'я"
+                    required
+                  />
                 </InputBlock>
                 <InputBlock>
                   <FormLabels>Ваш телефон*</FormLabels>
-                  <ContactsDataInput placeholder="+380 (97) 777-77-77" />
+                  <ContactsDataInput
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    pattern="^\+?380\d{9}$"
+                    placeholder="+380 (97) 777-77-77"
+                    required
+                  />
                 </InputBlock>
                 <InputBlock>
                   <FormLabels>Ваш e-mail*</FormLabels>
-                  <ContactsDataInput placeholder="Введіь вашу пошту" />
+                  <ContactsDataInput
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    pattern="^[A-Za-z0-9][A-Za-z0-9\.-_]*[A-Za-z0-9]*@([A-Za-z0-9]+([A-Za-z0-9-]*[A-Za-z0-9]+)*\.)+[A-Za-z]*$"
+                    placeholder="Введіь вашу пошту"
+                    required
+                  />
                 </InputBlock>
                 <InputBlock>
                   <FormLabels>Телефон отримувача (не обов'язково)</FormLabels>
@@ -322,7 +381,7 @@ const CheckoutPage = () => {
                 </InputBlock>
                 <InputBlock>
                   <FormLabels>Ім'я отримувача (не обов'язково)</FormLabels>
-                  <ContactsDataInput placeholder="Введіь ім`/я отримувача" />
+                  <ContactsDataInput placeholder="Введіь ім'я отримувача" />
                 </InputBlock>
                 <InputBlock>
                   <FormLabels>Коментарій до замовлення</FormLabels>
@@ -349,11 +408,23 @@ const CheckoutPage = () => {
                 ))}
                 <InputBlock>
                   <FormLabels>Місто*</FormLabels>
-                  <ContactsDataInput placeholder="Оберіть місто" />
+                  <ContactsDataInput
+                    name="city"
+                    value={formData.city}
+                    onChange={handleInputChange}
+                    placeholder="Оберіть місто"
+                    required
+                  />
                 </InputBlock>
                 <InputBlock>
                   <FormLabels>Вулиця*</FormLabels>
-                  <ContactsDataInput placeholder="Введіь вулицю" />
+                  <ContactsDataInput
+                    name="street"
+                    value={formData.street}
+                    onChange={handleInputChange}
+                    placeholder="Введіь вулицю"
+                    required
+                  />
                 </InputBlock>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                   <InputBlock style={{ flexDirection: 'column' }}>
@@ -429,11 +500,13 @@ const CheckoutPage = () => {
                     marginBottom: '0',
                   }}
                 >
-                  Загальна вартість замовлення грн
+                  Загальна вартість замовлення {totalPrice}грн
                 </OrderTitle>
                 <TotalPriceAdd>Знижка = 0 грн</TotalPriceAdd>
                 <TotalPriceAdd>Доставка = 0 грн</TotalPriceAdd>
-                <ToPayBtn>До сплати</ToPayBtn>
+                <ToPayBtn onClick={handlePayment} disabled={!isFormValid}>
+                  До сплати
+                </ToPayBtn>
                 <PrivacyBlock>
                   Натискаючи на кнопку «До Оплати», я даю свою згоду на обробку
                   персональних даних, відповідно до
