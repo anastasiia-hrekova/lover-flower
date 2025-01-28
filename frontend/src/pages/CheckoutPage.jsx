@@ -285,7 +285,8 @@ const CheckoutPage = () => {
     return timestamp.slice(-9);
   };
 
-  const handlePayment = () => {
+  const handlePayment = e => {
+    e.preventDefault();
     const orderNumber = generateOrderNumber();
     navigate('/success', { state: { orderNumber } });
   };
@@ -344,48 +345,72 @@ const CheckoutPage = () => {
               <OrderForm>
                 <FormTitles>Контактні данні</FormTitles>
                 <InputBlock>
-                  <FormLabels>Ваше ім'я*</FormLabels>
+                  <FormLabels htmlFor="name">Ваше ім'я*</FormLabels>
                   <ContactsDataInput
                     name="name"
+                    id="name"
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Введіь ваше ім'я"
+                    autoComplete="name"
                     required
                   />
                 </InputBlock>
                 <InputBlock>
-                  <FormLabels>Ваш телефон*</FormLabels>
+                  <FormLabels htmlFor="phone">Ваш телефон*</FormLabels>
                   <ContactsDataInput
                     name="phone"
+                    id="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
                     pattern="^\+?380\d{9}$"
                     placeholder="+380 (97) 777-77-77"
+                    autoComplete="tel"
                     required
                   />
                 </InputBlock>
                 <InputBlock>
-                  <FormLabels>Ваш e-mail*</FormLabels>
+                  <FormLabels htmlFor="email">Ваш e-mail*</FormLabels>
                   <ContactsDataInput
                     name="email"
+                    id="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     pattern="^[A-Za-z0-9][A-Za-z0-9\.-_]*[A-Za-z0-9]*@([A-Za-z0-9]+([A-Za-z0-9-]*[A-Za-z0-9]+)*\.)+[A-Za-z]*$"
                     placeholder="Введіь вашу пошту"
+                    autoComplete="email"
                     required
                   />
                 </InputBlock>
                 <InputBlock>
-                  <FormLabels>Телефон отримувача (не обов'язково)</FormLabels>
-                  <ContactsDataInput placeholder="+380 (97) 777-77-77" />
-                </InputBlock>
-                <InputBlock>
-                  <FormLabels>Ім'я отримувача (не обов'язково)</FormLabels>
-                  <ContactsDataInput placeholder="Введіь ім'я отримувача" />
-                </InputBlock>
-                <InputBlock>
-                  <FormLabels>Коментарій до замовлення</FormLabels>
+                  <FormLabels htmlFor="tel">
+                    Телефон отримувача (не обов'язково)
+                  </FormLabels>
                   <ContactsDataInput
+                    name="tel"
+                    id="tel"
+                    placeholder="+380 (97) 777-77-77"
+                    autoComplete="tel"
+                  />
+                </InputBlock>
+                <InputBlock>
+                  <FormLabels htmlFor="recipient">
+                    Ім'я отримувача (не обов'язково)
+                  </FormLabels>
+                  <ContactsDataInput
+                    name="recipient"
+                    id="recipient"
+                    placeholder="Введіь ім'я отримувача"
+                    autoComplete="name"
+                  />
+                </InputBlock>
+                <InputBlock>
+                  <FormLabels htmlFor="comment">
+                    Коментарій до замовлення
+                  </FormLabels>
+                  <ContactsDataInput
+                    name="comment"
+                    id="comment"
                     placeholder="Примітки до замовлення, особливі побажання відділу доставки"
                     style={{ marginBottom: '6rem' }}
                   />
@@ -393,8 +418,9 @@ const CheckoutPage = () => {
 
                 <FormTitles>Доставка</FormTitles>
                 {delCheckboxes.map(({ id, label }) => (
-                  <CheckboxLabel key={id} checked={checked[id]}>
+                  <CheckboxLabel htmlFor={id} key={id} checked={checked[id]}>
                     <CheckboxInput
+                      name="delivery"
                       type="checkbox"
                       id={id}
                       checked={!!checked[id]}
@@ -407,9 +433,10 @@ const CheckoutPage = () => {
                   </CheckboxLabel>
                 ))}
                 <InputBlock>
-                  <FormLabels>Місто*</FormLabels>
+                  <FormLabels htmlFor="city">Місто*</FormLabels>
                   <ContactsDataInput
                     name="city"
+                    id="city"
                     value={formData.city}
                     onChange={handleInputChange}
                     placeholder="Оберіть місто"
@@ -417,9 +444,10 @@ const CheckoutPage = () => {
                   />
                 </InputBlock>
                 <InputBlock>
-                  <FormLabels>Вулиця*</FormLabels>
+                  <FormLabels htmlFor="street">Вулиця*</FormLabels>
                   <ContactsDataInput
                     name="street"
+                    id="street"
                     value={formData.street}
                     onChange={handleInputChange}
                     placeholder="Введіь вулицю"
@@ -428,30 +456,38 @@ const CheckoutPage = () => {
                 </InputBlock>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                   <InputBlock style={{ flexDirection: 'column' }}>
-                    <FormLabels>Корп/стр</FormLabels>
+                    <FormLabels htmlFor="corpus">Корп/стр</FormLabels>
                     <ContactsDataInput
+                      name="corpus"
+                      id="corpus"
                       placeholder="Корп/стр"
                       style={{ width: '16rem', marginRight: '3rem' }}
                     />
                   </InputBlock>
                   <InputBlock style={{ flexDirection: 'column' }}>
-                    <FormLabels>Будинок</FormLabels>
+                    <FormLabels htmlFor="house">Будинок</FormLabels>
                     <ContactsDataInput
+                      name="house"
+                      id="house"
                       placeholder="Будинок"
                       style={{ width: '16rem', marginRight: '3rem' }}
                     />
                   </InputBlock>
                   <InputBlock style={{ flexDirection: 'column' }}>
-                    <FormLabels>Кв/офіс</FormLabels>
+                    <FormLabels htmlFor="appartment">Кв/офіс</FormLabels>
                     <ContactsDataInput
+                      name="appartment"
+                      id="appartment"
                       placeholder="Кв/офіс"
                       style={{ width: '16rem' }}
                     />
                   </InputBlock>
                 </div>
                 <InputBlock>
-                  <FormLabels>Час доставки</FormLabels>
+                  <FormLabels htmlFor="time">Час доставки</FormLabels>
                   <ContactsDataInput
+                    name="time"
+                    id="time"
                     type="time"
                     style={{
                       width: '16rem',
@@ -463,8 +499,9 @@ const CheckoutPage = () => {
 
                 <FormTitles>Оплата</FormTitles>
                 {payCheckboxes.map(({ id, label }) => (
-                  <CheckboxLabel key={id} checked={checked[id]}>
+                  <CheckboxLabel htmlFor={id} key={id} checked={checked[id]}>
                     <CheckboxInput
+                      name="payment"
                       type="checkbox"
                       id={id}
                       checked={!!checked[id]}
@@ -488,6 +525,7 @@ const CheckoutPage = () => {
                     Промокод
                   </FormTitles>
                   <ContactsDataInput
+                    name="promo"
                     placeholder="Промокод"
                     style={{ width: '16rem' }}
                   ></ContactsDataInput>

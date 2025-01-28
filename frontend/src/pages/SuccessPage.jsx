@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 
 const SuccessBlock = styled.div`
   width: 100%;
-  height: 105rem;
+  height: 110rem;
   background-image: url(images/access-payment.png);
   background-repeat: no-repeat;
   background-size: cover;

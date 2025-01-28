@@ -6,6 +6,7 @@ export const theme = {
     accentColor: '#d978ac',
     buttonHover: '#7d2253',
     inputTextColor: '#395959',
+    modalBack: '#0F2222',
   },
   mixins: {
     flexCenter: `

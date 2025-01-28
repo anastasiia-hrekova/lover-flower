@@ -108,7 +108,7 @@ const Menu = () => {
             <SearchBar onSearch={handleSearch} />
           </FixedMenu>
           <MenuAddition isScrolled={isScrolled}>
-            <PhoneLink>
+            <PhoneLink href="tel:+380971136969">
               <PhoneLinkImg src="images/phone.svg" alt="call" />
               +380 (97) 113-69-69
             </PhoneLink>

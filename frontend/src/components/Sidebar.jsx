@@ -13,6 +13,8 @@ import {
   CallBtn,
   SidebarCart,
 } from '../styles/SideBarStyles';
+import Modal from './Modal';
+import { useEffect, useState } from 'react';
 
 const SidebarStyle = styled.aside`
   position: absolute;
@@ -35,6 +37,12 @@ const SidebarStyle = styled.aside`
 `;
 
 const Sidebar = () => {
+  let [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = modalOpen ? 'hidden' : 'auto';
+  }, [modalOpen]);
+
   return (
     <SidebarStyle>
       <SidebarBlock>
@@ -66,13 +74,14 @@ const Sidebar = () => {
           </ListSide>
         </SocialSide>
         <SidebarCall>
-          <PhoneLink>+380 (97) 113-69-69</PhoneLink>
-          <CallBtn>
+          <PhoneLink href="tel:+380971136969">+380 (97) 113-69-69</PhoneLink>
+          <CallBtn onClick={() => setModalOpen(!modalOpen)}>
             <PhoneLink>
               <PhoneLinkImg src="images/phone.svg" alt="call" />
               Замовити дзвінок
             </PhoneLink>
           </CallBtn>
+          {modalOpen && <Modal isClose={() => setModalOpen(false)} />}
         </SidebarCall>
         <SidebarCart>
           <ButtonToCart />

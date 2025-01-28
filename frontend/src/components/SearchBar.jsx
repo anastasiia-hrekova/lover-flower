@@ -40,6 +40,7 @@ const SearchBar = ({ onSearch }) => {
       <Search>
         <SearchIcon src="images/search.svg" alt="search" />
         <SearchInput
+          name="search"
           type="text"
           placeholder="Пошук"
           value={query}

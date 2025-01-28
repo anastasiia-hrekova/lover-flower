@@ -144,7 +144,7 @@ const ButtonToCart = () => {
         <img
           src="images/cart.svg"
           alt="cart"
-          onClick={() => setCartOpen((cartOpen = !cartOpen))}
+          onClick={() => setCartOpen(!cartOpen)}
         />
         {cart.items.length > 0 && (
           <CountCardsDiv>
@@ -155,7 +155,7 @@ const ButtonToCart = () => {
       {cartOpen && (
         <Overlay>
           <OpenCart>
-            <CloseCartBtn onClick={() => setCartOpen((cartOpen = !cartOpen))}>
+            <CloseCartBtn onClick={() => setCartOpen(!cartOpen)}>
               <img src="images/closeX.png" alt="close" />
             </CloseCartBtn>
             <Cart />
