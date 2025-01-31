@@ -53,7 +53,9 @@ const NavLinkStyled = styled(NavLink)`
   }
 `;
 
-const DropdownMenu = styled.div`
+const DropdownMenu = styled.div.withConfig({
+  shouldForwardProp: prop => prop !== 'isOpen',
+})`
   position: absolute;
   top: 58%;
   left: 12%;
@@ -94,7 +96,6 @@ const Menu = () => {
     console.log('Пошук по запиту:', query);
     //додати логіку пошуку
   };
-
   const [isScrolled, setIsScrolled] = useState(false);
   const [zIndex, setZIndex] = useState(10);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
