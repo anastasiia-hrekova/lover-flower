@@ -2,17 +2,37 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 const Search = styled.div`
+  position: relative;
   ${({ theme }) => theme.mixins.flex};
   gap: 1rem;
 `;
 
 const SearchIcon = styled.img`
+  position: absolute;
   width: 1.8rem;
   height: 1.8rem;
 `;
 
+const SearchIconClear = styled.img`
+  position: absolute;
+  width: 1.8rem;
+  height: 1.8rem;
+  pointer-events: none;
+  opacity: 0;
+  right: 0;
+  transition: opacity 0.3s ease;
+
+  input:focus + & {
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
+  }
+`;
+
 const SearchInput = styled.input`
+  all: unset;
   background: none;
+  width: 10rem;
   border: none;
   color: ${({ theme }) => theme.colors.textColor};
   font-family: 'Oswald', sans-serif;
@@ -21,7 +41,13 @@ const SearchInput = styled.input`
   line-height: 2.1rem;
   letter-spacing: 0.04rem;
   text-transform: uppercase;
-  cursor: pointer;
+  padding-left: 2.2rem;
+  transition: width 0.3s ease, border-color 0.3s ease;
+
+  &:focus {
+    width: 36rem;
+    border-bottom: 1px solid #555555;
+  }
 `;
 
 const SearchBar = ({ onSearch }) => {
@@ -46,6 +72,7 @@ const SearchBar = ({ onSearch }) => {
           value={query}
           onChange={e => setQuery(e.target.value)}
         />
+        <SearchIconClear src="images/clear-search.png" alt="clear" />
       </Search>
     </form>
   );
