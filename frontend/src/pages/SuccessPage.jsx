@@ -2,6 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Container from '../styles/Container';
 import Footer from '../components/Footer';
+import { useEffect } from 'react';
 
 const SuccessBlock = styled.div`
   width: 100%;
@@ -71,6 +72,10 @@ const ToMain = styled(NavLink)`
 const SuccessPage = () => {
   const location = useLocation();
   const { orderNumber } = location.state || {};
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
