@@ -548,10 +548,7 @@ const CheckoutPage = () => {
                 <PrivacyBlock>
                   Натискаючи на кнопку «До Оплати», я даю свою згоду на обробку
                   персональних даних, відповідно до
-                  <PrivacyBlockSpan>
-                    {' '}
-                    Політики конфіденційності
-                  </PrivacyBlockSpan>
+                  <PrivacyBlockSpan>Політики конфіденційності</PrivacyBlockSpan>
                   , а також ознайомлений з умовами оплати та доставки
                 </PrivacyBlock>
               </OrderForm>

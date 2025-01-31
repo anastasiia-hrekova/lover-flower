@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
@@ -20,7 +21,7 @@ const ModalBlock = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 54rem;
-  height: 45.5rem;
+  height: auto;
   margin: 0 auto;
   z-index: 1000;
   padding: 3rem;
@@ -82,7 +83,77 @@ const Text = styled.p`
   margin-bottom: 2rem;
 `;
 
+const ModalForm = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+const FormInputs = styled.input`
+  width: 100%;
+  height: 6rem;
+  padding: 2rem;
+  background-color: transparent;
+  border: 1px solid ${({ theme }) => theme.colors.mainColor};
+  margin-bottom: 1rem;
+
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.mainColor};
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.1rem;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+  }
+`;
+
+const Button = styled.button`
+  width: 25.5rem;
+  height: 5rem;
+  background-color: ${({ theme }) => theme.colors.mainColor};
+  color: ${({ theme }) => theme.colors.backgroundColor};
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.buttonHover};
+    color: ${({ theme }) => theme.colors.textColor};
+  }
+`;
+
+const PrivacyBlock = styled.p`
+  position: relative;
+  color: ${({ theme }) => theme.colors.textColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.2rem;
+  letter-spacing: 0.02rem;
+  width: 32.7rem;
+`;
+
+const PrivacyBlockSpan = styled.span`
+  color: ${({ theme }) => theme.colors.accentColor};
+  text-decoration: underline;
+`;
+
 const Modal = ({ isClose }) => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
+
   return ReactDOM.createPortal(
     <>
       <Backdrop onClick={isClose} />
@@ -90,12 +161,44 @@ const Modal = ({ isClose }) => {
         <CloseBtn onClick={isClose}>
           <img src="images/closeX.png" alt="close" />
         </CloseBtn>
-        <Title>Замовити дзвінок</Title>
-        <Line />
-        <Text>
-          Впишіть свої дані і ми зв'яжемося з Вами. Ваші дані за жодних обставин
-          не будуть передані третім особам.
-        </Text>
+
+        {isSubmitted ? (
+          <Title style={{ textAlign: 'center' }}>
+            Дякуємо! Наш менеджер зв'яжеться із вами найближчим часом.
+          </Title>
+        ) : (
+          <>
+            <Title>Замовити дзвінок</Title>
+            <Line />
+            <Text>
+              Впишіть свої дані і ми зв'яжемося з Вами. Ваші дані за жодних
+              обставин не будуть передані третім особам.
+            </Text>
+            <ModalForm onSubmit={handleSubmit}>
+              <label htmlFor="name" />
+              <FormInputs
+                id="name"
+                placeholder="Ваше ім'я"
+                autoComplete="name"
+                required
+              />
+              <label htmlFor="phone" />
+              <FormInputs
+                id="phone"
+                placeholder="+380 (97) 777-77-77"
+                autoComplete="tel"
+                required
+              />
+              <Button type="submit">Відправити</Button>
+              <PrivacyBlock>
+                Натискаючи на кнопку «До Оплати», я даю свою згоду на обробку
+                персональних даних, відповідно до
+                <PrivacyBlockSpan>Політики конфіденційності</PrivacyBlockSpan>,
+                а також ознайомлений з умовами оплати та доставки
+              </PrivacyBlock>
+            </ModalForm>
+          </>
+        )}
       </ModalBlock>
     </>,
     document.getElementById('modal-root'),
