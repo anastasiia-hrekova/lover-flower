@@ -45,10 +45,34 @@ const Logo = styled.img`
 `;
 
 const NavLinkStyled = styled(NavLink)`
+  position: relative;
   &:hover {
-    color: var(--main-color);
+    color: ${({ theme }) => theme.colors.mainColor};
     text-decoration: underline;
     transition: 0.3s;
+  }
+`;
+
+const DropdownMenu = styled.div`
+  position: absolute;
+  top: 58%;
+  left: 12%;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  padding: 10px 0;
+  width: 26rem;
+`;
+
+const DropdownItem = styled(NavLink)`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 10px 15px;
+  cursor: pointer;
+  &:hover {
+    color: ${({ theme }) => theme.colors.mainColor};
+    background: rgba(0, 0, 0, 0.4);
   }
 `;
 
@@ -73,6 +97,7 @@ const Menu = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [zIndex, setZIndex] = useState(10);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -88,10 +113,6 @@ const Menu = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location]);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-
   return (
     <Header isScrolled={isScrolled} zIndex={zIndex}>
       <Container>
@@ -100,7 +121,27 @@ const Menu = () => {
             <NavLink to="/">
               <Logo src="images/logo.png" alt="logo" />
             </NavLink>
-            <NavLinkStyled to="catalog">Каталог</NavLinkStyled>
+            <div
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
+            >
+              <NavLinkStyled to="catalog">Каталог</NavLinkStyled>
+              <DropdownMenu isOpen={isDropdownOpen}>
+                <DropdownItem to="/catalog?sort=hydra">
+                  Букет із гортензій
+                </DropdownItem>
+                <DropdownItem to="/catalog?sort=peonies">
+                  Букет із півоній
+                </DropdownItem>
+                <DropdownItem to="/catalog?sort=chrysant">
+                  Букет із хризантем
+                </DropdownItem>
+                <DropdownItem to="/catalog?sort=isTop">Популярне</DropdownItem>
+                <DropdownItem to="/catalog?sort=rose">
+                  Букети троянд
+                </DropdownItem>
+              </DropdownMenu>
+            </div>
             <NavLinkStyled to="delivery&pay">Доставка та оплата</NavLinkStyled>
             <NavLinkStyled to="about">Про нас</NavLinkStyled>
             <NavLinkStyled to="contacts">Контакти</NavLinkStyled>

@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
-import { useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { useEffect, useState, useMemo } from 'react';
 import { selectFlowers } from '../redux/slices/cardsSlice';
 import {
   selectColorFilter,
@@ -155,7 +156,9 @@ const CatalogContainer = styled.div`
 `;
 
 const CatalogPage = () => {
-  const [sortOption, setSortOption] = useState('default');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [forceUpdate, setForceUpdate] = useState(0);
+  const sortOption = searchParams.get('sort') || 'default';
   const allFlowers = useSelector(selectFlowers);
 
   const typeFilter = useSelector(selectTypeFilter);
@@ -217,6 +220,23 @@ const CatalogPage = () => {
     return filtered;
   };
 
+  const handleSortClick = sortType => {
+    const currentSort = searchParams.get('sort');
+
+    if (currentSort === sortType) {
+      setForceUpdate(prev => prev + 1);
+    } else {
+      setSearchParams({ sort: sortType }, { replace: true });
+    }
+  };
+
+  useEffect(() => {
+    const urlSort = searchParams.get('sort');
+    if (urlSort) {
+      setSearchParams({ sort: urlSort });
+    }
+  }, [searchParams, setSearchParams, forceUpdate]);
+
   const filteredItems = useMemo(
     () =>
       applyFilters(
@@ -255,52 +275,52 @@ const CatalogPage = () => {
               У нашому магазині найбільший вибір букетів для будь-яких подій:
             </CatalogTitleBlockText>
             <SortBlock>
-              <SortBlockItem onClick={() => setSortOption('hydra')}>
+              <SortBlockItem onClick={() => handleSortClick('hydra')}>
                 Букет із гортензій
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('peonies')}>
+              <SortBlockItem onClick={() => handleSortClick('peonies')}>
                 Букет із півоній
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('chrysant')}>
+              <SortBlockItem onClick={() => handleSortClick('chrysant')}>
                 Букет із хризантем
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('default')}>
+              <SortBlockItem onClick={() => handleSortClick('default')}>
                 Кімнатні квіти в горщиках
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('default')}>
+              <SortBlockItem onClick={() => handleSortClick('default')}>
                 Монобукети
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('default')}>
+              <SortBlockItem onClick={() => handleSortClick('default')}>
                 Збірні букети
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('default')}>
+              <SortBlockItem onClick={() => handleSortClick('default')}>
                 Букет на свято
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('default')}>
+              <SortBlockItem onClick={() => handleSortClick('default')}>
                 Композиції із квітів
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('default')}>
+              <SortBlockItem onClick={() => handleSortClick('default')}>
                 Конверти
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('default')}>
+              <SortBlockItem onClick={() => handleSortClick('default')}>
                 Листівки
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('default')}>
+              <SortBlockItem onClick={() => handleSortClick('default')}>
                 Подарунки
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('default')}>
+              <SortBlockItem onClick={() => handleSortClick('default')}>
                 Букети із сухоквітів
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('default')}>
+              <SortBlockItem onClick={() => handleSortClick('default')}>
                 Шари
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('isTop')}>
+              <SortBlockItem onClick={() => handleSortClick('isTop')}>
                 Популярне
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('rose')}>
+              <SortBlockItem onClick={() => handleSortClick('rose')}>
                 Букети троянд
               </SortBlockItem>
-              <SortBlockItem onClick={() => setSortOption('default')}>
+              <SortBlockItem onClick={() => handleSortClick('default')}>
                 Упаковка подарунків
               </SortBlockItem>
             </SortBlock>
