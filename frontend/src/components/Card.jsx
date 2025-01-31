@@ -75,7 +75,7 @@ const Card = ({ cardData, isMainPage }) => {
         isNew={isNew}
         isMainPage={isMainPage}
       ></CardSticker>
-      <CardImg src={image} alt="flowers" />
+      <CardImg src={image} alt="flowers" loading="lazy" />
       <CardTitle>{title}</CardTitle>
       <CardPrice>
         {price} UAH

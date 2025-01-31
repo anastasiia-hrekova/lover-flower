@@ -811,6 +811,7 @@ const HomePage = () => {
               <SpecialTitleImg
                 src="images/holiday-section-1.png"
                 alt="bouquet"
+                loading="lazy"
               />
             </SpecialTitle>
 
@@ -832,9 +833,21 @@ const HomePage = () => {
                 <ButtonLink text="Зібрати букет" />
               </SpecialText>
               <SpecialImages>
-                <img src="images/holiday-section-2.png" alt="bouquet" />
-                <img src="images/holiday-section-3.png" alt="bouquet" />
-                <img src="images/holiday-section-4.png" alt="bouquet" />
+                <img
+                  src="images/holiday-section-2.png"
+                  alt="bouquet"
+                  loading="lazy"
+                />
+                <img
+                  src="images/holiday-section-3.png"
+                  alt="bouquet"
+                  loading="lazy"
+                />
+                <img
+                  src="images/holiday-section-4.png"
+                  alt="bouquet"
+                  loading="lazy"
+                />
               </SpecialImages>
             </SpecialContent>
           </div>
@@ -883,10 +896,10 @@ const HomePage = () => {
         <Container>
           <InstagramBlock>
             <InstagramBlock>
-              <img src="images/inst1.png" alt="ins1" />
-              <img src="images/inst2.png" alt="ins2" />
-              <img src="images/inst3.png" alt="ins3" />
-              <img src="images/inst4.png" alt="ins4" />
+              <img src="images/inst1.png" alt="ins1" loading="lazy" />
+              <img src="images/inst2.png" alt="ins2" loading="lazy" />
+              <img src="images/inst3.png" alt="ins3" loading="lazy" />
+              <img src="images/inst4.png" alt="ins4" loading="lazy" />
             </InstagramBlock>
             <InstagramTitle
               src="images/our-social-networks.png"
