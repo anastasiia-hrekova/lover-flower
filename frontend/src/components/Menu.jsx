@@ -92,10 +92,6 @@ const MenuAddition = styled.div.withConfig({
 `;
 
 const Menu = () => {
-  const handleSearch = query => {
-    console.log('Пошук по запиту:', query);
-    //додати логіку пошуку
-  };
   const [isScrolled, setIsScrolled] = useState(false);
   const [zIndex, setZIndex] = useState(10);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -147,7 +143,7 @@ const Menu = () => {
             <NavLinkStyled to="about">Про нас</NavLinkStyled>
             <NavLinkStyled to="contacts">Контакти</NavLinkStyled>
             <NavLinkStyled to="faq">FAQ</NavLinkStyled>
-            <SearchBar onSearch={handleSearch} />
+            <SearchBar />
           </FixedMenu>
           <MenuAddition isScrolled={isScrolled}>
             <PhoneLink href="tel:+380971136969">

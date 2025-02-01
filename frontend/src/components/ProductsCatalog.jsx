@@ -4,6 +4,7 @@ import { fetchFlowers } from '../redux/slices/cardsSlice';
 import { selectLoading, selectError } from '../redux/slices/cardsSlice';
 import Card from '../components/Card';
 import styled from 'styled-components';
+import { useLocation } from 'react-router-dom';
 
 const CatalogCards = styled.div`
   position: relative;
@@ -37,6 +38,8 @@ const ProductsCatalog = ({ flowers }) => {
   const [page, setPage] = useState(1);
   const [showBtn, setShowBtn] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+
+  const location = useLocation();
 
   useEffect(() => {
     const loadFlowers = async () => {
@@ -89,11 +92,19 @@ const ProductsCatalog = ({ flowers }) => {
     return <div>Error: {error}</div>;
   }
 
+  const isSearchPage = location.pathname.includes('search');
+  const isCatalogPage = location.pathname.includes('catalog');
+
   return (
     <>
       <CatalogCards>
         {flowers.map(card => (
-          <Card cardData={card} key={card.id} />
+          <Card
+            cardData={card}
+            key={card.id}
+            isCatalogPage={isCatalogPage}
+            isSearchPage={isSearchPage}
+          />
         ))}
       </CatalogCards>
       {!hasMore && <div></div>}

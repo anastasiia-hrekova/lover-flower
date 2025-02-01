@@ -1,5 +1,7 @@
-import { useState } from 'react';
 import styled from 'styled-components';
+import { setSearchQuery } from '../redux/slices/cardsSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const Search = styled.div`
   position: relative;
@@ -11,20 +13,19 @@ const SearchIcon = styled.img`
   position: absolute;
   width: 1.8rem;
   height: 1.8rem;
+  cursor: pointer;
 `;
 
 const SearchIconClear = styled.img`
   position: absolute;
   width: 1.8rem;
   height: 1.8rem;
-  pointer-events: none;
   opacity: 0;
   right: 0;
   transition: opacity 0.3s ease;
 
   input:focus + & {
     opacity: 1;
-    pointer-events: all;
     cursor: pointer;
   }
 `;
@@ -32,7 +33,7 @@ const SearchIconClear = styled.img`
 const SearchInput = styled.input`
   all: unset;
   background: none;
-  width: 10rem;
+  width: 36rem;
   border: none;
   color: ${({ theme }) => theme.colors.textColor};
   font-family: 'Oswald', sans-serif;
@@ -50,29 +51,47 @@ const SearchInput = styled.input`
   }
 `;
 
-const SearchBar = ({ onSearch }) => {
-  const [query, setQuery] = useState('');
+const SearchBar = () => {
+  const dispatch = useDispatch();
+  const searchQuery = useSelector(state => state.flowers.searchQuery);
+  const navigate = useNavigate();
 
-  const handleSumbit = e => {
-    e.preventDeafault();
+  const handleChange = e => {
+    dispatch(setSearchQuery(e.target.value));
+  };
 
-    if (onSearch) {
-      onSearch(query);
-    }
+  const handleSubmit = e => {
+    e.preventDefault();
+    navigate(`/search?query=${searchQuery}`);
+  };
+
+  const handleResetFilters = () => {
+    dispatch(setSearchQuery(''));
   };
 
   return (
-    <form role="search" onSubmit={handleSumbit}>
+    <form role="search" onSubmit={handleSubmit}>
       <Search>
-        <SearchIcon src="images/search.svg" alt="search" />
+        <SearchIcon
+          type="submit"
+          src="images/search.svg"
+          alt="search"
+          onClick={handleSubmit}
+        />
         <SearchInput
+          onChange={handleChange}
+          value={searchQuery}
           name="search"
           type="text"
           placeholder="Пошук"
-          value={query}
-          onChange={e => setQuery(e.target.value)}
         />
-        <SearchIconClear src="images/clear-search.png" alt="clear" />
+        {searchQuery && (
+          <SearchIconClear
+            onClick={handleResetFilters}
+            src="images/clear-search.png"
+            alt="clear"
+          />
+        )}
       </Search>
     </form>
   );

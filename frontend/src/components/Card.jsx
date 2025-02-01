@@ -44,18 +44,29 @@ const OldPrice = styled.span`
 
 const CardSticker = styled.img.withConfig({
   shouldForwardProp: prop =>
-    prop !== 'onSale' && prop !== 'isNew' && prop !== 'isMainPage',
+    prop !== 'onSale' &&
+    prop !== 'isNew' &&
+    prop !== 'isMainPage' &&
+    prop !== 'isCatalogPage' &&
+    prop !== 'isSearchPage',
 })`
   display: ${({ onSale, isNew }) => (onSale || isNew ? 'block' : 'none')};
   position: absolute;
-  right: ${({ isMainPage }) => (isMainPage ? '-1.8rem' : '2.5rem')};
+  right: ${({ isMainPage, isCatalogPage, isSearchPage }) =>
+    isMainPage
+      ? '-1.8rem'
+      : isCatalogPage
+      ? '2.5rem'
+      : isSearchPage
+      ? '10rem'
+      : '2.5rem'};
   top: ${({ isMainPage }) => (isMainPage ? '-1rem' : '-1rem')};
   width: 6rem;
   height: 6rem;
   z-index: 2;
 `;
 
-const Card = ({ cardData, isMainPage }) => {
+const Card = ({ cardData, isMainPage, isCatalogPage, isSearchPage }) => {
   const { image, title, price, onSale, oldPrice, isNew } = cardData;
   const dispatch = useDispatch();
 
@@ -69,11 +80,15 @@ const Card = ({ cardData, isMainPage }) => {
         src="images/sale.png"
         onSale={onSale}
         isMainPage={isMainPage}
+        isCatalogPage={isCatalogPage}
+        isSearchPage={isSearchPage}
       ></CardSticker>
       <CardSticker
         src="images/isNew.png"
         isNew={isNew}
         isMainPage={isMainPage}
+        isCatalogPage={isCatalogPage}
+        isSearchPage={isSearchPage}
       ></CardSticker>
       <CardImg src={image} alt="flowers" loading="lazy" />
       <CardTitle>{title}</CardTitle>

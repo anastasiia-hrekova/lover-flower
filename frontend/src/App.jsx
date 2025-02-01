@@ -12,6 +12,7 @@ import CheckoutPage from './pages/CheckoutPage';
 import SuccessPage from './pages/SuccessPage';
 import MainLayout from './layouts/MainLayout';
 import ButtonToCart from './features/ButtonToCart';
+import SearchPage from './pages/SearchPage';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="corporation" element={<CorpClients />} />
             <Route path="checkout" element={<CheckoutPage />} />
             <Route path="success" element={<SuccessPage />} />
+            <Route path="search" element={<SearchPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

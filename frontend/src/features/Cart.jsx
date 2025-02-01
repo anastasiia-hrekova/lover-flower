@@ -4,7 +4,6 @@ import {
   removeFromCart,
   incrementQuantity,
   decrementQuantity,
-  selectTotalPrice,
 } from '../redux/slices/cartSlice';
 import { useLocation } from 'react-router-dom';
 
@@ -139,7 +138,6 @@ const Cart = () => {
   const isOpen = useSelector(state => state.cart);
   const dispatch = useDispatch();
   const location = useLocation();
-  const totalPrice = useSelector(selectTotalPrice);
 
   const isCheckoutPage = location.pathname === '/checkout';
 
@@ -184,7 +182,7 @@ const Cart = () => {
                   </ProductPartCenter>
                 </ProductPartLeft>
                 <ProductPartRight>
-                  <ProductPrice>{totalPrice} грн</ProductPrice>
+                  <ProductPrice>{item.quantity * item.price} грн</ProductPrice>
                   <DeleteBtn onClick={() => dispatch(removeFromCart(item.id))}>
                     Видалити
                   </DeleteBtn>
