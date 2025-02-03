@@ -8,6 +8,7 @@ const initialState = {
   searchQuery: '',
   isLoading: false,
   error: null,
+  hasMore: true,
 };
 
 export const fetchFlowers = createAsyncThunk(
@@ -53,11 +54,8 @@ export const selectFilteredFlowers = createSelector(
   state => state.flowers.items,
   state => state.flowers.searchQuery,
   (flowers, searchQuery) => {
-    if (!searchQuery) {
-      return flowers;
-    }
     return flowers.filter(flower =>
-      flower.title.toLowerCase().includes(searchQuery.toLowerCase()),
+      flower?.title?.toLowerCase().includes(searchQuery.toLowerCase()),
     );
   },
 );

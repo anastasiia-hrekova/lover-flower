@@ -23,8 +23,20 @@ const SearchTitle = styled.h3`
 `;
 
 const SearchBlock = styled.div`
+  position: relative;
   width: 100%;
   height: ${({ $hasItems }) => ($hasItems ? 'auto' : '95rem')};
+
+  &:before {
+    width: 100%;
+    height: 70rem;
+    position: absolute;
+    content: '';
+    background-image: url(images/search-top.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
 `;
 
 const SearchContainer = styled.div`

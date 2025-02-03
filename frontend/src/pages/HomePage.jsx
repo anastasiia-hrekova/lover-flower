@@ -868,12 +868,20 @@ const HomePage = () => {
                 вами протягом 15 хвилин.
               </QuestionsInfoText>
               <QuestionsForm>
-                <QuestionsFormInput type="text" placeholder="Ваше ім`я" />
                 <QuestionsFormInput
+                  id="name"
+                  type="text"
+                  placeholder="Ваше ім`я"
+                  autoComplete="name"
+                />
+                <QuestionsFormInput
+                  id="tel"
                   type="tel"
                   placeholder="+38-(097)-777-77-77"
+                  autoComplete="tel"
                 />
                 <QuestionsFormArea
+                  id="text"
                   rows="5"
                   cols="20"
                   placeholder="Ваш коментарій"

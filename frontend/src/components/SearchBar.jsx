@@ -45,7 +45,8 @@ const SearchInput = styled.input`
   padding-left: 2.2rem;
   transition: width 0.3s ease, border-color 0.3s ease;
 
-  &:focus {
+  &:focus,
+  :active {
     width: 36rem;
     border-bottom: 1px solid #555555;
   }

@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
-import AddToCart from './AddToCart';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import AddToCart from './AddToCart';
 import { addToCart } from '../redux/slices/cartSlice';
 
 const CardStyle = styled.div`
@@ -67,11 +68,16 @@ const CardSticker = styled.img.withConfig({
 `;
 
 const Card = ({ cardData, isMainPage, isCatalogPage, isSearchPage }) => {
-  const { image, title, price, onSale, oldPrice, isNew } = cardData;
+  const { id, image, title, price, onSale, oldPrice, isNew } = cardData;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleAddToCart = () => {
     dispatch(addToCart(cardData));
+  };
+
+  const handleCardClick = () => {
+    navigate(`/product/${id}`);
   };
 
   return (
@@ -90,12 +96,14 @@ const Card = ({ cardData, isMainPage, isCatalogPage, isSearchPage }) => {
         isCatalogPage={isCatalogPage}
         isSearchPage={isSearchPage}
       ></CardSticker>
-      <CardImg src={image} alt="flowers" loading="lazy" />
-      <CardTitle>{title}</CardTitle>
-      <CardPrice>
-        {price} UAH
-        {onSale && oldPrice && <OldPrice> {oldPrice} UAH</OldPrice>}
-      </CardPrice>
+      <div onClick={handleCardClick}>
+        <CardImg src={image} alt="flowers" loading="lazy" />
+        <CardTitle>{title}</CardTitle>
+        <CardPrice>
+          {price} UAH
+          {onSale && oldPrice && <OldPrice> {oldPrice} UAH</OldPrice>}
+        </CardPrice>
+      </div>
       <AddToCart onClick={handleAddToCart} />
     </CardStyle>
   );
