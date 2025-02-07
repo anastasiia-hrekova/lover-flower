@@ -11,6 +11,7 @@ import Footer from '../components/Footer';
 import Container from '../styles/Container';
 import AddToCart from '../components/AddToCart';
 import CardsCarousel from '../components/CardsCarousel';
+import { addToCart } from '../redux/slices/cartSlice';
 
 const ProductBlock = styled.div`
   position: relative;
@@ -280,6 +281,10 @@ const ProductPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+  };
+
   return (
     <>
       <ProductBlock>
@@ -303,7 +308,7 @@ const ProductPage = () => {
                   </FlowerNewPrice>
                   <FlowerDesc>{product.description}</FlowerDesc>
                   <FlowerActions>
-                    <AddToCart />
+                    <AddToCart onClick={handleAddToCart} />
                     <ProductQuantityBlock
                       style={{ width: '16rem', height: '5rem' }}
                     >
