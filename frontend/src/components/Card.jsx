@@ -83,14 +83,14 @@ const Card = ({ cardData, isMainPage, isCatalogPage, isSearchPage }) => {
   return (
     <CardStyle>
       <CardSticker
-        src="images/sale.png"
+        src="/images/sale.png"
         onSale={onSale}
         isMainPage={isMainPage}
         isCatalogPage={isCatalogPage}
         isSearchPage={isSearchPage}
       ></CardSticker>
       <CardSticker
-        src="images/isNew.png"
+        src="/images/isNew.png"
         isNew={isNew}
         isMainPage={isMainPage}
         isCatalogPage={isCatalogPage}

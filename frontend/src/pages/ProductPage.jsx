@@ -17,10 +17,11 @@ const ProductBlock = styled.div`
   width: 100%;
   height: auto;
   margin-top: 10rem;
+  margin-bottom: 20rem;
 
   &:before {
     width: 100%;
-    height: 70rem;
+    height: 140rem;
     position: absolute;
     content: '';
     background-image: url(/images/product-card-back.png);
@@ -41,12 +42,79 @@ const ProductTitle = styled.h1`
   color: ${({ theme }) => theme.colors.textColor};
 `;
 
+const BackBtn = styled.button`
+  position: relative;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  color: ${({ theme }) => theme.colors.textColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:before {
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    content: '';
+    background-image: url(/images/back-arrow.png);
+    background-size: content;
+    background-repeat: no-repeat;
+    margin-left: -2rem;
+  }
+`;
+
+const FlowerNewPrice = styled.p`
+  color: ${({ theme }) => theme.colors.mainColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 4.5rem;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+`;
+
+const FlowerOldPrice = styled.span`
+  color: #555555;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 4.5rem;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  text-decoration: line-through;
+  margin-left: 2rem;
+`;
+
+const FlowerDesc = styled.p`
+  color: ${({ theme }) => theme.colors.textColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  margin-bottom: 7rem;
+`;
+
 const FlowerInfoBlock = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   gap: 3rem;
   margin-bottom: 8rem;
+`;
+
+const FlowerActions = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
 `;
 
 const BlockImg = styled.img`
@@ -81,6 +149,130 @@ const QuantityBtn = styled.button`
   cursor: pointer;
 `;
 
+const AddToOrder = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 10rem;
+`;
+
+const AddBlocks = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  text-align: center;
+`;
+
+const AddBlock = styled.li`
+  position: relative;
+  width: 25.5rem;
+  height: 24rem;
+  border-radius: 2rem;
+  background-color: #0000004d;
+  backdrop-filter: blur(20px);
+  padding: 3rem 1.7rem;
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 3rem;
+    height: 3rem;
+    background-color: ${({ theme }) => theme.colors.backgroundColor};
+    border-radius: 50%;
+    top: -5%;
+    left: 45%;
+  }
+`;
+
+const AddBlockTitle = styled.h3`
+  color: ${({ theme }) => theme.colors.mainColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+`;
+
+const AddTitle = styled.h3`
+  color: ${({ theme }) => theme.colors.accentColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3rem;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+`;
+
+const AddText = styled.p`
+  width: 21.7rem;
+  color: ${({ theme }) => theme.colors.textColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.06rem;
+`;
+
+const DeliveryBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rem;
+`;
+
+const DeliveryBlockBtns = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 6rem;
+`;
+
+const BlockButton = styled.button`
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid ${({ theme }) => theme.colors.mainColor};
+  width: 35.8rem;
+  text-align: center;
+  color: ${({ theme }) => theme.colors.mainColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3rem;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  padding: 3rem;
+`;
+
+const DeliveryBlocks = styled.ul`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6rem;
+  list-style: unset;
+`;
+
+const DeliveryText = styled.li`
+  color: ${({ theme }) => theme.colors.textColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2.6rem;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+`;
+
+const BoldSpan = styled.span`
+  font-weight: 700;
+`;
+
+const ColorSpan = styled.span`
+  color: ${({ theme }) => theme.colors.mainColor};
+`;
+
 const ProductPage = () => {
   const { id } = useParams();
   const products = useSelector(selectFlowers);
@@ -101,15 +293,20 @@ const ProductPage = () => {
                   <BlockImg src={product.image} alt="flower" />
                 </div>
                 <div>
-                  <button onClick={() => navigate(-1)}>Назад</button>
+                  <BackBtn onClick={() => navigate(-1)}>Назад</BackBtn>
                   <ProductTitle>{product.title}</ProductTitle>
-                  <p>
-                    {product.price} <span>{product.oldPrice}</span>
-                  </p>
-                  <p>{product.description}</p>
-                  <div>
+                  <FlowerNewPrice>
+                    {product.price} грн
+                    {product.onSale && product.oldPrice && (
+                      <FlowerOldPrice>{product.oldPrice} грн</FlowerOldPrice>
+                    )}
+                  </FlowerNewPrice>
+                  <FlowerDesc>{product.description}</FlowerDesc>
+                  <FlowerActions>
                     <AddToCart />
-                    <ProductQuantityBlock>
+                    <ProductQuantityBlock
+                      style={{ width: '16rem', height: '5rem' }}
+                    >
                       <QuantityBtn
                         onClick={() =>
                           dispatch(decrementQuantity({ id: product.id }))
@@ -126,40 +323,99 @@ const ProductPage = () => {
                         +
                       </QuantityBtn>
                     </ProductQuantityBlock>
-                  </div>
+                  </FlowerActions>
                 </div>
               </FlowerInfoBlock>
-              <div>
-                <h3>Додатково до замовлення:</h3>
-                <ul>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-              </div>
-              <div>
-                <div>
-                  <button></button>
-                  <button></button>
-                </div>
-                <ul>
-                  <p></p>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <ul>
-                  <p></p>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <p></p>
-                <p></p>
-              </div>
+              <AddToOrder>
+                <AddTitle>Додатково до замовлення:</AddTitle>
+                <AddBlocks>
+                  <AddBlock>
+                    <AddBlockTitle>
+                      Добрива для <br />
+                      зрізаних квітів
+                    </AddBlockTitle>
+                    <AddText>
+                      При вказівці про це у побажаннях до букету, ми додамо
+                      пакетик добрива для вас
+                    </AddText>
+                  </AddBlock>
+                  <AddBlock>
+                    <AddBlockTitle>
+                      підпишемо <br />
+                      листівку
+                    </AddBlockTitle>
+                    <AddText>
+                      У побажаннях до букета вкажіть текст, який бажаєте
+                      розмістити та виберіть на сайті саму листівку
+                    </AddText>
+                  </AddBlock>
+                  <AddBlock>
+                    <AddBlockTitle>
+                      Фото букета <br />
+                      перед відправкою
+                    </AddBlockTitle>
+                    <AddText>
+                      У примітці до замовлення вкажіть про це ми відправимо фото
+                      готового букета перед доставкою. У святкові дні у зв'язку
+                      з великою завантаженістю такої можливості немає
+                    </AddText>
+                  </AddBlock>
+                  <AddBlock>
+                    <AddBlockTitle>Букет-сюрприз</AddBlockTitle>
+                    <AddText>
+                      Якщо хочете, щоб одержувач не знав, що йому вручать і від
+                      когось, то вкажіть про це у примітці до замовлення
+                    </AddText>
+                  </AddBlock>
+                </AddBlocks>
+              </AddToOrder>
+              <DeliveryBlock>
+                <DeliveryBlockBtns>
+                  <BlockButton>доставка та оплата</BlockButton>
+                  <BlockButton>відгуки</BlockButton>
+                </DeliveryBlockBtns>
+                <DeliveryBlocks>
+                  <AddTitle>Способи оплати:</AddTitle>
+                  <DeliveryText>
+                    Банківською картою при оформленні замовлення через сайт
+                  </DeliveryText>
+                  <DeliveryText>
+                    Готівкою або банківською картою при самовивозі
+                  </DeliveryText>
+                  <DeliveryText>Готівкою при доставці кур'єром</DeliveryText>
+                </DeliveryBlocks>
+                <DeliveryBlocks>
+                  <AddTitle>Вартість доставки:</AddTitle>
+                  <DeliveryText>
+                    <BoldSpan>Безкоштовно</BoldSpan> - при замовленні на суму
+                    <ColorSpan> від 1500 грн</ColorSpan>
+                  </DeliveryText>
+                  <DeliveryText>
+                    <BoldSpan>150 грн</BoldSpan> - при замовленні на суму
+                    <ColorSpan> менше 1500 грн</ColorSpan>
+                  </DeliveryText>
+                  <DeliveryText>
+                    Можливість, терміни та вартість доставки за межі Києва,
+                    доставки у нічний час, свята
+                    <ColorSpan> обмовляються з менеджером</ColorSpan>
+                  </DeliveryText>
+                  <DeliveryText>
+                    Також ви можете забрати ваше замовлення самостійно за
+                    адресою:
+                    <br />
+                    <ColorSpan>
+                      м. Київ, вул. Тараса Шевченка 67, щоденно з 10:00 до 21:00
+                    </ColorSpan>
+                  </DeliveryText>
+                </DeliveryBlocks>
+                <AddTitle>Умови доставки:</AddTitle>
+                <DeliveryText style={{ listStyle: 'none', marginLeft: '0' }}>
+                  Доставка здійснюється по місту в межах Києва
+                  <ColorSpan> будь-якого дня з 09.00 до 22.00.</ColorSpan>{' '}
+                  Доставка у нічний час здійснюється за домовленістю з
+                  оператором
+                </DeliveryText>
+              </DeliveryBlock>
               <CardsCarousel />
             </>
           ) : (
