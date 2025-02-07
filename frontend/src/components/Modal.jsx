@@ -37,7 +37,7 @@ const ModalBlock = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-    background-image: url(images/modal-before.png);
+    background-image: url(/images/modal-before.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -159,7 +159,7 @@ const Modal = ({ isClose }) => {
       <Backdrop onClick={isClose} />
       <ModalBlock>
         <CloseBtn onClick={isClose}>
-          <img src="images/closeX.png" alt="close" />
+          <img src="/images/closeX.png" alt="close" />
         </CloseBtn>
 
         {isSubmitted ? (

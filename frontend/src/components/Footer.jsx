@@ -71,7 +71,7 @@ const Footer = () => {
         <FooterStyles>
           <FooterPayment>
             <NavLink to="/">
-              <img className="menu__logo" src="images/logo.png" alt="logo" />
+              <img className="menu__logo" src="/images/logo.png" alt="logo" />
             </NavLink>
             <FooterTitle>Реквізити</FooterTitle>
             <p>
@@ -140,17 +140,17 @@ const Footer = () => {
               <FooterSocial>
                 <li>
                   <a href="https://www.instagram.com/">
-                    <img src="images/instagram.png" alt="instagram" />
+                    <img src="/images/instagram.png" alt="instagram" />
                   </a>
                 </li>
                 <li>
                   <a href="https://www.whatsapp.com/?lang=uk">
-                    <img src="images/whats-up.png" alt="whats-up" />
+                    <img src="/images/whats-up.png" alt="whats-up" />
                   </a>
                 </li>
                 <li>
                   <a href="tel:+380971136969">
-                    <img src="images/call.png" alt="call" />
+                    <img src="/images/call.png" alt="call" />
                   </a>
                 </li>
               </FooterSocial>

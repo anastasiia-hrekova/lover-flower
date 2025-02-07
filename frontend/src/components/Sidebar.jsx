@@ -58,17 +58,17 @@ const Sidebar = () => {
           <ListSide>
             <li>
               <a href="https://www.instagram.com/">
-                <SocialImg src="images/instagram.png" alt="instagram" />
+                <SocialImg src="/images/instagram.png" alt="instagram" />
               </a>
             </li>
             <li>
               <a href="https://www.whatsapp.com/?lang=uk">
-                <SocialImg src="images/whats-up.png" alt="whats-up" />
+                <SocialImg src="/images/whats-up.png" alt="whats-up" />
               </a>
             </li>
             <li>
               <a href="tel:+380971136969">
-                <SocialImg src="images/call.png" alt="call" />
+                <SocialImg src="/images/call.png" alt="call" />
               </a>
             </li>
           </ListSide>
@@ -77,7 +77,7 @@ const Sidebar = () => {
           <PhoneLink href="tel:+380971136969">+380 (97) 113-69-69</PhoneLink>
           <CallBtn onClick={() => setModalOpen(!modalOpen)}>
             <PhoneLink>
-              <PhoneLinkImg src="images/phone.svg" alt="call" />
+              <PhoneLinkImg src="/images/phone.svg" alt="call" />
               Замовити дзвінок
             </PhoneLink>
           </CallBtn>

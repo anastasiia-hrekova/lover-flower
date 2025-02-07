@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const FaqContent = styled.div`
   position: relative;
-  background-image: url(images/faq-back.png);
+  background-image: url(/images/faq-back.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -16,7 +16,7 @@ const FaqContent = styled.div`
 
   &::after {
     position: absolute;
-    background-image: url(images/faq-1.png);
+    background-image: url(/images/faq-1.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -30,7 +30,7 @@ const FaqContent = styled.div`
 
   &::before {
     position: absolute;
-    background-image: url(images/faq-2.png);
+    background-image: url(/images/faq-2.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -131,12 +131,12 @@ const FaqPage = () => {
                 НА САЙТІ?
                 <img
                   class="question-plus"
-                  src="images/plus.png"
+                  src="/images/plus.png"
                   alt="look answer"
                 />
                 <img
                   class="question-minus"
-                  src="images/minus.png"
+                  src="/images/minus.png"
                   alt="close answer"
                 />
               </FaqSummary>
@@ -150,12 +150,12 @@ const FaqPage = () => {
                 ЯК ДОВГО СТОЯТЬ БУКЕТИ ІЗ СУХОКВІТІВ?
                 <img
                   class="question-plus"
-                  src="images/plus.png"
+                  src="/images/plus.png"
                   alt="look answer"
                 />
                 <img
                   class="question-minus"
-                  src="images/minus.png"
+                  src="/images/minus.png"
                   alt="close answer"
                 />
               </FaqSummary>
@@ -169,12 +169,12 @@ const FaqPage = () => {
                 ЧИ РОБИТЕ ВИ ФОТО ГОТОВОГО БУКЕТУ ПЕРЕД ВІДПРАВКОЮ?
                 <img
                   class="question-plus"
-                  src="images/plus.png"
+                  src="/images/plus.png"
                   alt="look answer"
                 />
                 <img
                   class="question-minus"
-                  src="images/minus.png"
+                  src="/images/minus.png"
                   alt="close answer"
                 />
               </FaqSummary>
@@ -188,12 +188,12 @@ const FaqPage = () => {
                 А СКІЛЬКИ ПОВИННІ ПРОСТОЯТИ КВІТИ У БУКЕТІ?
                 <img
                   class="question-plus"
-                  src="images/plus.png"
+                  src="/images/plus.png"
                   alt="look answer"
                 />
                 <img
                   class="question-minus"
-                  src="images/minus.png"
+                  src="/images/minus.png"
                   alt="close answer"
                 />
               </FaqSummary>
@@ -207,12 +207,12 @@ const FaqPage = () => {
                 ЧИ Є ДОСТАВКА ЗА МЕЖІ КИЄВА?
                 <img
                   class="question-plus"
-                  src="images/plus.png"
+                  src="/images/plus.png"
                   alt="look answer"
                 />
                 <img
                   class="question-minus"
-                  src="images/minus.png"
+                  src="/images/minus.png"
                   alt="close answer"
                 />
               </FaqSummary>
@@ -226,12 +226,12 @@ const FaqPage = () => {
                 ЯК ВИЗНАЧИТИ ЧИ СВІЖІ КВІТИ?
                 <img
                   class="question-plus"
-                  src="images/plus.png"
+                  src="/images/plus.png"
                   alt="look answer"
                 />
                 <img
                   class="question-minus"
-                  src="images/minus.png"
+                  src="/images/minus.png"
                   alt="close answer"
                 />
               </FaqSummary>
@@ -245,12 +245,12 @@ const FaqPage = () => {
                 ЧИМ ВІДРІЗНЯЄТЬСЯ УКРАЇНСЬКА ТРОЯНДЯ ВІД ІМПОРТНОЇ?
                 <img
                   class="question-plus"
-                  src="images/plus.png"
+                  src="/images/plus.png"
                   alt="look answer"
                 />
                 <img
                   class="question-minus"
-                  src="images/minus.png"
+                  src="/images/minus.png"
                   alt="close answer"
                 />
               </FaqSummary>

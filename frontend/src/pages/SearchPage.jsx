@@ -32,7 +32,7 @@ const SearchBlock = styled.div`
     height: 70rem;
     position: absolute;
     content: '';
-    background-image: url(images/search-top.png);
+    background-image: url(/images/search-top.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;

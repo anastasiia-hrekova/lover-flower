@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Footer from '../components/Footer';
 
 const Delivery = styled.div`
-  background-image: url(images/delivery-back.png);
+  background-image: url(/images/delivery-back.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -54,7 +54,7 @@ const DearClients = styled.div`
   &:before {
     position: absolute;
     content: '';
-    background-image: url(images/delivery-sign.png);
+    background-image: url(/images/delivery-sign.png);
     background-repeat: no-repeat;
     left: -2rem;
     width: 2.5rem;
@@ -129,7 +129,7 @@ const PaymentsWay = styled.li`
     top: 2rem;
     width: 1.1rem;
     height: 1.1rem;
-    background-image: url(images/ellipse.svg);
+    background-image: url(/images/ellipse.svg);
     background-repeat: no-repeat;
   }
 `;

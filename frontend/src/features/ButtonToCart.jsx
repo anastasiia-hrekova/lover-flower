@@ -142,7 +142,7 @@ const ButtonToCart = () => {
     <>
       <CartBtn>
         <img
-          src="images/cart.svg"
+          src="/images/cart.svg"
           alt="cart"
           onClick={() => setCartOpen(!cartOpen)}
         />
@@ -156,7 +156,7 @@ const ButtonToCart = () => {
         <Overlay>
           <OpenCart>
             <CloseCartBtn onClick={() => setCartOpen(!cartOpen)}>
-              <img src="images/closeX.png" alt="close" />
+              <img src="/images/closeX.png" alt="close" />
             </CloseCartBtn>
             <Cart />
             <TotalBlock>

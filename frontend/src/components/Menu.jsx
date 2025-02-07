@@ -116,7 +116,7 @@ const Menu = () => {
         <Nav>
           <FixedMenu>
             <NavLink to="/">
-              <Logo src="images/logo.png" alt="logo" />
+              <Logo src="/images/logo.png" alt="logo" />
             </NavLink>
             <div
               onMouseEnter={() => setIsDropdownOpen(true)}
@@ -147,7 +147,7 @@ const Menu = () => {
           </FixedMenu>
           <MenuAddition isScrolled={isScrolled}>
             <PhoneLink href="tel:+380971136969">
-              <PhoneLinkImg src="images/phone.svg" alt="call" />
+              <PhoneLinkImg src="/images/phone.svg" alt="call" />
               +380 (97) 113-69-69
             </PhoneLink>
             <ButtonToCart />

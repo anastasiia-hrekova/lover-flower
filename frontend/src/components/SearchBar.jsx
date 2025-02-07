@@ -75,7 +75,7 @@ const SearchBar = () => {
       <Search>
         <SearchIcon
           type="submit"
-          src="images/search.svg"
+          src="/images/search.svg"
           alt="search"
           onClick={handleSubmit}
         />
@@ -89,7 +89,7 @@ const SearchBar = () => {
         {searchQuery && (
           <SearchIconClear
             onClick={handleResetFilters}
-            src="images/clear-search.png"
+            src="/images/clear-search.png"
             alt="clear"
           />
         )}

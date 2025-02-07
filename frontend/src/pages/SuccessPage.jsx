@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 const SuccessBlock = styled.div`
   width: 100%;
   height: 110rem;
-  background-image: url(images/access-payment.png);
+  background-image: url(/images/access-payment.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

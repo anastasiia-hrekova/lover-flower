@@ -13,7 +13,7 @@ const OrderBlock = styled.div`
   width: 100%;
   height: auto;
   padding-top: 10rem;
-  background-image: url(images/order-page-back.png);
+  background-image: url(/images/order-page-back.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -34,7 +34,7 @@ const OrderBlockTitle = styled.h1`
   &::after {
     position: absolute;
     content: '';
-    background-image: url(images/lover-flower-order.png);
+    background-image: url(/images/lover-flower-order.png);
     background-repeat: no-repeat;
     width: 30.5rem;
     height: 19rem;
@@ -247,7 +247,7 @@ const PrivacyBlock = styled.p`
   &::after {
     position: absolute;
     content: '';
-    background-image: url(images/payment.png);
+    background-image: url(/images/payment.png);
     background-repeat: no-repeat;
     width: 25rem;
     height: 17rem;

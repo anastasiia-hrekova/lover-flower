@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const Contacts = styled.div`
   position: relative;
-  background-image: url(images/contacts-back.png);
+  background-image: url(/images/contacts-back.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -78,7 +78,7 @@ const QuestionsBlock = styled.div`
     content: '';
     width: 50rem;
     height: 40rem;
-    background-image: url(images/contacts-after.png);
+    background-image: url(/images/contacts-after.png);
     background-repeat: no-repeat;
     top: 45%;
     left: 25%;

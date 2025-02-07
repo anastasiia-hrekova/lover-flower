@@ -12,7 +12,7 @@ const Hero = styled.section`
 position: relative;
 width: 100%;
 height: 130rem;
-background-image: url(images/hero-background.jpg);
+background-image: url(/images/hero-background.jpg);
 background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
@@ -21,7 +21,7 @@ background-position: center;
     position: absolute;
     width: 100%;
     height: 102rem;
-    background-image: url(images/hero-img.png);
+    background-image: url(/images/hero-img.png);
     content: '';
     background-repeat: no-repeat;
     background-size: cover;
@@ -81,7 +81,7 @@ const Catalog = styled.section`
   width: 100%;
   height: 100rem;
   margin-top: 2rem;
-  background-image: url(images/home-catalog.png);
+  background-image: url(/images/home-catalog.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center -15rem;
@@ -186,7 +186,7 @@ const CatalogOther = styled.div`
 const Bestsellers = styled.section`
   width: 100%;
   height: 110rem;
-  background-image: url(images/bestseller_back.png);
+  background-image: url(/images/bestseller_back.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 10rem;
@@ -196,7 +196,7 @@ const BestsellersBlock = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   margin-bottom: 18rem;
-  background-image: url(images/bestsellers.png);
+  background-image: url(/images/bestsellers.png);
   background-repeat: no-repeat;
   background-size: 90rem 65rem;
   background-position: right 2.5rem;
@@ -268,7 +268,7 @@ const Order = styled.section`
     width: 100%;
     height: 102rem;
     content: '';
-    background-image: url(images/order-section.png);
+    background-image: url(/images/order-section.png);
     background-repeat: no-repeat;
     background-size: 45rem 84.5rem;
     background-position: left 4rem;
@@ -280,7 +280,7 @@ const Order = styled.section`
     width: 30rem;
     height: 20rem;
     content: '';
-    background-image: url(images/order-section-lover-flower.png);
+    background-image: url(/images/order-section-lover-flower.png);
     background-repeat: no-repeat;
     background-size: 30rem 20rem;
     background-position: center;
@@ -372,7 +372,7 @@ const Special = styled.section`
     content: '';
     width: 100%;
     height: 80rem;
-    background-image: url(images/special.png);
+    background-image: url(/images/special.png);
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
@@ -451,7 +451,7 @@ const SpecialList = styled.ul`
     position: absolute;
     width: 2rem;
     height: 6rem;
-    background-image: url(images/arrow-oval.svg);
+    background-image: url(/images/arrow-oval.svg);
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
@@ -482,7 +482,7 @@ const Questions = styled.section`
     content: '';
     width: 100%;
     height: 100rem;
-    background-image: url(images/questions-section.png);
+    background-image: url(/images/questions-section.png);
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
@@ -616,7 +616,7 @@ const QuestionsFormTextSpan = styled.span`
 
 const Instagram = styled.section`
   padding: 20rem 0;
-  background-image: url(images/social-section-back.png);
+  background-image: url(/images/social-section-back.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center -6rem;
@@ -747,7 +747,7 @@ const HomePage = () => {
             </BestsellersList>
             <BestsellersLink to="catalog">
               Дивитись весь каталог
-              <img src="images/arrow-catalog.svg" alt="arrow" />
+              <img src="/images/arrow-catalog.svg" alt="arrow" />
             </BestsellersLink>
           </BestsellersBlock>
         </Container>
@@ -809,7 +809,7 @@ const HomePage = () => {
               Особливий <br />
               <SpecialTitleSpan> привід?</SpecialTitleSpan>
               <SpecialTitleImg
-                src="images/holiday-section-1.png"
+                src="/images/holiday-section-1.png"
                 alt="bouquet"
                 loading="lazy"
               />
@@ -834,17 +834,17 @@ const HomePage = () => {
               </SpecialText>
               <SpecialImages>
                 <img
-                  src="images/holiday-section-2.png"
+                  src="/images/holiday-section-2.png"
                   alt="bouquet"
                   loading="lazy"
                 />
                 <img
-                  src="images/holiday-section-3.png"
+                  src="/images/holiday-section-3.png"
                   alt="bouquet"
                   loading="lazy"
                 />
                 <img
-                  src="images/holiday-section-4.png"
+                  src="/images/holiday-section-4.png"
                   alt="bouquet"
                   loading="lazy"
                 />
@@ -904,20 +904,20 @@ const HomePage = () => {
         <Container>
           <InstagramBlock>
             <InstagramBlock>
-              <img src="images/inst1.png" alt="ins1" loading="lazy" />
-              <img src="images/inst2.png" alt="ins2" loading="lazy" />
-              <img src="images/inst3.png" alt="ins3" loading="lazy" />
-              <img src="images/inst4.png" alt="ins4" loading="lazy" />
+              <img src="/images/inst1.png" alt="ins1" loading="lazy" />
+              <img src="/images/inst2.png" alt="ins2" loading="lazy" />
+              <img src="/images/inst3.png" alt="ins3" loading="lazy" />
+              <img src="/images/inst4.png" alt="ins4" loading="lazy" />
             </InstagramBlock>
             <InstagramTitle
-              src="images/our-social-networks.png"
+              src="/images/our-social-networks.png"
               alt="Our social media"
             />
             <InstagramSocials>
               <li>
                 <a href="https://www.instagram.com/">
                   <InstagramSocialsImg
-                    src="images/instagram.png"
+                    src="/images/instagram.png"
                     alt="instagram"
                   />
                 </a>
@@ -925,14 +925,14 @@ const HomePage = () => {
               <li>
                 <a href="https://www.whatsapp.com/?lang=uk">
                   <InstagramSocialsImg
-                    src="images/whats-up.png"
+                    src="/images/whats-up.png"
                     alt="whats-up"
                   />
                 </a>
               </li>
               <li>
                 <a href="tel:+380971136969">
-                  <InstagramSocialsImg src="images/call.png" alt="call" />
+                  <InstagramSocialsImg src="/images/call.png" alt="call" />
                 </a>
               </li>
             </InstagramSocials>
