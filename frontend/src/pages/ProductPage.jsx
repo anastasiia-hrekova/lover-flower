@@ -19,7 +19,7 @@ import CarouselForProduct from '../components/CarouselForProduct';
 const ProductBlock = styled.div`
   position: relative;
   width: 100%;
-  min-height: 350rem;
+  min-height: 250rem;
   height: auto;
   margin-top: 10rem;
   margin-bottom: 20rem;
@@ -135,11 +135,6 @@ const FlowerActions = styled.div`
   display: flex;
   flex-direction: row;
   gap: 3rem;
-`;
-
-const BlockImg = styled.img`
-  width: 35rem;
-  height: 45rem;
 `;
 
 const ProductQuantityBlock = styled.div`
@@ -521,9 +516,6 @@ const ProductPage = () => {
             <>
               <FlowerInfoBlock>
                 <CarouselForProduct images={product.images} />
-                <div>
-                  <BlockImg src={product.image} alt="flower" />
-                </div>
                 <div>
                   <BackBtn onClick={() => navigate(-1)}>Назад</BackBtn>
                   <ProductTitle>{product.title}</ProductTitle>
