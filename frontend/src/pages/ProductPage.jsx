@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 import { selectFlowers } from '../redux/slices/cardsSlice';
 import styled from 'styled-components';
 import {
@@ -12,10 +13,13 @@ import Container from '../styles/Container';
 import AddToCart from '../components/AddToCart';
 import CardsCarousel from '../components/CardsCarousel';
 import { addToCart } from '../redux/slices/cartSlice';
+import ButtonLink from '../components/ButtonLink';
+import CarouselForProduct from '../components/CarouselForProduct';
 
 const ProductBlock = styled.div`
   position: relative;
   width: 100%;
+  min-height: 350rem;
   height: auto;
   margin-top: 10rem;
   margin-bottom: 20rem;
@@ -28,7 +32,22 @@ const ProductBlock = styled.div`
     background-image: url(/images/product-card-back.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: center;
+    top: 0;
+    z-index: -1;
+  }
+
+  &:after {
+    width: 100vw;
+    height: 50rem;
+    position: absolute;
+    content: '';
+    background-image: url(/images/search-bottom.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 87%;
+    left: 0;
     z-index: -1;
   }
 `;
@@ -220,8 +239,23 @@ const AddText = styled.p`
 
 const DeliveryBlock = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   margin-bottom: 10rem;
+
+  &:after {
+    width: 50rem;
+    height: 80rem;
+    position: absolute;
+    content: '';
+    background-image: url(/images/product-card.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    top: 10%;
+    right: -15%;
+    z-index: -1;
+  }
 `;
 
 const DeliveryBlockBtns = styled.div`
@@ -234,17 +268,19 @@ const DeliveryBlockBtns = styled.div`
 const BlockButton = styled.button`
   background-color: transparent;
   border: none;
-  border-bottom: 3px solid ${({ theme }) => theme.colors.mainColor};
+  border-bottom: ${props => (props.$active ? '3px' : '1px')} solid
+    ${props => (props.$active ? ' #43FFD2' : '#555')};
+  color: ${props => (props.$active ? ' #43FFD2' : '#555')};
   width: 35.8rem;
   text-align: center;
-  color: ${({ theme }) => theme.colors.mainColor};
   font-family: 'Oswald', sans-serif;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 3rem;
   letter-spacing: 0.04rem;
   text-transform: uppercase;
   padding: 3rem;
+  cursor: pointer;
 `;
 
 const DeliveryBlocks = styled.ul`
@@ -274,12 +310,203 @@ const ColorSpan = styled.span`
   color: ${({ theme }) => theme.colors.mainColor};
 `;
 
+const ReviewsBlockTitle = styled.p`
+  color: ${({ theme }) => theme.colors.mainColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+`;
+
+const ReviewsBlockText = styled.p`
+  color: ${({ theme }) => theme.colors.textColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.06rem;
+  margin-bottom: 2rem;
+`;
+
+const ReviewsForm = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ReviewsFormLabel = styled.label`
+  color: ${({ theme }) => theme.colors.textColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.06rem;
+  margin-bottom: 4px;
+`;
+
+const ReviewsFormInput = styled.input`
+  all: unset;
+  background-color: transparent;
+  border: 1px solid #555555;
+  width: 54rem;
+  height: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+`;
+
+const ReviewsFormTextarea = styled.textarea`
+  all: unset;
+  background-color: transparent;
+  border: 1px solid #555555;
+  width: 54rem;
+  height: 18rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+`;
+
+const RatingBlock = styled.div`
+  margin-bottom: 2rem;
+`;
+
+const ReviewStart = styled.p`
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 4.5rem;
+  letter-spacing: 0.02rem;
+  color: ${({ theme }) => theme.colors.mainColor};
+`;
+
+const ReviewText = styled.p`
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  letter-spacing: 0.02rem;
+  color: ${({ theme }) => theme.colors.textColor};
+`;
+
+const ReviewAuthor = styled.p`
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  letter-spacing: 0.02rem;
+  color: #555;
+`;
+
+const ReviewBlock = styled.li`
+  margin-bottom: 4rem;
+`;
+
+const PrivacyBlock = styled.p`
+  position: relative;
+  color: ${({ theme }) => theme.colors.textColor};
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+  letter-spacing: 0.02rem;
+  width: 34.2rem;
+  margin-top: 1rem;
+`;
+
+const PrivacyBlockSpan = styled.span`
+  color: ${({ theme }) => theme.colors.accentColor};
+  text-decoration: underline;
+`;
+
+const initialReviews = [
+  {
+    id: 1,
+    author: 'Іван Іванов',
+    text: 'Чудовий товар! Рекомендую.',
+    rating: 5,
+  },
+  {
+    id: 2,
+    author: 'Марія Петрова',
+    text: 'Дуже сподобалося, буду замовляти знову.',
+    rating: 4,
+  },
+];
+
 const ProductPage = () => {
   const { id } = useParams();
   const products = useSelector(selectFlowers);
   const product = products.find(item => Number(item.id) === Number(id));
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const [activeTab, setActiveTab] = useState('delivery');
+  const [reviews, setReviews] = useState(initialReviews);
+  const [newReview, setNewReview] = useState('');
+  const [rating, setRating] = useState(0);
+  const [userName, setUserName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleAddReview = () => {
+    if (!userName || !userEmail || !newReview.trim() || rating === 0) {
+      alert("Будь-ласка, заповніть всі обов'язкові поля.");
+      return;
+    }
+    if (newReview.trim()) {
+      const newReviewObj = {
+        id: Date.now(),
+        author: userName,
+        text: newReview,
+        rating,
+        date: new Date().toLocaleDateString(),
+      };
+      setReviews([...reviews, newReviewObj]);
+      setNewReview('');
+      setUserName('');
+      setUserEmail('');
+      setRating(0);
+    }
+  };
+
+  const renderStars = (selectedRating, onSelect) => {
+    return (
+      <div>
+        {[1, 2, 3, 4, 5].map(star => (
+          <span
+            key={star}
+            onClick={() => onSelect(star)}
+            style={{
+              cursor: 'pointer',
+              fontSize: '2.4rem',
+              color: star <= selectedRating ? 'gold' : 'gray',
+              marginBottom: '2rem',
+            }}
+          >
+            {star <= selectedRating ? '★' : '☆'}
+          </span>
+        ))}
+      </div>
+    );
+  };
+
+  const handleTabClick = tab => {
+    setActiveTab(tab);
+  };
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
@@ -293,7 +520,7 @@ const ProductPage = () => {
           {product ? (
             <>
               <FlowerInfoBlock>
-                <div></div>
+                <CarouselForProduct images={product.images} />
                 <div>
                   <BlockImg src={product.image} alt="flower" />
                 </div>
@@ -319,7 +546,7 @@ const ProductPage = () => {
                       >
                         -
                       </QuantityBtn>
-                      <p>{product.quantity}</p>
+                      <p>{product.quantity || 1}</p>
                       <QuantityBtn
                         onClick={() =>
                           dispatch(incrementQuantity({ id: product.id }))
@@ -376,55 +603,162 @@ const ProductPage = () => {
               </AddToOrder>
               <DeliveryBlock>
                 <DeliveryBlockBtns>
-                  <BlockButton>доставка та оплата</BlockButton>
-                  <BlockButton>відгуки</BlockButton>
+                  <BlockButton
+                    onClick={() => handleTabClick('delivery')}
+                    $active={activeTab === 'delivery'}
+                  >
+                    доставка та оплата
+                  </BlockButton>
+                  <BlockButton
+                    onClick={() => handleTabClick('reviews')}
+                    $active={activeTab === 'reviews'}
+                  >
+                    відгуки
+                  </BlockButton>
                 </DeliveryBlockBtns>
-                <DeliveryBlocks>
-                  <AddTitle>Способи оплати:</AddTitle>
-                  <DeliveryText>
-                    Банківською картою при оформленні замовлення через сайт
-                  </DeliveryText>
-                  <DeliveryText>
-                    Готівкою або банківською картою при самовивозі
-                  </DeliveryText>
-                  <DeliveryText>Готівкою при доставці кур'єром</DeliveryText>
-                </DeliveryBlocks>
-                <DeliveryBlocks>
-                  <AddTitle>Вартість доставки:</AddTitle>
-                  <DeliveryText>
-                    <BoldSpan>Безкоштовно</BoldSpan> - при замовленні на суму
-                    <ColorSpan> від 1500 грн</ColorSpan>
-                  </DeliveryText>
-                  <DeliveryText>
-                    <BoldSpan>150 грн</BoldSpan> - при замовленні на суму
-                    <ColorSpan> менше 1500 грн</ColorSpan>
-                  </DeliveryText>
-                  <DeliveryText>
-                    Можливість, терміни та вартість доставки за межі Києва,
-                    доставки у нічний час, свята
-                    <ColorSpan> обмовляються з менеджером</ColorSpan>
-                  </DeliveryText>
-                  <DeliveryText>
-                    Також ви можете забрати ваше замовлення самостійно за
-                    адресою:
-                    <br />
-                    <ColorSpan>
-                      м. Київ, вул. Тараса Шевченка 67, щоденно з 10:00 до 21:00
-                    </ColorSpan>
-                  </DeliveryText>
-                </DeliveryBlocks>
-                <AddTitle>Умови доставки:</AddTitle>
-                <DeliveryText style={{ listStyle: 'none', marginLeft: '0' }}>
-                  Доставка здійснюється по місту в межах Києва
-                  <ColorSpan> будь-якого дня з 09.00 до 22.00.</ColorSpan>{' '}
-                  Доставка у нічний час здійснюється за домовленістю з
-                  оператором
-                </DeliveryText>
+                {activeTab === 'delivery' && (
+                  <>
+                    <DeliveryBlocks>
+                      <AddTitle>Способи оплати:</AddTitle>
+                      <DeliveryText>
+                        Банківською картою при оформленні замовлення через сайт
+                      </DeliveryText>
+                      <DeliveryText>
+                        Готівкою або банківською картою при самовивозі
+                      </DeliveryText>
+                      <DeliveryText>
+                        Готівкою при доставці кур'єром
+                      </DeliveryText>
+                    </DeliveryBlocks>
+                    <DeliveryBlocks>
+                      <AddTitle>Вартість доставки:</AddTitle>
+                      <DeliveryText>
+                        <BoldSpan>Безкоштовно</BoldSpan> - при замовленні на
+                        суму
+                        <ColorSpan> від 1500 грн</ColorSpan>
+                      </DeliveryText>
+                      <DeliveryText>
+                        <BoldSpan>150 грн</BoldSpan> - при замовленні на суму
+                        <ColorSpan> менше 1500 грн</ColorSpan>
+                      </DeliveryText>
+                      <DeliveryText>
+                        Можливість, терміни та вартість доставки за межі Києва,
+                        доставки у нічний час, свята
+                        <ColorSpan> обмовляються з менеджером</ColorSpan>
+                      </DeliveryText>
+                      <DeliveryText>
+                        Також ви можете забрати ваше замовлення самостійно за
+                        адресою:
+                        <br />
+                        <ColorSpan>
+                          м. Київ, вул. Тараса Шевченка 67, щоденно з 10:00 до
+                          21:00
+                        </ColorSpan>
+                      </DeliveryText>
+                    </DeliveryBlocks>
+                    <AddTitle>Умови доставки:</AddTitle>
+                    <DeliveryText
+                      style={{ listStyle: 'none', marginLeft: '0' }}
+                    >
+                      Доставка здійснюється по місту в межах Києва
+                      <ColorSpan>
+                        {' '}
+                        будь-якого дня з 09.00 до 22.00.
+                      </ColorSpan>{' '}
+                      Доставка у нічний час здійснюється за домовленістю з
+                      оператором
+                    </DeliveryText>
+                  </>
+                )}
+                {activeTab === 'reviews' && (
+                  <>
+                    {reviews.length === 0 ? (
+                      <ReviewText style={{ marginBottom: '6rem' }}>
+                        Відгуків поки немає
+                      </ReviewText>
+                    ) : (
+                      <ul>
+                        {reviews.map(review => (
+                          <ReviewBlock key={review.id}>
+                            <ReviewStart>"</ReviewStart>
+                            <ReviewText>{review.text}</ReviewText> <br />
+                            {renderStars(review.rating, () => {})}
+                            <ReviewAuthor>
+                              {review.author}, {review.date}
+                            </ReviewAuthor>
+                          </ReviewBlock>
+                        ))}
+                      </ul>
+                    )}
+                    <div>
+                      <ReviewsBlockTitle>
+                        Будьте першим, хто залишив відгук на "{product.title}"
+                      </ReviewsBlockTitle>
+                      <ReviewsBlockText>
+                        Ваша адреса email не буде опублікована. Обов'язкові поля
+                        позначені *
+                      </ReviewsBlockText>
+                      <RatingBlock>
+                        <ReviewsBlockText style={{ marginBottom: '0' }}>
+                          Ваша оцінка:
+                        </ReviewsBlockText>
+                        {renderStars(rating, setRating)}
+                      </RatingBlock>
+                      <ReviewsForm>
+                        <ReviewsFormLabel htmlFor="comment">
+                          Ваш відгук*
+                        </ReviewsFormLabel>
+                        <ReviewsFormTextarea
+                          id="comment"
+                          type="textarea"
+                          value={newReview}
+                          onChange={e => setNewReview(e.target.value)}
+                          placeholder="Введіть комментар"
+                          required
+                        />
+                        <ReviewsFormLabel htmlFor="name">
+                          Ім'я*
+                        </ReviewsFormLabel>
+                        <ReviewsFormInput
+                          id="name"
+                          type="text"
+                          value={userName}
+                          onChange={e => setUserName(e.target.value)}
+                          placeholder="Введіть ваше ім'я"
+                          required
+                        />
+                        <ReviewsFormLabel htmlFor="email">
+                          E-mail*
+                        </ReviewsFormLabel>
+                        <ReviewsFormInput
+                          id="email"
+                          type="email"
+                          value={userEmail}
+                          onChange={e => setUserEmail(e.target.value)}
+                          placeholder="Введіть вашу пошту"
+                          required
+                        />
+                        <ButtonLink
+                          text="Відправити"
+                          onNavigate={handleAddReview}
+                        />
+                        <PrivacyBlock>
+                          Натискаючи на кнопку «До Оплати», я даю свою згоду на
+                          обробку персональних даних, відповідно до
+                          <PrivacyBlockSpan>
+                            Політики конфіденційності
+                          </PrivacyBlockSpan>
+                          , а також ознайомлений з умовами оплати та доставки
+                        </PrivacyBlock>
+                      </ReviewsForm>
+                    </div>
+                  </>
+                )}
               </DeliveryBlock>
               <CardsCarousel />
             </>
           ) : (
-            <h2>Товару не знайдено</h2>
+            <ReviewsBlockTitle>Товару не знайдено</ReviewsBlockTitle>
           )}
         </Container>
       </ProductBlock>
