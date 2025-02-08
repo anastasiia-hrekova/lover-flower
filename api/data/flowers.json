@@ -3,6 +3,17 @@
     "id": 1,
     "title": "Букет Троянди 1",
     "image": "https://i.pinimg.com/736x/88/e3/ae/88e3aebca4fc12b657d44edb0d0f6a17.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/88/e3/ae/88e3aebca4fc12b657d44edb0d0f6a17.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/88/e3/ae/88e3aebca4fc12b657d44edb0d0f6a17.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/88/e3/ae/88e3aebca4fc12b657d44edb0d0f6a17.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 500,
     "onSale": true,
@@ -18,6 +29,17 @@
     "id": 2,
     "title": "Букет Тюльпани 2",
     "image": "https://i.pinimg.com/736x/62/06/47/6206473d016d76ad0b83693122d53d5b.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/62/06/47/6206473d016d76ad0b83693122d53d5b.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/62/06/47/6206473d016d76ad0b83693122d53d5b.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/62/06/47/6206473d016d76ad0b83693122d53d5b.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 510,
     "onSale": false,
@@ -33,6 +55,17 @@
     "id": 3,
     "title": "Букет Орхідеї 3",
     "image": "https://i.pinimg.com/736x/96/f6/5e/96f65edc4f7693aefd00db270df2aa53.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/96/f6/5e/96f65edc4f7693aefd00db270df2aa53.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/96/f6/5e/96f65edc4f7693aefd00db270df2aa53.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/96/f6/5e/96f65edc4f7693aefd00db270df2aa53.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 520,
     "onSale": false,
@@ -48,6 +81,17 @@
     "id": 4,
     "title": "Букет Гортензії 4",
     "image": "https://i.pinimg.com/736x/18/60/51/186051a22045690b9253d8034a199ac7.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/18/60/51/186051a22045690b9253d8034a199ac7.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/18/60/51/186051a22045690b9253d8034a199ac7.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/18/60/51/186051a22045690b9253d8034a199ac7.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 530,
     "onSale": false,
@@ -63,6 +107,17 @@
     "id": 5,
     "title": "Букет Півонії 5",
     "image": "https://i.pinimg.com/736x/6d/64/95/6d6495a8bc6f6ea2c0325ced96f18afa.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/6d/64/95/6d6495a8bc6f6ea2c0325ced96f18afa.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/6d/64/95/6d6495a8bc6f6ea2c0325ced96f18afa.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/6d/64/95/6d6495a8bc6f6ea2c0325ced96f18afa.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 540,
     "onSale": true,
@@ -78,6 +133,17 @@
     "id": 6,
     "title": "Букет Кали 6",
     "image": "https://i.pinimg.com/736x/ee/d2/85/eed285c19ceda76c3a3f36851e722142.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/ee/d2/85/eed285c19ceda76c3a3f36851e722142.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ee/d2/85/eed285c19ceda76c3a3f36851e722142.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ee/d2/85/eed285c19ceda76c3a3f36851e722142.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 550,
     "onSale": false,
@@ -93,6 +159,17 @@
     "id": 7,
     "title": "Букет Хризантеми 7",
     "image": "https://i.pinimg.com/736x/83/74/54/83745484b5945511717aa24dc654ba7c.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/83/74/54/83745484b5945511717aa24dc654ba7c.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/83/74/54/83745484b5945511717aa24dc654ba7c.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/83/74/54/83745484b5945511717aa24dc654ba7c.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 560,
     "onSale": false,
@@ -108,6 +185,17 @@
     "id": 8,
     "title": "Букет Еустоми 8",
     "image": "https://i.pinimg.com/736x/d9/14/8a/d9148a0a923bd0e926302e3f74f88611.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/d9/14/8a/d9148a0a923bd0e926302e3f74f88611.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/d9/14/8a/d9148a0a923bd0e926302e3f74f88611.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/d9/14/8a/d9148a0a923bd0e926302e3f74f88611.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 570,
     "onSale": false,
@@ -123,6 +211,17 @@
     "id": 9,
     "title": "Букет Гвоздики 9",
     "image": "https://i.pinimg.com/736x/55/7f/64/557f64398f6241699f6319784018a330.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/55/7f/64/557f64398f6241699f6319784018a330.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/55/7f/64/557f64398f6241699f6319784018a330.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/55/7f/64/557f64398f6241699f6319784018a330.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 580,
     "onSale": true,
@@ -138,6 +237,17 @@
     "id": 10,
     "title": "Букет Іриси 10",
     "image": "https://i.pinimg.com/736x/bc/ad/e9/bcade9053d4a6e3d6179605091501015.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/bc/ad/e9/bcade9053d4a6e3d6179605091501015.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/bc/ad/e9/bcade9053d4a6e3d6179605091501015.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/bc/ad/e9/bcade9053d4a6e3d6179605091501015.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 590,
     "onSale": false,
@@ -153,6 +263,17 @@
     "id": 11,
     "title": "Букет Троянди 11",
     "image": "https://i.pinimg.com/736x/70/2f/23/702f23c9059c48bcd138464c6de1aab2.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/70/2f/23/702f23c9059c48bcd138464c6de1aab2.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/70/2f/23/702f23c9059c48bcd138464c6de1aab2.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/70/2f/23/702f23c9059c48bcd138464c6de1aab2.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 600,
     "onSale": false,
@@ -168,6 +289,17 @@
     "id": 12,
     "title": "Букет Тюльпани 12",
     "image": "https://i.pinimg.com/736x/64/94/ca/6494ca939dff0c24e58ec7e2fbc1a8e6.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/64/94/ca/6494ca939dff0c24e58ec7e2fbc1a8e6.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/64/94/ca/6494ca939dff0c24e58ec7e2fbc1a8e6.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/64/94/ca/6494ca939dff0c24e58ec7e2fbc1a8e6.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 610,
     "onSale": false,
@@ -183,6 +315,17 @@
     "id": 13,
     "title": "Букет Орхідеї 13",
     "image": "https://i.pinimg.com/736x/9a/c5/d0/9ac5d04eaac321e3ca149b624ab16649.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/9a/c5/d0/9ac5d04eaac321e3ca149b624ab16649.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/9a/c5/d0/9ac5d04eaac321e3ca149b624ab16649.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/9a/c5/d0/9ac5d04eaac321e3ca149b624ab16649.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 620,
     "onSale": true,
@@ -198,6 +341,17 @@
     "id": 14,
     "title": "Букет Гортензії 14",
     "image": "https://i.pinimg.com/736x/91/79/e7/9179e77c6271a3885fda9bde5018fe0e.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/91/79/e7/9179e77c6271a3885fda9bde5018fe0e.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/91/79/e7/9179e77c6271a3885fda9bde5018fe0e.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/91/79/e7/9179e77c6271a3885fda9bde5018fe0e.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 630,
     "onSale": false,
@@ -213,6 +367,17 @@
     "id": 15,
     "title": "Букет Півонії 15",
     "image": "https://i.pinimg.com/736x/34/03/ce/3403ce32cbc4756ff41cf90397ac44f8.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/34/03/ce/3403ce32cbc4756ff41cf90397ac44f8.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/34/03/ce/3403ce32cbc4756ff41cf90397ac44f8.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/34/03/ce/3403ce32cbc4756ff41cf90397ac44f8.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 640,
     "onSale": false,
@@ -228,6 +393,17 @@
     "id": 16,
     "title": "Букет Кали 16",
     "image": "https://i.pinimg.com/736x/81/42/1b/81421b4cd7003993fbdb3a5782182af0.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/81/42/1b/81421b4cd7003993fbdb3a5782182af0.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/81/42/1b/81421b4cd7003993fbdb3a5782182af0.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/81/42/1b/81421b4cd7003993fbdb3a5782182af0.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 650,
     "onSale": false,
@@ -243,6 +419,17 @@
     "id": 17,
     "title": "Букет Хризантеми 17",
     "image": "https://i.pinimg.com/736x/04/44/d6/0444d6ca23746bcc1d7df993a94b1013.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/04/44/d6/0444d6ca23746bcc1d7df993a94b1013.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/04/44/d6/0444d6ca23746bcc1d7df993a94b1013.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/04/44/d6/0444d6ca23746bcc1d7df993a94b1013.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 660,
     "onSale": true,
@@ -258,6 +445,17 @@
     "id": 18,
     "title": "Букет Еустоми 18",
     "image": "https://i.pinimg.com/736x/07/3d/4c/073d4c0e84841c10379988f7568b5d76.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/07/3d/4c/073d4c0e84841c10379988f7568b5d76.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/07/3d/4c/073d4c0e84841c10379988f7568b5d76.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/07/3d/4c/073d4c0e84841c10379988f7568b5d76.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 670,
     "onSale": false,
@@ -273,6 +471,17 @@
     "id": 19,
     "title": "Букет Гвоздики 19",
     "image": "https://i.pinimg.com/736x/1f/79/f7/1f79f73bbc5bd64659731965298c0ce2.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/1f/79/f7/1f79f73bbc5bd64659731965298c0ce2.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/1f/79/f7/1f79f73bbc5bd64659731965298c0ce2.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/1f/79/f7/1f79f73bbc5bd64659731965298c0ce2.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 680,
     "onSale": false,
@@ -288,6 +497,17 @@
     "id": 20,
     "title": "Букет Іриси 20",
     "image": "https://i.pinimg.com/736x/2d/a2/6c/2da26c6decbe198f5f26a36f434ed133.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/2d/a2/6c/2da26c6decbe198f5f26a36f434ed133.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/2d/a2/6c/2da26c6decbe198f5f26a36f434ed133.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/2d/a2/6c/2da26c6decbe198f5f26a36f434ed133.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 690,
     "onSale": false,
@@ -303,6 +523,17 @@
     "id": 21,
     "title": "Букет Троянди 21",
     "image": "https://i.pinimg.com/736x/13/a9/c6/13a9c6010864f4b623c1fdebd8e07869.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/13/a9/c6/13a9c6010864f4b623c1fdebd8e07869.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/13/a9/c6/13a9c6010864f4b623c1fdebd8e07869.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/13/a9/c6/13a9c6010864f4b623c1fdebd8e07869.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 700,
     "onSale": true,
@@ -318,6 +549,17 @@
     "id": 22,
     "title": "Букет Тюльпани 22",
     "image": "https://i.pinimg.com/736x/77/2e/72/772e72382a076d6b16973e086534caec.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/77/2e/72/772e72382a076d6b16973e086534caec.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/77/2e/72/772e72382a076d6b16973e086534caec.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/77/2e/72/772e72382a076d6b16973e086534caec.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 710,
     "onSale": false,
@@ -333,6 +575,17 @@
     "id": 23,
     "title": "Букет Орхідеї 23",
     "image": "https://i.pinimg.com/736x/c2/73/5f/c2735f3408008720a551f90886414b60.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/c2/73/5f/c2735f3408008720a551f90886414b60.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/c2/73/5f/c2735f3408008720a551f90886414b60.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/c2/73/5f/c2735f3408008720a551f90886414b60.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 720,
     "onSale": false,
@@ -348,6 +601,17 @@
     "id": 24,
     "title": "Букет Гортензії 24",
     "image": "https://i.pinimg.com/736x/89/82/e8/8982e858ff2ee726160b7ea5a7381842.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/89/82/e8/8982e858ff2ee726160b7ea5a7381842.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/89/82/e8/8982e858ff2ee726160b7ea5a7381842.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/89/82/e8/8982e858ff2ee726160b7ea5a7381842.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 730,
     "onSale": false,
@@ -363,6 +627,17 @@
     "id": 25,
     "title": "Букет Півонії 25",
     "image": "https://i.pinimg.com/736x/c3/cc/b7/c3ccb7a4e2a74b7256fcf3bbe1711845.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/c3/cc/b7/c3ccb7a4e2a74b7256fcf3bbe1711845.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/c3/cc/b7/c3ccb7a4e2a74b7256fcf3bbe1711845.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/c3/cc/b7/c3ccb7a4e2a74b7256fcf3bbe1711845.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 740,
     "onSale": true,
@@ -378,6 +653,17 @@
     "id": 26,
     "title": "Букет Кали 26",
     "image": "https://i.pinimg.com/736x/d3/ff/4f/d3ff4f2cce4bdeacccc466ba17ec2b0d.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/d3/ff/4f/d3ff4f2cce4bdeacccc466ba17ec2b0d.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/d3/ff/4f/d3ff4f2cce4bdeacccc466ba17ec2b0d.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/d3/ff/4f/d3ff4f2cce4bdeacccc466ba17ec2b0d.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 750,
     "onSale": false,
@@ -393,6 +679,17 @@
     "id": 27,
     "title": "Букет Хризантеми 27",
     "image": "https://i.pinimg.com/736x/8e/89/85/8e89851421c3759add64d2b6893cfe71.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/8e/89/85/8e89851421c3759add64d2b6893cfe71.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/8e/89/85/8e89851421c3759add64d2b6893cfe71.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/8e/89/85/8e89851421c3759add64d2b6893cfe71.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 760,
     "onSale": false,
@@ -408,6 +705,17 @@
     "id": 28,
     "title": "Букет Еустоми 28",
     "image": "https://i.pinimg.com/736x/15/4c/da/154cda308245ad326210063d7a4f1e06.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/15/4c/da/154cda308245ad326210063d7a4f1e06.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/15/4c/da/154cda308245ad326210063d7a4f1e06.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/15/4c/da/154cda308245ad326210063d7a4f1e06.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 770,
     "onSale": false,
@@ -423,6 +731,17 @@
     "id": 29,
     "title": "Букет Гвоздики 29",
     "image": "https://i.pinimg.com/736x/88/4b/03/884b03a26fc09a21a75e5519043e3749.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/88/4b/03/884b03a26fc09a21a75e5519043e3749.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/88/4b/03/884b03a26fc09a21a75e5519043e3749.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/88/4b/03/884b03a26fc09a21a75e5519043e3749.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 780,
     "onSale": true,
@@ -438,6 +757,17 @@
     "id": 30,
     "title": "Букет Іриси 30",
     "image": "https://i.pinimg.com/736x/3e/0a/ac/3e0aacb81e9608c9a19523adfd578957.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/3e/0a/ac/3e0aacb81e9608c9a19523adfd578957.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/3e/0a/ac/3e0aacb81e9608c9a19523adfd578957.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/3e/0a/ac/3e0aacb81e9608c9a19523adfd578957.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 790,
     "onSale": false,
@@ -453,6 +783,17 @@
     "id": 31,
     "title": "Букет Троянди 31",
     "image": "https://i.pinimg.com/736x/b5/6e/1c/b56e1c45259f4c3a75ff73ab5a39d8a2.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/b5/6e/1c/b56e1c45259f4c3a75ff73ab5a39d8a2.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/b5/6e/1c/b56e1c45259f4c3a75ff73ab5a39d8a2.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/b5/6e/1c/b56e1c45259f4c3a75ff73ab5a39d8a2.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 800,
     "onSale": false,
@@ -468,6 +809,17 @@
     "id": 32,
     "title": "Букет Тюльпани 32",
     "image": "https://i.pinimg.com/736x/c2/55/cf/c255cfa7563b537db02bfa5079dbfc9f.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/c2/55/cf/c255cfa7563b537db02bfa5079dbfc9f.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/c2/55/cf/c255cfa7563b537db02bfa5079dbfc9f.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/c2/55/cf/c255cfa7563b537db02bfa5079dbfc9f.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 810,
     "onSale": false,
@@ -483,6 +835,17 @@
     "id": 33,
     "title": "Букет Орхідеї 33",
     "image": "https://i.pinimg.com/736x/46/03/c3/4603c39984a33d212427c1030920a8bd.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/46/03/c3/4603c39984a33d212427c1030920a8bd.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/46/03/c3/4603c39984a33d212427c1030920a8bd.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/46/03/c3/4603c39984a33d212427c1030920a8bd.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 820,
     "onSale": true,
@@ -498,6 +861,17 @@
     "id": 34,
     "title": "Букет Гортензії 34",
     "image": "https://i.pinimg.com/736x/bf/82/66/bf8266aa3ea334e54388c54c21993afa.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/bf/82/66/bf8266aa3ea334e54388c54c21993afa.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/bf/82/66/bf8266aa3ea334e54388c54c21993afa.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/bf/82/66/bf8266aa3ea334e54388c54c21993afa.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 830,
     "onSale": false,
@@ -513,6 +887,17 @@
     "id": 35,
     "title": "Букет Півонії 35",
     "image": "https://i.pinimg.com/736x/31/19/a2/3119a2b36fade9fafae76ed376ccdf66.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/31/19/a2/3119a2b36fade9fafae76ed376ccdf66.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/31/19/a2/3119a2b36fade9fafae76ed376ccdf66.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/31/19/a2/3119a2b36fade9fafae76ed376ccdf66.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 840,
     "onSale": false,
@@ -528,6 +913,17 @@
     "id": 36,
     "title": "Букет Кали 36",
     "image": "https://i.pinimg.com/736x/ee/d2/85/eed285c19ceda76c3a3f36851e722142.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/ee/d2/85/eed285c19ceda76c3a3f36851e722142.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ee/d2/85/eed285c19ceda76c3a3f36851e722142.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ee/d2/85/eed285c19ceda76c3a3f36851e722142.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 850,
     "onSale": false,
@@ -543,6 +939,17 @@
     "id": 37,
     "title": "Букет Хризантеми 37",
     "image": "https://i.pinimg.com/736x/c2/49/e7/c249e75277d7bf4b64caed9786ce6976.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/c2/49/e7/c249e75277d7bf4b64caed9786ce6976.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/c2/49/e7/c249e75277d7bf4b64caed9786ce6976.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/c2/49/e7/c249e75277d7bf4b64caed9786ce6976.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 860,
     "onSale": true,
@@ -558,6 +965,17 @@
     "id": 38,
     "title": "Букет Еустоми 38",
     "image": "https://i.pinimg.com/736x/54/01/31/540131b00acd6cdf4433aa66b5aa4483.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/54/01/31/540131b00acd6cdf4433aa66b5aa4483.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/54/01/31/540131b00acd6cdf4433aa66b5aa4483.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/54/01/31/540131b00acd6cdf4433aa66b5aa4483.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 870,
     "onSale": false,
@@ -573,6 +991,17 @@
     "id": 39,
     "title": "Букет Гвоздики 39",
     "image": "https://i.pinimg.com/736x/a9/2a/36/a92a36642908a6c22c204dd04962d735.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/a9/2a/36/a92a36642908a6c22c204dd04962d735.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/a9/2a/36/a92a36642908a6c22c204dd04962d735.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/a9/2a/36/a92a36642908a6c22c204dd04962d735.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 880,
     "onSale": false,
@@ -588,6 +1017,17 @@
     "id": 40,
     "title": "Букет Іриси 40",
     "image": "https://i.pinimg.com/736x/69/f3/00/69f3000fc99a1e4de14537b3ad6b61b8.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/69/f3/00/69f3000fc99a1e4de14537b3ad6b61b8.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/69/f3/00/69f3000fc99a1e4de14537b3ad6b61b8.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/69/f3/00/69f3000fc99a1e4de14537b3ad6b61b8.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 890,
     "onSale": false,
@@ -603,6 +1043,17 @@
     "id": 41,
     "title": "Букет Троянди 41",
     "image": "https://i.pinimg.com/736x/68/bf/bb/68bfbbb95e4b3df3fba037f97f0c1c90.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/68/bf/bb/68bfbbb95e4b3df3fba037f97f0c1c90.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/68/bf/bb/68bfbbb95e4b3df3fba037f97f0c1c90.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/68/bf/bb/68bfbbb95e4b3df3fba037f97f0c1c90.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 900,
     "onSale": true,
@@ -618,6 +1069,17 @@
     "id": 42,
     "title": "Букет Тюльпани 42",
     "image": "https://i.pinimg.com/736x/4f/22/04/4f2204d1791fc08f537e01e6a63d939d.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/4f/22/04/4f2204d1791fc08f537e01e6a63d939d.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/4f/22/04/4f2204d1791fc08f537e01e6a63d939d.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/4f/22/04/4f2204d1791fc08f537e01e6a63d939d.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 910,
     "onSale": false,
@@ -633,6 +1095,17 @@
     "id": 43,
     "title": "Букет Орхідеї 43",
     "image": "https://i.pinimg.com/736x/ff/60/a4/ff60a4d5aa0ce5d8f0203f56d0563576.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/ff/60/a4/ff60a4d5aa0ce5d8f0203f56d0563576.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ff/60/a4/ff60a4d5aa0ce5d8f0203f56d0563576.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ff/60/a4/ff60a4d5aa0ce5d8f0203f56d0563576.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 920,
     "onSale": false,
@@ -648,6 +1121,17 @@
     "id": 44,
     "title": "Букет Гортензії 44",
     "image": "https://i.pinimg.com/736x/53/3e/6d/533e6d9ab50c614107c1104d5b855497.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/53/3e/6d/533e6d9ab50c614107c1104d5b855497.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/53/3e/6d/533e6d9ab50c614107c1104d5b855497.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/53/3e/6d/533e6d9ab50c614107c1104d5b855497.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 930,
     "onSale": false,
@@ -663,6 +1147,17 @@
     "id": 45,
     "title": "Букет Півонії 45",
     "image": "https://i.pinimg.com/736x/bd/74/e7/bd74e780ee07e3085d0e1ef561253887.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/bd/74/e7/bd74e780ee07e3085d0e1ef561253887.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/bd/74/e7/bd74e780ee07e3085d0e1ef561253887.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/bd/74/e7/bd74e780ee07e3085d0e1ef561253887.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 940,
     "onSale": true,
@@ -678,6 +1173,17 @@
     "id": 46,
     "title": "Букет Кали 46",
     "image": "https://i.pinimg.com/736x/01/7a/36/017a368f85e5622f28e2613822ed3377.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/01/7a/36/017a368f85e5622f28e2613822ed3377.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/01/7a/36/017a368f85e5622f28e2613822ed3377.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/01/7a/36/017a368f85e5622f28e2613822ed3377.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 950,
     "onSale": false,
@@ -693,6 +1199,17 @@
     "id": 47,
     "title": "Букет Хризантеми 47",
     "image": "https://i.pinimg.com/736x/91/f9/9e/91f99e74b76d324d4a2b57166d640a19.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/91/f9/9e/91f99e74b76d324d4a2b57166d640a19.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/91/f9/9e/91f99e74b76d324d4a2b57166d640a19.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/91/f9/9e/91f99e74b76d324d4a2b57166d640a19.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 960,
     "onSale": false,
@@ -708,6 +1225,17 @@
     "id": 48,
     "title": "Букет Еустоми 48",
     "image": "https://i.pinimg.com/736x/0a/de/6a/0ade6a4af0deb5ea306e58c8e35aff5d.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/0a/de/6a/0ade6a4af0deb5ea306e58c8e35aff5d.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/0a/de/6a/0ade6a4af0deb5ea306e58c8e35aff5d.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/0a/de/6a/0ade6a4af0deb5ea306e58c8e35aff5d.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 970,
     "onSale": false,
@@ -723,6 +1251,17 @@
     "id": 49,
     "title": "Букет Гвоздики 49",
     "image": "https://i.pinimg.com/736x/ed/c2/3b/edc23b2ce4f1dc215e2c70f703b39dec.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/ed/c2/3b/edc23b2ce4f1dc215e2c70f703b39dec.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ed/c2/3b/edc23b2ce4f1dc215e2c70f703b39dec.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ed/c2/3b/edc23b2ce4f1dc215e2c70f703b39dec.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 980,
     "onSale": true,
@@ -738,6 +1277,17 @@
     "id": 50,
     "title": "Букет Іриси 50",
     "image": "https://i.pinimg.com/736x/4a/cf/95/4acf95a027db3634129db998354db675.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/4a/cf/95/4acf95a027db3634129db998354db675.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/4a/cf/95/4acf95a027db3634129db998354db675.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/4a/cf/95/4acf95a027db3634129db998354db675.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 990,
     "onSale": false,
@@ -753,6 +1303,17 @@
     "id": 51,
     "title": "Букет Троянди 51",
     "image": "https://i.pinimg.com/736x/e5/a3/bb/e5a3bb89f2daa1589e3a972c1b72b791.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/e5/a3/bb/e5a3bb89f2daa1589e3a972c1b72b791.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/e5/a3/bb/e5a3bb89f2daa1589e3a972c1b72b791.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/e5/a3/bb/e5a3bb89f2daa1589e3a972c1b72b791.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 1000,
     "onSale": false,
@@ -768,6 +1329,17 @@
     "id": 52,
     "title": "Букет Тюльпани 52",
     "image": "https://i.pinimg.com/736x/94/22/b6/9422b6f48f892ddf9448550c1a572892.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/94/22/b6/9422b6f48f892ddf9448550c1a572892.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/94/22/b6/9422b6f48f892ddf9448550c1a572892.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/94/22/b6/9422b6f48f892ddf9448550c1a572892.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 1010,
     "onSale": false,
@@ -783,6 +1355,17 @@
     "id": 53,
     "title": "Букет Орхідеї 53",
     "image": "https://i.pinimg.com/736x/88/44/d8/8844d8d7b7f0a186a9eb5c2f7579128b.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/88/44/d8/8844d8d7b7f0a186a9eb5c2f7579128b.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/88/44/d8/8844d8d7b7f0a186a9eb5c2f7579128b.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/88/44/d8/8844d8d7b7f0a186a9eb5c2f7579128b.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 1020,
     "onSale": true,
@@ -798,6 +1381,17 @@
     "id": 54,
     "title": "Букет Гортензії 54",
     "image": "https://i.pinimg.com/736x/0c/00/4a/0c004ae310d27071291775f26cba0c62.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/0c/00/4a/0c004ae310d27071291775f26cba0c62.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/0c/00/4a/0c004ae310d27071291775f26cba0c62.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/0c/00/4a/0c004ae310d27071291775f26cba0c62.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 1030,
     "onSale": false,
@@ -813,6 +1407,17 @@
     "id": 55,
     "title": "Букет Півонії 55",
     "image": "https://i.pinimg.com/736x/ba/b4/1c/bab41cb0c69e69343892d89433275b19.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/ba/b4/1c/bab41cb0c69e69343892d89433275b19.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ba/b4/1c/bab41cb0c69e69343892d89433275b19.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ba/b4/1c/bab41cb0c69e69343892d89433275b19.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 1040,
     "onSale": false,
@@ -828,6 +1433,17 @@
     "id": 56,
     "title": "Букет Кали 56",
     "image": "https://i.pinimg.com/736x/8e/27/88/8e27881a7962f0faaf2538a816daa114.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/8e/27/88/8e27881a7962f0faaf2538a816daa114.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/8e/27/88/8e27881a7962f0faaf2538a816daa114.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/8e/27/88/8e27881a7962f0faaf2538a816daa114.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 1050,
     "onSale": false,
@@ -843,6 +1459,17 @@
     "id": 57,
     "title": "Букет Хризантеми 57",
     "image": "https://i.pinimg.com/736x/be/a7/d0/bea7d03b243bbf8cc2dc81a2d5e7c6b1.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/be/a7/d0/bea7d03b243bbf8cc2dc81a2d5e7c6b1.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/be/a7/d0/bea7d03b243bbf8cc2dc81a2d5e7c6b1.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/be/a7/d0/bea7d03b243bbf8cc2dc81a2d5e7c6b1.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 1060,
     "onSale": true,
@@ -858,6 +1485,17 @@
     "id": 58,
     "title": "Букет Еустоми 58",
     "image": "https://i.pinimg.com/736x/20/ca/d5/20cad531b95cebb630e3eaa32e45cc30.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/20/ca/d5/20cad531b95cebb630e3eaa32e45cc30.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/20/ca/d5/20cad531b95cebb630e3eaa32e45cc30.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/20/ca/d5/20cad531b95cebb630e3eaa32e45cc30.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 1070,
     "onSale": false,
@@ -873,6 +1511,17 @@
     "id": 59,
     "title": "Букет Гвоздики 59",
     "image": "https://i.pinimg.com/736x/a0/82/2c/a0822c5e2aa266f06cbab5babfa71e01.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/a0/82/2c/a0822c5e2aa266f06cbab5babfa71e01.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/a0/82/2c/a0822c5e2aa266f06cbab5babfa71e01.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/a0/82/2c/a0822c5e2aa266f06cbab5babfa71e01.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 1080,
     "onSale": false,
@@ -888,6 +1537,17 @@
     "id": 60,
     "title": "Букет Іриси 60",
     "image": "https://i.pinimg.com/736x/bc/e4/24/bce42431e4cebf97835502d12d991933.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/bc/e4/24/bce42431e4cebf97835502d12d991933.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/bc/e4/24/bce42431e4cebf97835502d12d991933.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/bc/e4/24/bce42431e4cebf97835502d12d991933.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 1090,
     "onSale": false,
@@ -903,6 +1563,17 @@
     "id": 61,
     "title": "Букет Троянди 61",
     "image": "https://i.pinimg.com/736x/79/7a/01/797a017aafa73455c71f7cc72eed3fe2.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/79/7a/01/797a017aafa73455c71f7cc72eed3fe2.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/79/7a/01/797a017aafa73455c71f7cc72eed3fe2.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/79/7a/01/797a017aafa73455c71f7cc72eed3fe2.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 1100,
     "onSale": true,
@@ -918,6 +1589,17 @@
     "id": 62,
     "title": "Букет Тюльпани 62",
     "image": "https://i.pinimg.com/736x/56/bc/5b/56bc5b333505f2d992bb61d8c05bbb62.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/56/bc/5b/56bc5b333505f2d992bb61d8c05bbb62.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/56/bc/5b/56bc5b333505f2d992bb61d8c05bbb62.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/56/bc/5b/56bc5b333505f2d992bb61d8c05bbb62.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 1110,
     "onSale": false,
@@ -933,6 +1615,17 @@
     "id": 63,
     "title": "Букет Орхідеї 63",
     "image": "https://i.pinimg.com/736x/55/60/06/5560064d0d4297274edc5863df8e4d93.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/55/60/06/5560064d0d4297274edc5863df8e4d93.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/55/60/06/5560064d0d4297274edc5863df8e4d93.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/55/60/06/5560064d0d4297274edc5863df8e4d93.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 1120,
     "onSale": false,
@@ -948,6 +1641,17 @@
     "id": 64,
     "title": "Букет Гортензії 64",
     "image": "https://i.pinimg.com/736x/18/59/b5/1859b59ed26af34ab07c2533a63458d6.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/18/59/b5/1859b59ed26af34ab07c2533a63458d6.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/18/59/b5/1859b59ed26af34ab07c2533a63458d6.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/18/59/b5/1859b59ed26af34ab07c2533a63458d6.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 1130,
     "onSale": false,
@@ -963,6 +1667,17 @@
     "id": 65,
     "title": "Букет Півонії 65",
     "image": "https://i.pinimg.com/736x/de/82/d9/de82d951908bc270bdaa31167d850fe2.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/de/82/d9/de82d951908bc270bdaa31167d850fe2.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/de/82/d9/de82d951908bc270bdaa31167d850fe2.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/de/82/d9/de82d951908bc270bdaa31167d850fe2.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 1140,
     "onSale": true,
@@ -978,6 +1693,17 @@
     "id": 66,
     "title": "Букет Кали 66",
     "image": "https://i.pinimg.com/736x/ce/4a/2a/ce4a2aa98104fbb7bbd6bfb035030aa5.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/ce/4a/2a/ce4a2aa98104fbb7bbd6bfb035030aa5.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ce/4a/2a/ce4a2aa98104fbb7bbd6bfb035030aa5.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ce/4a/2a/ce4a2aa98104fbb7bbd6bfb035030aa5.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 1150,
     "onSale": false,
@@ -993,6 +1719,17 @@
     "id": 67,
     "title": "Букет Хризантеми 67",
     "image": "https://i.pinimg.com/736x/74/24/9f/74249fa5f83d53d2992009d059e3e22f.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/74/24/9f/74249fa5f83d53d2992009d059e3e22f.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/74/24/9f/74249fa5f83d53d2992009d059e3e22f.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/74/24/9f/74249fa5f83d53d2992009d059e3e22f.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 1160,
     "onSale": false,
@@ -1008,6 +1745,17 @@
     "id": 68,
     "title": "Букет Еустоми 68",
     "image": "https://i.pinimg.com/736x/3e/41/7b/3e417be9d744eb9b7738ce64af55d5fb.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/3e/41/7b/3e417be9d744eb9b7738ce64af55d5fb.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/3e/41/7b/3e417be9d744eb9b7738ce64af55d5fb.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/3e/41/7b/3e417be9d744eb9b7738ce64af55d5fb.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 1170,
     "onSale": false,
@@ -1023,6 +1771,17 @@
     "id": 69,
     "title": "Букет Гвоздики 69",
     "image": "https://i.pinimg.com/736x/01/da/54/01da5485c65f4392b571cd59f150213e.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/01/da/54/01da5485c65f4392b571cd59f150213e.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/01/da/54/01da5485c65f4392b571cd59f150213e.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/01/da/54/01da5485c65f4392b571cd59f150213e.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 1180,
     "onSale": true,
@@ -1038,6 +1797,17 @@
     "id": 70,
     "title": "Букет Іриси 70",
     "image": "https://i.pinimg.com/736x/39/08/e8/3908e867b42591c748d1e6b619e1e3f3.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/39/08/e8/3908e867b42591c748d1e6b619e1e3f3.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/39/08/e8/3908e867b42591c748d1e6b619e1e3f3.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/39/08/e8/3908e867b42591c748d1e6b619e1e3f3.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 1190,
     "onSale": false,
@@ -1053,6 +1823,17 @@
     "id": 71,
     "title": "Букет Троянди 71",
     "image": "https://i.pinimg.com/736x/78/79/d0/7879d0480ed0b0639e2340907d403de8.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/78/79/d0/7879d0480ed0b0639e2340907d403de8.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/78/79/d0/7879d0480ed0b0639e2340907d403de8.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/78/79/d0/7879d0480ed0b0639e2340907d403de8.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 1200,
     "onSale": false,
@@ -1068,6 +1849,17 @@
     "id": 72,
     "title": "Букет Тюльпани 72",
     "image": "https://i.pinimg.com/736x/cb/80/f5/cb80f532f22cd5cab43bcbc3b6ed0e6d.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/cb/80/f5/cb80f532f22cd5cab43bcbc3b6ed0e6d.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/cb/80/f5/cb80f532f22cd5cab43bcbc3b6ed0e6d.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/cb/80/f5/cb80f532f22cd5cab43bcbc3b6ed0e6d.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 1210,
     "onSale": false,
@@ -1083,6 +1875,17 @@
     "id": 73,
     "title": "Букет Орхідеї 73",
     "image": "https://i.pinimg.com/736x/fd/1e/34/fd1e34c12780ec12611a42e0e671da8a.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/fd/1e/34/fd1e34c12780ec12611a42e0e671da8a.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/fd/1e/34/fd1e34c12780ec12611a42e0e671da8a.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/fd/1e/34/fd1e34c12780ec12611a42e0e671da8a.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 1220,
     "onSale": true,
@@ -1098,6 +1901,17 @@
     "id": 74,
     "title": "Букет Гортензії 74",
     "image": "https://i.pinimg.com/736x/6e/90/84/6e9084f4dadfff564d21006bbd8981e1.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/6e/90/84/6e9084f4dadfff564d21006bbd8981e1.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/6e/90/84/6e9084f4dadfff564d21006bbd8981e1.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/6e/90/84/6e9084f4dadfff564d21006bbd8981e1.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 1230,
     "onSale": false,
@@ -1113,6 +1927,17 @@
     "id": 75,
     "title": "Букет Півонії 75",
     "image": "https://i.pinimg.com/736x/2c/5b/ce/2c5bced872be058c3650f5ffeb904b0a.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/2c/5b/ce/2c5bced872be058c3650f5ffeb904b0a.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/2c/5b/ce/2c5bced872be058c3650f5ffeb904b0a.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/2c/5b/ce/2c5bced872be058c3650f5ffeb904b0a.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 1240,
     "onSale": false,
@@ -1128,6 +1953,17 @@
     "id": 76,
     "title": "Букет Кали 76",
     "image": "https://i.pinimg.com/736x/4e/48/6b/4e486b42238a3a091b176d9faa4e9375.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/4e/48/6b/4e486b42238a3a091b176d9faa4e9375.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/4e/48/6b/4e486b42238a3a091b176d9faa4e9375.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/4e/48/6b/4e486b42238a3a091b176d9faa4e9375.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 1250,
     "onSale": false,
@@ -1143,6 +1979,17 @@
     "id": 77,
     "title": "Букет Хризантеми 77",
     "image": "https://i.pinimg.com/736x/cd/fd/87/cdfd87fc7873fac1473b560dc80b69b3.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/cd/fd/87/cdfd87fc7873fac1473b560dc80b69b3.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/cd/fd/87/cdfd87fc7873fac1473b560dc80b69b3.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/cd/fd/87/cdfd87fc7873fac1473b560dc80b69b3.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 1260,
     "onSale": true,
@@ -1158,6 +2005,17 @@
     "id": 78,
     "title": "Букет Еустоми 78",
     "image": "https://i.pinimg.com/736x/6b/1e/15/6b1e15c4c8a307ffc01ff3254d709186.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/6b/1e/15/6b1e15c4c8a307ffc01ff3254d709186.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/6b/1e/15/6b1e15c4c8a307ffc01ff3254d709186.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/6b/1e/15/6b1e15c4c8a307ffc01ff3254d709186.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 1270,
     "onSale": false,
@@ -1173,6 +2031,17 @@
     "id": 79,
     "title": "Букет Гвоздики 79",
     "image": "https://i.pinimg.com/736x/a8/e4/25/a8e425b88226a9ec96fbb93fb4330f12.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/a8/e4/25/a8e425b88226a9ec96fbb93fb4330f12.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/a8/e4/25/a8e425b88226a9ec96fbb93fb4330f12.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/a8/e4/25/a8e425b88226a9ec96fbb93fb4330f12.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 1280,
     "onSale": false,
@@ -1188,6 +2057,17 @@
     "id": 80,
     "title": "Букет Іриси 80",
     "image": "https://i.pinimg.com/736x/5e/49/88/5e4988aebfe994fcf6810d9ceb450f82.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/5e/49/88/5e4988aebfe994fcf6810d9ceb450f82.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/5e/49/88/5e4988aebfe994fcf6810d9ceb450f82.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/5e/49/88/5e4988aebfe994fcf6810d9ceb450f82.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 1290,
     "onSale": false,
@@ -1203,6 +2083,17 @@
     "id": 81,
     "title": "Букет Троянди 81",
     "image": "https://i.pinimg.com/736x/ab/bb/c1/abbbc1975d30e27ad8556349c27a4fa8.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/ab/bb/c1/abbbc1975d30e27ad8556349c27a4fa8.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ab/bb/c1/abbbc1975d30e27ad8556349c27a4fa8.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ab/bb/c1/abbbc1975d30e27ad8556349c27a4fa8.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 1300,
     "onSale": true,
@@ -1218,6 +2109,17 @@
     "id": 82,
     "title": "Букет Тюльпани 82",
     "image": "https://i.pinimg.com/736x/00/8c/03/008c03fa5b186bd5f4d17d97e793db54.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/00/8c/03/008c03fa5b186bd5f4d17d97e793db54.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/00/8c/03/008c03fa5b186bd5f4d17d97e793db54.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/00/8c/03/008c03fa5b186bd5f4d17d97e793db54.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 1310,
     "onSale": false,
@@ -1233,6 +2135,17 @@
     "id": 83,
     "title": "Букет Орхідеї 83",
     "image": "https://i.pinimg.com/736x/ff/00/6f/ff006fb087ca43fc9f8d85970865ac3d.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/ff/00/6f/ff006fb087ca43fc9f8d85970865ac3d.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ff/00/6f/ff006fb087ca43fc9f8d85970865ac3d.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/ff/00/6f/ff006fb087ca43fc9f8d85970865ac3d.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 1320,
     "onSale": false,
@@ -1248,6 +2161,17 @@
     "id": 84,
     "title": "Букет Гортензії 84",
     "image": "https://i.pinimg.com/736x/57/ad/19/57ad19b1432f4d1ec70e2e98532b3f41.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/57/ad/19/57ad19b1432f4d1ec70e2e98532b3f41.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/57/ad/19/57ad19b1432f4d1ec70e2e98532b3f41.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/57/ad/19/57ad19b1432f4d1ec70e2e98532b3f41.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 1330,
     "onSale": false,
@@ -1263,6 +2187,17 @@
     "id": 85,
     "title": "Букет Півонії 85",
     "image": "https://i.pinimg.com/736x/70/74/4a/70744aa5fa02cbfa9f8dc1886f373bb8.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/70/74/4a/70744aa5fa02cbfa9f8dc1886f373bb8.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/70/74/4a/70744aa5fa02cbfa9f8dc1886f373bb8.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/70/74/4a/70744aa5fa02cbfa9f8dc1886f373bb8.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 1340,
     "onSale": true,
@@ -1278,6 +2213,17 @@
     "id": 86,
     "title": "Букет Кали 86",
     "image": "https://i.pinimg.com/736x/28/97/03/2897038ac48157e173c30def1aaf6553.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/28/97/03/2897038ac48157e173c30def1aaf6553.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/28/97/03/2897038ac48157e173c30def1aaf6553.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/28/97/03/2897038ac48157e173c30def1aaf6553.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 1350,
     "onSale": false,
@@ -1293,6 +2239,17 @@
     "id": 87,
     "title": "Букет Хризантеми 87",
     "image": "https://i.pinimg.com/736x/9b/01/c0/9b01c0ec8295ad6476f8bf0252f83a9c.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/9b/01/c0/9b01c0ec8295ad6476f8bf0252f83a9c.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/9b/01/c0/9b01c0ec8295ad6476f8bf0252f83a9c.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/9b/01/c0/9b01c0ec8295ad6476f8bf0252f83a9c.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 1360,
     "onSale": false,
@@ -1308,6 +2265,17 @@
     "id": 88,
     "title": "Букет Еустоми 88",
     "image": "https://i.pinimg.com/736x/b5/6f/78/b56f78958ad1a16940f9b430181a1376.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/b5/6f/78/b56f78958ad1a16940f9b430181a1376.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/b5/6f/78/b56f78958ad1a16940f9b430181a1376.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/b5/6f/78/b56f78958ad1a16940f9b430181a1376.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 1370,
     "onSale": false,
@@ -1323,6 +2291,17 @@
     "id": 89,
     "title": "Букет Гвоздики 89",
     "image": "https://i.pinimg.com/736x/3c/55/e3/3c55e37932f8f78234e001aa43dc9ee5.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/3c/55/e3/3c55e37932f8f78234e001aa43dc9ee5.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/3c/55/e3/3c55e37932f8f78234e001aa43dc9ee5.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/3c/55/e3/3c55e37932f8f78234e001aa43dc9ee5.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 1380,
     "onSale": true,
@@ -1338,6 +2317,17 @@
     "id": 90,
     "title": "Букет Іриси 90",
     "image": "https://i.pinimg.com/736x/fb/39/b9/fb39b99ad848ab696b8f6fae579daa58.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/fb/39/b9/fb39b99ad848ab696b8f6fae579daa58.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/fb/39/b9/fb39b99ad848ab696b8f6fae579daa58.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/fb/39/b9/fb39b99ad848ab696b8f6fae579daa58.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 1390,
     "onSale": false,
@@ -1353,6 +2343,17 @@
     "id": 91,
     "title": "Букет Троянди 91",
     "image": "https://i.pinimg.com/736x/4f/a4/19/4fa4194af0d486ce3a8906bcec7b7f6a.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/4f/a4/19/4fa4194af0d486ce3a8906bcec7b7f6a.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/4f/a4/19/4fa4194af0d486ce3a8906bcec7b7f6a.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/4f/a4/19/4fa4194af0d486ce3a8906bcec7b7f6a.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 1400,
     "onSale": false,
@@ -1368,6 +2369,17 @@
     "id": 92,
     "title": "Букет Тюльпани 92",
     "image": "https://i.pinimg.com/736x/66/54/03/66540311f03b210ddf1b1933a9da80c2.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/66/54/03/66540311f03b210ddf1b1933a9da80c2.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/66/54/03/66540311f03b210ddf1b1933a9da80c2.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/66/54/03/66540311f03b210ddf1b1933a9da80c2.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 1410,
     "onSale": false,
@@ -1383,6 +2395,17 @@
     "id": 93,
     "title": "Букет Мікс Орхідеї 93",
     "image": "https://i.pinimg.com/736x/65/2b/08/652b08ba4fe46b9183249bab7e05da0a.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/65/2b/08/652b08ba4fe46b9183249bab7e05da0a.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/65/2b/08/652b08ba4fe46b9183249bab7e05da0a.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/65/2b/08/652b08ba4fe46b9183249bab7e05da0a.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 1420,
     "onSale": true,
@@ -1398,6 +2421,17 @@
     "id": 94,
     "title": "Букет Гортензії 94",
     "image": "https://i.pinimg.com/736x/08/49/2c/08492ca283840aeb327995a96ce442f5.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/08/49/2c/08492ca283840aeb327995a96ce442f5.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/08/49/2c/08492ca283840aeb327995a96ce442f5.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/08/49/2c/08492ca283840aeb327995a96ce442f5.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 1430,
     "onSale": false,
@@ -1413,6 +2447,17 @@
     "id": 95,
     "title": "Букет Півонії 95",
     "image": "https://i.pinimg.com/736x/82/f4/89/82f489e8191e3e583575b0b0b909776d.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/82/f4/89/82f489e8191e3e583575b0b0b909776d.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/82/f4/89/82f489e8191e3e583575b0b0b909776d.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/82/f4/89/82f489e8191e3e583575b0b0b909776d.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 1440,
     "onSale": false,
@@ -1428,6 +2473,17 @@
     "id": 96,
     "title": "Букет Кали 96",
     "image": "https://i.pinimg.com/736x/d9/15/a8/d915a8669a048324b197e1f1b3e5c304.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/d9/15/a8/d915a8669a048324b197e1f1b3e5c304.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/d9/15/a8/d915a8669a048324b197e1f1b3e5c304.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/d9/15/a8/d915a8669a048324b197e1f1b3e5c304.jpg"
+      }
+    ],
     "description": "Ніжний букет для особливих моментів.",
     "price": 1450,
     "onSale": false,
@@ -1443,6 +2499,17 @@
     "id": 97,
     "title": "Букет Хризантеми 97",
     "image": "https://i.pinimg.com/736x/a0/a4/9b/a0a49b6553cc1de57b7925e149a8810e.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/a0/a4/9b/a0a49b6553cc1de57b7925e149a8810e.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/a0/a4/9b/a0a49b6553cc1de57b7925e149a8810e.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/a0/a4/9b/a0a49b6553cc1de57b7925e149a8810e.jpg"
+      }
+    ],
     "description": "Яскрава композиція для святкових подій.",
     "price": 1460,
     "onSale": true,
@@ -1458,6 +2525,17 @@
     "id": 98,
     "title": "Букет Еустоми 98",
     "image": "https://i.pinimg.com/736x/d1/15/a2/d115a2c68bc9b8995dd2559dd96eb5e9.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/d1/15/a2/d115a2c68bc9b8995dd2559dd96eb5e9.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/d1/15/a2/d115a2c68bc9b8995dd2559dd96eb5e9.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/d1/15/a2/d115a2c68bc9b8995dd2559dd96eb5e9.jpg"
+      }
+    ],
     "description": "Елегантний вибір для подарунка.",
     "price": 1470,
     "onSale": false,
@@ -1473,6 +2551,17 @@
     "id": 99,
     "title": "Букет Гвоздики 99",
     "image": "https://i.pinimg.com/736x/12/31/73/123173b1814f82c5c2a7804e30f6e2c3.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/12/31/73/123173b1814f82c5c2a7804e30f6e2c3.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/12/31/73/123173b1814f82c5c2a7804e30f6e2c3.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/12/31/73/123173b1814f82c5c2a7804e30f6e2c3.jpg"
+      }
+    ],
     "description": "Розкішна композиція, що підкреслює стиль.",
     "price": 1480,
     "onSale": false,
@@ -1488,6 +2577,17 @@
     "id": 100,
     "title": "Букет Іриси 100",
     "image": "https://i.pinimg.com/736x/14/71/68/147168bde7399a0aa6431ed14b78f225.jpg",
+    "images": [
+      {
+        "src": "https://i.pinimg.com/736x/14/71/68/147168bde7399a0aa6431ed14b78f225.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/14/71/68/147168bde7399a0aa6431ed14b78f225.jpg"
+      },
+      {
+        "src": "https://i.pinimg.com/736x/14/71/68/147168bde7399a0aa6431ed14b78f225.jpg"
+      }
+    ],
     "description": "Чудовий вибір для весняного настрою.",
     "price": 1490,
     "onSale": false,
