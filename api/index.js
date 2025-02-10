@@ -8,6 +8,10 @@ const app = express();
 
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('API is running! Use /flowers to get data.');
+});
+
 app.get('/flowers', (req, res) => {
   const flowersFilePath = path.join(__dirname, 'data', 'flowers.json');
   fs.readFile(flowersFilePath, 'utf8', (err, data) => {
