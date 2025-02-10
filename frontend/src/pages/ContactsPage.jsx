@@ -3,6 +3,7 @@ import Footer from '../components/Footer';
 import Container from '../styles/Container';
 import ButtonLink from '../components/ButtonLink';
 import styled from 'styled-components';
+import { useEffect } from 'react';
 
 const Contacts = styled.div`
   position: relative;
@@ -204,6 +205,10 @@ const ContactsIframe = styled.iframe`
 `;
 
 const ContactsPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Contacts>

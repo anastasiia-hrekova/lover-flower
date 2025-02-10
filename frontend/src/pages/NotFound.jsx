@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
 import Container from '../styles/Container';
+import { useEffect } from 'react';
 
 const NotFoundPage = styled.div`
   background-image: url(/images/404-background.png);
@@ -43,6 +44,10 @@ const ToMainPage = styled(NavLink)`
 `;
 
 const NotFound = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <NotFoundPage>

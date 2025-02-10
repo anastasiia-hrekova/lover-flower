@@ -62,6 +62,8 @@ const SearchPage = () => {
   const searchQuery = useSelector(state => state.flowers.searchQuery);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const queryParams = new URLSearchParams(location.search);
     const query = queryParams.get('query');
     if (query) {

@@ -231,6 +231,8 @@ const CatalogPage = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const urlSort = searchParams.get('sort');
     if (urlSort) {
       setSearchParams({ sort: urlSort });

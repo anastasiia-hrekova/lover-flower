@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Breadcrumbs from '../components/BreadcrumbsContainer';
 import Footer from '../components/Footer';
 import Container from '../styles/Container';
@@ -116,6 +117,10 @@ const FaqSummary = styled.summary`
 `;
 
 const FaqPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <FaqContent>

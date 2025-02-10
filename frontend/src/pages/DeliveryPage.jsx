@@ -2,6 +2,7 @@ import Breadcrumbs from '../components/BreadcrumbsContainer';
 import Container from '../styles/Container';
 import styled from 'styled-components';
 import Footer from '../components/Footer';
+import { useEffect } from 'react';
 
 const Delivery = styled.div`
   background-image: url(/images/delivery-back.png);
@@ -228,6 +229,10 @@ const AdittionTextSpan = styled.span`
 `;
 
 const DeliveryPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Delivery>

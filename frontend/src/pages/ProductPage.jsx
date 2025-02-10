@@ -48,7 +48,7 @@ const ProductBlock = styled.div`
     background-position: center;
     top: 87%;
     left: 0;
-    z-index: -1;
+    z-index: -2;
   }
 `;
 

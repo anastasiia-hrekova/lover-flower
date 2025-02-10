@@ -307,6 +307,8 @@ const CheckoutPage = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const isValid =
       formData.name.trim() &&
       formData.phone.trim() &&

@@ -3,6 +3,7 @@ import Container from '../styles/Container';
 import Footer from '../components/Footer';
 import ButtonLink from '../components/ButtonLink';
 import styled from 'styled-components';
+import { useEffect } from 'react';
 
 const Corporation = styled.div`
   position: relative;
@@ -322,6 +323,10 @@ const FromButtonPolicySpan = styled.span`
 `;
 
 const CorpClients = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Corporation>

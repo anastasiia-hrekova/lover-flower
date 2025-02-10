@@ -2,6 +2,7 @@ import Breadcrumbs from '../components/BreadcrumbsContainer';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
 import Container from '../styles/Container';
+import { useEffect } from 'react';
 
 const About = styled.div`
   position: relative;
@@ -148,6 +149,10 @@ const FinalWords = styled.h3`
 `;
 
 const AboutPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <About>
