@@ -1,6 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+ @font-face {
+    font-family: "Cormorant";
+    src: url("../fonts/Cormorant-VariableFont_wght.ttf") format("ttf");
+    font-display: swap;
+  }
+
 * {
   box-sizing: border-box;
   margin: 0;
