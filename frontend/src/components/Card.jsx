@@ -20,6 +20,11 @@ const CardStyle = styled.div`
 const CardImg = styled.img`
   width: 25.5rem;
   height: 33.5rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 30rem;
+    height: 33.5rem;
+  }
 `;
 
 const CardTitle = styled.h4`

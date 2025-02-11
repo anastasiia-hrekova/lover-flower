@@ -17,6 +17,10 @@ const Header = styled.header.withConfig({
   top: 0;
   left: 0;
   z-index: ${({ zIndex }) => zIndex};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 const Nav = styled.nav`

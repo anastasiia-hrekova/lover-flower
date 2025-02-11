@@ -10,7 +10,7 @@ const Container = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    max-width: 32rem;
+    max-width: 40rem;
   }
 `;
 

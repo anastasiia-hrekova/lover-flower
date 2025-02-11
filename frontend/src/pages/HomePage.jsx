@@ -17,6 +17,10 @@ background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
 
+@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    height: 56rem;
+  }
+
   &::after {
     position: absolute;
     width: 100%;
@@ -29,6 +33,11 @@ background-position: center;
     z-index: 0;
     top: 0;
 
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    height: 44rem;
+    z-index: 2;
+  }
+
 `;
 
 // HERO SECTION
@@ -39,6 +48,10 @@ const HeroBlock = styled.div`
   flex-direction: column;
   width: 100%;
   top: 9.5rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    top: 0;
+  }
 `;
 
 const HeroTitle = styled.h1`
@@ -50,6 +63,13 @@ const HeroTitle = styled.h1`
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   z-index: 2;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 5rem;
+    line-height: 6.5rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+  }
 `;
 
 const HeroTitleSpan = styled.span`
@@ -61,6 +81,12 @@ const HeroTitleSpan = styled.span`
   letter-spacing: 0.2rem;
   z-index: -1;
   margin-left: 8%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 5rem;
+    line-height: 6.5rem;
+    letter-spacing: 0.1rem;
+  }
 `;
 
 const HeroInfo = styled.div`
@@ -73,6 +99,14 @@ const HeroInfo = styled.div`
   font-weight: 400;
   line-height: 3rem;
   letter-spacing: 0.02rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-top: 47rem;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    width: 21rem;
+    text-align: center;
+  }
 `;
 
 // CATALOG SECTION
@@ -85,6 +119,13 @@ const Catalog = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center -15rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    background-image: url(/images/catalog-section-mobile.png);
+    background-position: center;
+    height: 150rem;
+    margin-top: 16rem;
+  }
 `;
 
 const CatalogBlock = styled.div`
@@ -93,6 +134,11 @@ const CatalogBlock = styled.div`
   flex-wrap: wrap;
   gap: 3rem;
   padding: 0 4rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 100%;
+    padding: 0;
+  }
 `;
 
 const CatalogDescribtion = styled.div`
@@ -101,6 +147,10 @@ const CatalogDescribtion = styled.div`
   text-align: left;
   flex-direction: column;
   gap: 1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-top: 10rem;
+  }
 `;
 
 const CatalogTitle = styled.h2`
@@ -110,6 +160,11 @@ const CatalogTitle = styled.h2`
   line-height: 12rem;
   letter-spacing: 0.02rem;
   text-transform: uppercase;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 4rem;
+    line-height: 4.9rem;
+  }
 `;
 
 const CatalogText = styled.p`
@@ -119,6 +174,10 @@ const CatalogText = styled.p`
   width: 46rem;
   margin-left: 9.5rem;
   font-family: 'Oswald', sans-serif;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 const CatalogContainers = styled.div`
@@ -129,6 +188,10 @@ const CatalogContainers = styled.div`
   font-family: 'Oswald', sans-serif;
   padding: 3rem;
   padding-left: 5rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 100%;
+  }
 `;
 
 const CatalogContainersTitle = styled.h3`
@@ -161,6 +224,11 @@ const LinkStyled = styled(Link)`
   text-decoration: underline;
   color: ${({ theme }) => theme.colors.accentColor};
   margin-left: 65%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    text-align: center;
+    margin-left: 4rem;
+  }
 `;
 
 const CatalogBouqets = styled.div`
@@ -168,17 +236,32 @@ const CatalogBouqets = styled.div`
   height: 28rem;
   margin-top: 12rem;
   margin-left: 8rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin: 0 auto;
+    width: 30rem;
+  }
 `;
 
 const CatalogFlowers = styled.div`
   width: 54rem;
   height: 31rem;
   margin-top: -8rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin: 0 auto;
+    width: 30rem;
+  }
 `;
 
 const CatalogOther = styled.div`
   width: 54rem;
   height: 26rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin: 0 auto;
+    width: 30rem;
+  }
 `;
 
 // BESTSELLER SECTION
@@ -190,6 +273,10 @@ const Bestsellers = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 10rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-top: -70%;
+  }
 `;
 
 const BestsellersBlock = styled.div`
@@ -201,6 +288,10 @@ const BestsellersBlock = styled.div`
   background-size: 90rem 65rem;
   background-position: right 2.5rem;
   padding-top: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    background-image: none;
+  }
 `;
 
 const BestsellersTitle = styled.h2`
@@ -210,6 +301,11 @@ const BestsellersTitle = styled.h2`
   letter-spacing: 0.04rem;
   text-transform: uppercase;
   text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 4rem;
+    line-height: 4.9rem;
+  }
 `;
 
 const BestsellersTitleSpan = styled.span`
@@ -219,6 +315,12 @@ const BestsellersTitleSpan = styled.span`
   letter-spacing: 0.04rem;
   text-transform: uppercase;
   margin-left: -100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 4rem;
+    line-height: 4.9rem;
+    margin-left: 0;
+  }
 `;
 
 const BestsellersText = styled.p`
@@ -229,6 +331,13 @@ const BestsellersText = styled.p`
   font-family: 'Oswald', sans-serif;
   letter-spacing: 0.02rem;
   margin-bottom: 8.6rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    margin-left: 20%;
+    letter-spacing: 0.04rem;
+  }
 `;
 
 const BestsellersList = styled.div`
@@ -254,6 +363,11 @@ const BestsellersLink = styled(Link)`
   text-decoration: underline;
   color: ${({ theme }) => theme.colors.accentColor};
   margin-right: 80%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-left: auto;
+    width: 30rem;
+  }
 `;
 
 // ORDER SECTION
@@ -273,6 +387,10 @@ const Order = styled.section`
     background-size: 45rem 84.5rem;
     background-position: left 4rem;
     z-index: 2;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      background-size: 28rem 64rem;
+    }
   }
 
   &::after {
@@ -286,6 +404,15 @@ const Order = styled.section`
     background-position: center;
     right: 10%;
     top: 85%;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      background-size: 15rem 10rem;
+      right: -8%;
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-top: 65rem;
   }
 `;
 
@@ -297,6 +424,11 @@ const OrderTitle = styled.h2`
   letter-spacing: 0.02rem;
   text-transform: uppercase;
   margin-bottom: 6.5rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 4rem;
+    line-height: 4.9rem;
+  }
 `;
 
 const OrderList = styled.ul`
@@ -315,6 +447,10 @@ const OrderList = styled.ul`
     width: 6.5rem;
     height: 1rem;
     background-color: ${({ theme }) => theme.colors.accentColor};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      left: 53%;
+    }
   }
 
   &::after {
@@ -325,6 +461,15 @@ const OrderList = styled.ul`
     width: 0.1rem;
     height: 44rem;
     background-color: ${({ theme }) => theme.colors.accentColor};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      display: none;
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    flex-direction: column;
+    gap: 2rem;
   }
 `;
 
@@ -332,6 +477,39 @@ const OrderListBlock = styled.div`
   width: 26.5rem;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    z-index: 2;
+    width: 15rem;
+    margin-bottom: -2rem;
+
+    > :first-child {
+      margin-left: 52%;
+      width: 13rem;
+    }
+
+    > :nth-child(2) {
+      margin-left: 15%;
+      width: 20rem;
+    }
+
+    > :nth-child(3) {
+      margin-left: -10%;
+      width: 21rem;
+    }
+  }
+`;
+
+const OrderListBlock2 = styled.div`
+  width: 26.5rem;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    z-index: 2;
+    width: 30rem;
+    margin-left: -50%;
+  }
 `;
 
 const OrderItem = styled.li`
@@ -350,6 +528,11 @@ const OrderItemTitle = styled.h4`
   font-weight: 700;
   line-height: 4.5rem;
   color: ${({ theme }) => theme.colors.accentColor};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
 `;
 
 const OrderItemText = styled.p`
@@ -357,6 +540,12 @@ const OrderItemText = styled.p`
   font-weight: 400;
   line-height: 2.1rem;
   color: ${({ theme }) => theme.colors.textColor};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    text-transform: none;
+  }
 `;
 
 // SPECIAL SECTION
@@ -380,6 +569,10 @@ const Special = styled.section`
     right: 0;
     top: 0;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-top: -20%;
+  }
 `;
 
 const SpecialTitle = styled.h2`
@@ -390,6 +583,11 @@ const SpecialTitle = styled.h2`
   font-family: 'Cormorant', serif;
   letter-spacing: 0.02rem;
   margin-bottom: 3rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 4rem;
+    line-height: 4.9rem;
+  }
 `;
 
 const SpecialTitleSpan = styled.span`
@@ -411,6 +609,16 @@ const SpecialTitleSpan = styled.span`
     background-color: ${({ theme }) => theme.colors.accentColor};
     top: 50%;
     margin-left: -78%;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      width: 9.8rem;
+      margin-left: -78%;
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 4rem;
+    line-height: 4.9rem;
   }
 `;
 
@@ -418,6 +626,10 @@ const SpecialTitleImg = styled.img`
   position: absolute;
   right: 0;
   top: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 const SpecialContent = styled.div`
@@ -437,6 +649,10 @@ const SpecialText = styled.div`
   font-weight: 400;
   line-height: 2rem;
   font-family: 'Oswald', sans-serif;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 30rem;
+  }
 `;
 
 const SpecialList = styled.ul`
@@ -466,6 +682,10 @@ const SpecialImages = styled.div`
   gap: 3rem;
   height: 29.2rem;
   margin-left: 7%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 // QUESTION SECTION
@@ -488,6 +708,14 @@ const Questions = styled.section`
     background-size: contain;
     top: -15%;
     z-index: 1;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      top: -38%;
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    height: 85rem;
   }
 `;
 
@@ -505,6 +733,13 @@ const QuestionsTitle = styled.h2`
   z-index: 2;
   text-transform: uppercase;
   letter-spacing: 0.02rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 4rem;
+    line-height: 4.9rem;
+    margin-top: 3rem;
+    margin-left: 1rem;
+  }
 `;
 
 const QuestionsTitleSpan = styled.span`
@@ -516,6 +751,12 @@ const QuestionsTitleSpan = styled.span`
   text-transform: uppercase;
   letter-spacing: 0.02rem;
   margin-left: 25%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 4rem;
+    line-height: 4.9rem;
+    margin-left: 0;
+  }
 `;
 
 const QuestionsInfo = styled.div`
@@ -526,6 +767,14 @@ const QuestionsInfo = styled.div`
   width: 44.5rem;
   margin-top: 10rem;
   gap: 3rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    position: absolute;
+    margin-top: 33rem;
+    margin-left: 1rem;
+    width: 30rem;
+    z-index: 5;
+  }
 `;
 
 const QuestionsInfoText = styled.p`
@@ -548,6 +797,15 @@ const QuestionsInfoText = styled.p`
     width: 25.5rem;
     height: 0.1rem;
     background-color: ${({ theme }) => theme.colors.mainColor};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      display: none;
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-left: 0;
+    width: 100%;
   }
 `;
 
@@ -574,6 +832,10 @@ const QuestionsFormInput = styled.input`
   letter-spacing: 0.04rem;
   padding: 2rem;
   cursor: pointer;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 100%;
+  }
 `;
 
 const QuestionsFormArea = styled.textarea`
@@ -590,6 +852,10 @@ const QuestionsFormArea = styled.textarea`
   letter-spacing: 0.04rem;
   padding: 2rem;
   cursor: pointer;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 100%;
+  }
 `;
 
 const QuestionsFormText = styled.p`
@@ -599,6 +865,10 @@ const QuestionsFormText = styled.p`
   line-height: 1.2rem;
   text-align: left;
   letter-spacing: 0.02rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 25rem;
+  }
 `;
 
 const QuestionsFormTextSpan = styled.span`
@@ -620,6 +890,14 @@ const Instagram = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center -6rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    background-image: url(/images/instagram-bottom-mobile.png);
+    background-position: center bottom;
+    background-size: contain;
+    margin-top: -30%;
+    padding-bottom: 8rem;
+  }
 `;
 
 const InstagramBlock = styled.div`
@@ -628,6 +906,32 @@ const InstagramBlock = styled.div`
   justify-content: space-between;
   flex-direction: row;
   gap: 3rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    gap: 6px;
+  }
+`;
+
+const InstagramBlockImages = styled.div`
+  position: relative;
+  ${({ theme }) => theme.mixins.flex};
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 3rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-top: 20%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 6px;
+  }
+`;
+
+const InstagramImages = styled.img`
+  width: 15rem;
+  height: 15rem;
 `;
 
 const InstagramTitle = styled.img`
@@ -636,6 +940,12 @@ const InstagramTitle = styled.img`
   right: 10%;
   width: 35rem;
   height: 15rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 19rem;
+    height: 12.1rem;
+    right: 40%;
+  }
 `;
 
 const InstagramSocials = styled.ul`
@@ -644,11 +954,22 @@ const InstagramSocials = styled.ul`
   gap: 2rem;
   margin-top: 12rem;
   margin-right: 4rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    position: absolute;
+    top: -38%;
+    right: -10%;
+  }
 `;
 
 const InstagramSocialsImg = styled.img`
   width: 4rem;
   height: 4rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 2rem;
+    height: 2rem;
+  }
 `;
 
 const HomePage = () => {
@@ -781,7 +1102,7 @@ const HomePage = () => {
                   </OrderItemText>
                 </OrderItem>
               </OrderListBlock>
-              <OrderListBlock>
+              <OrderListBlock2>
                 <OrderItem>
                   <OrderItemTitle>4 шаг</OrderItemTitle>
                   <OrderItemText>
@@ -796,7 +1117,7 @@ const HomePage = () => {
                     коханим та рідним
                   </OrderItemText>
                 </OrderItem>
-              </OrderListBlock>
+              </OrderListBlock2>
             </OrderList>
           </div>
         </Container>
@@ -903,12 +1224,28 @@ const HomePage = () => {
       <Instagram>
         <Container>
           <InstagramBlock>
-            <InstagramBlock>
-              <img src="/images/inst1.png" alt="ins1" loading="lazy" />
-              <img src="/images/inst2.png" alt="ins2" loading="lazy" />
-              <img src="/images/inst3.png" alt="ins3" loading="lazy" />
-              <img src="/images/inst4.png" alt="ins4" loading="lazy" />
-            </InstagramBlock>
+            <InstagramBlockImages>
+              <InstagramImages
+                src="/images/inst1.png"
+                alt="ins1"
+                loading="lazy"
+              />
+              <InstagramImages
+                src="/images/inst2.png"
+                alt="ins2"
+                loading="lazy"
+              />
+              <InstagramImages
+                src="/images/inst3.png"
+                alt="ins3"
+                loading="lazy"
+              />
+              <InstagramImages
+                src="/images/inst4.png"
+                alt="ins4"
+                loading="lazy"
+              />
+            </InstagramBlockImages>
             <InstagramTitle
               src="/images/our-social-networks.png"
               alt="Our social media"
@@ -940,7 +1277,7 @@ const HomePage = () => {
         </Container>
       </Instagram>
 
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 };

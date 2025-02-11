@@ -10,6 +10,10 @@ const CarouselBtn = styled.button`
     cursor: default;
     filter: grayscale(1);
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 const PrevBtn = styled(CarouselBtn)`

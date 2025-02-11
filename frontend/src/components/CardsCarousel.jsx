@@ -16,6 +16,11 @@ const CardBlock = styled.div`
   ${({ theme }) => theme.mixins.flex};
   flex-direction: row;
   gap: 3rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    flex-direction: column;
+    margin-top: -20%;
+  }
 `;
 
 const CardsCarousel = () => {
@@ -32,7 +37,7 @@ const CardsCarousel = () => {
       const width = window.innerWidth;
 
       if (width < 500) {
-        setCardsToShow(1);
+        setCardsToShow(3);
       } else if (width <= 1024) {
         setCardsToShow(2);
       } else {
