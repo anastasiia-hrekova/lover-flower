@@ -10,6 +10,13 @@ const FooterStyles = styled.footer`
   gap: 2rem;
   font-family: 'Oswald', sans-serif;
   margin-top: 3rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
 `;
 
 const FooterTitle = styled.h3`
@@ -17,6 +24,12 @@ const FooterTitle = styled.h3`
   font-weight: 700;
   line-height: 2rem;
   color: ${({ theme }) => theme.colors.mainColor};
+`;
+
+const Info = styled.div`
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 const NavLinkTitle = styled(NavLink)`
@@ -35,10 +48,46 @@ const FooterBlocks = styled.div`
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.8rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    align-items: center;
+    text-align: center;
+    gap: 0;
+    width: 100%;
+  }
+`;
+
+const LogoMobile = styled(NavLink)`
+  display: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: flex;
+  }
+`;
+
+const LogoDesktop = styled(NavLink)`
+  display: flex;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 const FooterPayment = styled(FooterBlocks)`
   width: 24.4rem;
+
+  p {
+    margin-top: 1rem;
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      text-transform: none;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    order: 3;
+  }
 `;
 
 const FooterAddressTitle = styled.h3`
@@ -62,6 +111,10 @@ const FooterSocial = styled.ul`
       transform: scale(1.1);
     }
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    justify-content: center;
+  }
 `;
 
 const Footer = () => {
@@ -69,21 +122,26 @@ const Footer = () => {
     <footer>
       <Container>
         <FooterStyles>
+          <LogoMobile to="/">
+            <img className="menu__logo" src="/images/logo.png" alt="logo" />
+          </LogoMobile>
           <FooterPayment>
-            <NavLink to="/">
+            <LogoDesktop to="/">
               <img className="menu__logo" src="/images/logo.png" alt="logo" />
-            </NavLink>
-            <FooterTitle>Реквізити</FooterTitle>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
-              ad officia tempora consectetur voluptatibus laudantium dicta ipsa
-              vitae magnam, obcaecati ex assumenda, blanditiis, quisquam amet
-              fuga quos? Vitae, blanditiis velit!
-            </p>
+            </LogoDesktop>
+            <div>
+              <FooterTitle>Реквізити</FooterTitle>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Numquam ad officia tempora consectetur voluptatibus laudantium
+                dicta ipsa vitae magnam, obcaecati ex assumenda, blanditiis,
+                quisquam amet fuga quos? Vitae, blanditiis velit!
+              </p>
+            </div>
           </FooterPayment>
           <FooterBlocks>
             <FooterTitle>Каталог</FooterTitle>
-            <div>
+            <Info>
               <NavLink to="catalog">Популярні</NavLink> <br />
               <NavLink to="catalog">Сухоквіти</NavLink> <br />
               <NavLink to="catalog">Букети троянд</NavLink> <br />
@@ -94,11 +152,11 @@ const Footer = () => {
               <NavLink to="catalog">Шари</NavLink> <br />
               <NavLink to="catalog">Листівки</NavLink> <br />
               <NavLink to="catalog">Конверти</NavLink> <br />
-            </div>
+            </Info>
           </FooterBlocks>
           <FooterBlocks>
             <FooterTitle>Букет</FooterTitle>
-            <div>
+            <Info>
               <NavLink to="catalog">Для дівчини</NavLink> <br />
               <NavLink to="catalog">Для чоловіка</NavLink> <br />
               <NavLink to="catalog">Для дружини</NavLink> <br />
@@ -107,7 +165,7 @@ const Footer = () => {
               <NavLink to="catalog">Для керівника</NavLink> <br />
               <NavLink to="catalog">Для доньки</NavLink> <br />
               <NavLink to="catalog">Для дітей</NavLink> <br />
-            </div>
+            </Info>
           </FooterBlocks>
           <FooterBlocks>
             <NavLinkTitle to="delivery&pay">Доставка та оплата</NavLinkTitle>

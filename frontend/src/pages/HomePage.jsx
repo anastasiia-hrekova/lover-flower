@@ -1277,7 +1277,7 @@ const HomePage = () => {
         </Container>
       </Instagram>
 
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 };
