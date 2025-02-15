@@ -10,6 +10,11 @@ export const PhoneLink = styled.a`
   letter-spacing: 0.1rem;
   font-family: 'Oswald', sans-serif;
   cursor: pointer;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    color: ${({ theme }) => theme.colors.textColor};
+    text-decoration: underline;
+  }
 `;
 
 export const PhoneLinkImg = styled.img`
@@ -35,6 +40,10 @@ export const AccentText = styled.h3`
   font-weight: 400;
   line-height: 2rem;
   color: ${({ theme }) => theme.colors.mainColor};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    letter-spacing: 0.1rem;
+  }
 `;
 
 export const SidebarText = styled.p`
@@ -42,6 +51,13 @@ export const SidebarText = styled.p`
   font-weight: 400;
   line-height: 2rem;
   margin-bottom: 2rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    letter-spacing: 0.1rem;
+  }
 `;
 
 export const SocialSide = styled.div`
@@ -79,22 +95,6 @@ export const SidebarCall = styled.div`
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 2.4rem;
-`;
-
-export const CallBtn = styled.button`
-  background-color: rgba(0, 0, 0, 0.441);
-  backdrop-filter: blur(8px);
-  border: none;
-  border-radius: 1rem;
-  padding: 1.2rem;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 2rem;
-  transition: 0.3s ease;
-
-  &:hover {
-    transform: scale(1.04);
-  }
 `;
 
 export const SidebarCart = styled.div`
