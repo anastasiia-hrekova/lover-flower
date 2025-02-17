@@ -50,6 +50,14 @@ const SearchInput = styled.input`
     width: 36rem;
     border-bottom: 1px solid #555555;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 75%;
+    &:focus,
+    :active {
+      width: 75%;
+    }
+  }
 `;
 
 const SearchBar = () => {

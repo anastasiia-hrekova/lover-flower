@@ -12,6 +12,11 @@ const CatalogCards = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   margin-bottom: 20rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ScrollToTopBtn = styled.button`

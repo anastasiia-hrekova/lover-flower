@@ -76,18 +76,16 @@ const MobileMenuButton = styled.button`
 `;
 
 const MainTitle = styled.img.withConfig({
-  shouldForwardProp: prop => prop !== 'isScrolled' && prop !== 'isMobile',
+  shouldForwardProp: prop => prop !== 'isScrolled',
 })`
-  opacity: ${({ isScrolled, isMobile }) => (isScrolled && isMobile ? 1 : 0)};
-  visibility: ${({ isScrolled, isMobile }) =>
-    isScrolled && isMobile ? 'visible' : 'hidden'};
+  opacity: ${({ isScrolled }) => (isScrolled ? 1 : 0)};
+  visibility: ${({ isScrolled }) => (isScrolled ? 'visible' : 'hidden')};
   transition: opacity 0.5s ease, visibility 0.5s ease;
   position: absolute;
-  width: 10rem;
+  width: 12rem;
   top: 2.2rem;
-  left: 33%;
+  left: 30%;
   z-index: 9999;
-  background: red;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     opacity: 0;
@@ -228,7 +226,6 @@ const Menu = () => {
   const [zIndex, setZIndex] = useState(10);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const location = useLocation();
 
   useEffect(() => {
@@ -241,27 +238,20 @@ const Menu = () => {
       document.body.style.overflow = '';
     }
 
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
     const handleScroll = () => {
-      const scrollThreshold = window.innerWidth <= 768 ? 100 : 750;
+      const scrollThreshold = window.innerWidth <= 768 ? 150 : 750;
       setIsScrolled(
         isMainOrCatalogPage ? window.scrollY > scrollThreshold : true,
       );
       setZIndex(window.scrollY > 30 ? 20 : 10);
     };
     handleScroll();
-    handleResize();
 
-    window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [location, isMobileMenuOpen, isMobile, isScrolled]);
+  }, [location, isMobileMenuOpen, isScrolled]);
 
   return (
     <Header isScrolled={isScrolled} zIndex={zIndex}>
@@ -313,7 +303,11 @@ const Menu = () => {
         <MobileMenuButton onClick={() => setIsMobileMenuOpen(true)}>
           <img src="/images/humbMenu.png" alt="Open" />
         </MobileMenuButton>
-        <MainTitle src="/images/mobile-flower.png" alt="Lover Flower" />
+        <MainTitle
+          isScrolled={isScrolled}
+          src="/images/mobile-flower.png"
+          alt="Lover Flower"
+        />
         <CartBtn>
           <ButtonToCart />
         </CartBtn>
