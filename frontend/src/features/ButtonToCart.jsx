@@ -71,6 +71,22 @@ const OpenCart = styled.div`
     right: 0;
     z-index: 5;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 75%;
+  }
+`;
+
+const CardsBlock = styled.div`
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  overflow-y: auto;
+  overflow-x: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const CloseCartBtn = styled.button`
@@ -90,7 +106,22 @@ const TotalPrice = styled.p`
 `;
 
 const TotalBlock = styled.div`
-  margin-top: 1rem;
+  position: sticky;
+  bottom: 0;
+  background-color: #000;
+  padding: 1rem;
+  z-index: 10;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 100%;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    z-index: 50;
+
+    p {
+      width: 24rem;
+    }
+  }
 `;
 
 const CheckoutBtn = styled.button`
@@ -117,6 +148,10 @@ const CheckoutBtn = styled.button`
     border: 0.5px solid ${({ theme }) => theme.colors.mainColor};
     color: ${({ theme }) => theme.colors.backgroundColor};
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 24rem;
+  }
 `;
 
 const ButtonToCart = () => {
@@ -135,7 +170,15 @@ const ButtonToCart = () => {
   );
 
   useEffect(() => {
-    document.body.style.overflow = cartOpen ? 'hidden' : 'auto';
+    if (cartOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
   }, [cartOpen]);
 
   return (
@@ -158,7 +201,9 @@ const ButtonToCart = () => {
             <CloseCartBtn onClick={() => setCartOpen(!cartOpen)}>
               <img src="/images/closeX.png" alt="close" />
             </CloseCartBtn>
-            <Cart />
+            <CardsBlock>
+              <Cart />
+            </CardsBlock>
             <TotalBlock>
               <TotalPrice>
                 Попередній підсумок: {totalAmount.toFixed(2)} грн

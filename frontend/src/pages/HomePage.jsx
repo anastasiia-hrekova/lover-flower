@@ -17,6 +17,10 @@ background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
 
+@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    height: 96rem;
+  }
+
 @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     height: 56rem;
   }
@@ -32,6 +36,11 @@ background-position: center;
     background-position: center;
     z-index: 0;
     top: 0;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    height: 75rem;
+    z-index: 0;
+  }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     height: 44rem;
@@ -49,6 +58,10 @@ const HeroBlock = styled.div`
   width: 100%;
   top: 9.5rem;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    top: 9rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     top: 0;
   }
@@ -63,6 +76,13 @@ const HeroTitle = styled.h1`
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   z-index: 2;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 10rem;
+    line-height: 10.5rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 5rem;
@@ -82,6 +102,12 @@ const HeroTitleSpan = styled.span`
   z-index: -1;
   margin-left: 8%;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 10rem;
+    line-height: 10.5rem;
+    letter-spacing: 0.1rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 5rem;
     line-height: 6.5rem;
@@ -99,6 +125,10 @@ const HeroInfo = styled.div`
   font-weight: 400;
   line-height: 3rem;
   letter-spacing: 0.02rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    z-index: 10;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin-top: 47rem;
@@ -237,6 +267,11 @@ const CatalogBouqets = styled.div`
   margin-top: 12rem;
   margin-left: 8rem;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin: 0 auto;
+    width: 100%;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 0 auto;
     width: 30rem;
@@ -248,6 +283,11 @@ const CatalogFlowers = styled.div`
   height: 31rem;
   margin-top: -8rem;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin: 0 auto;
+    width: 100%;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 0 auto;
     width: 30rem;
@@ -257,6 +297,11 @@ const CatalogFlowers = styled.div`
 const CatalogOther = styled.div`
   width: 54rem;
   height: 26rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin: 0 auto;
+    width: 100%;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 0 auto;
@@ -274,6 +319,10 @@ const Bestsellers = styled.section`
   background-size: cover;
   background-position: center 10rem;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-top: 30%;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin-top: -70%;
   }
@@ -289,7 +338,7 @@ const BestsellersBlock = styled.div`
   background-position: right 2.5rem;
   padding-top: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     background-image: none;
   }
 `;
@@ -301,6 +350,11 @@ const BestsellersTitle = styled.h2`
   letter-spacing: 0.04rem;
   text-transform: uppercase;
   text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 6rem;
+    line-height: 6.9rem;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 4rem;
@@ -315,6 +369,12 @@ const BestsellersTitleSpan = styled.span`
   letter-spacing: 0.04rem;
   text-transform: uppercase;
   margin-left: -100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 6rem;
+    line-height: 6.9rem;
+    margin-left: -60%;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 4rem;
@@ -331,6 +391,10 @@ const BestsellersText = styled.p`
   font-family: 'Oswald', sans-serif;
   letter-spacing: 0.02rem;
   margin-bottom: 8.6rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-bottom: 6rem;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 1.4rem;
@@ -351,6 +415,10 @@ const BestsellersList = styled.div`
       filter: grayscale(0);
       transition: 0.4s, ease;
     }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-bottom: 3rem;
   }
 `;
 
@@ -388,6 +456,10 @@ const Order = styled.section`
     background-position: left 4rem;
     z-index: 2;
 
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      background-size: 28rem 64rem;
+    }
+
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
       background-size: 28rem 64rem;
     }
@@ -405,10 +477,18 @@ const Order = styled.section`
     right: 10%;
     top: 85%;
 
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      background-size: 20rem 10rem;
+    }
+
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
       background-size: 15rem 10rem;
       right: -8%;
     }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-top: -20rem;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -424,6 +504,11 @@ const OrderTitle = styled.h2`
   letter-spacing: 0.02rem;
   text-transform: uppercase;
   margin-bottom: 6.5rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 6rem;
+    line-height: 6.9rem;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 4rem;
@@ -584,6 +669,11 @@ const SpecialTitle = styled.h2`
   letter-spacing: 0.02rem;
   margin-bottom: 3rem;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 6rem;
+    line-height: 6.9rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 4rem;
     line-height: 4.9rem;
@@ -610,10 +700,20 @@ const SpecialTitleSpan = styled.span`
     top: 50%;
     margin-left: -78%;
 
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      width: 15rem;
+      margin-left: -78%;
+    }
+
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
       width: 9.8rem;
       margin-left: -78%;
     }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 6rem;
+    line-height: 6.9rem;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -627,7 +727,7 @@ const SpecialTitleImg = styled.img`
   right: 0;
   top: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: none;
   }
 `;
@@ -683,7 +783,7 @@ const SpecialImages = styled.div`
   height: 29.2rem;
   margin-left: 7%;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: none;
   }
 `;
@@ -709,9 +809,17 @@ const Questions = styled.section`
     top: -15%;
     z-index: 1;
 
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      top: 28%;
+    }
+
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
       top: -38%;
     }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    height: 95rem;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -734,6 +842,11 @@ const QuestionsTitle = styled.h2`
   text-transform: uppercase;
   letter-spacing: 0.02rem;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 6rem;
+    line-height: 6.9rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 4rem;
     line-height: 4.9rem;
@@ -752,6 +865,11 @@ const QuestionsTitleSpan = styled.span`
   letter-spacing: 0.02rem;
   margin-left: 25%;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 6rem;
+    line-height: 6.9rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 4rem;
     line-height: 4.9rem;
@@ -767,6 +885,14 @@ const QuestionsInfo = styled.div`
   width: 44.5rem;
   margin-top: 10rem;
   gap: 3rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    position: absolute;
+    margin-top: 20rem;
+    right: 30%;
+    width: 30rem;
+    z-index: 5;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     position: absolute;
@@ -907,6 +1033,10 @@ const InstagramBlock = styled.div`
   flex-direction: row;
   gap: 3rem;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    gap: 6px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     gap: 6px;
   }
@@ -918,6 +1048,15 @@ const InstagramBlockImages = styled.div`
   justify-content: space-between;
   flex-direction: row;
   gap: 3rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-top: 20%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 6px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin-top: 20%;
@@ -932,6 +1071,11 @@ const InstagramBlockImages = styled.div`
 const InstagramImages = styled.img`
   width: 15rem;
   height: 15rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 19rem;
+    height: 19rem;
+  }
 `;
 
 const InstagramTitle = styled.img`
@@ -940,6 +1084,10 @@ const InstagramTitle = styled.img`
   right: 10%;
   width: 35rem;
   height: 15rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    right: 40%;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 19rem;

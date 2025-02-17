@@ -19,6 +19,10 @@ const Header = styled.header.withConfig({
   left: 0;
   z-index: ${({ zIndex }) => zIndex};
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    height: 10rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     height: 8rem;
   }
@@ -37,7 +41,7 @@ const NavDesktop = styled.nav`
   text-transform: uppercase;
   padding: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: none;
   }
 `;
@@ -70,7 +74,7 @@ const MobileMenuButton = styled.button`
   width: 2rem;
   height: 1rem;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: block;
   }
 `;
@@ -85,7 +89,10 @@ const MainTitle = styled.img.withConfig({
   width: 12rem;
   top: 2.2rem;
   left: 30%;
-  z-index: 9999;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    left: 40%;
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     opacity: 0;
@@ -99,7 +106,7 @@ const CartBtn = styled.div`
   top: 3rem;
   right: 10%;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: block;
   }
 `;
